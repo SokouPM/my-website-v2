@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { useTranslations } from "next-intl"
 
 import {
   NavigationMenu,
@@ -12,6 +13,8 @@ import {
 import { menu } from "@/config/menu"
 
 export default function Navigation() {
+  const t = useTranslations("header.navbar")
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -20,12 +23,12 @@ export default function Navigation() {
             <NavigationMenuItem key={index}>
               {item.href && (
                 <Link href={item.href} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.name}</NavigationMenuLink>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>{t(item.name)}</NavigationMenuLink>
                 </Link>
               )}
               {item.children ? (
                 <>
-                  <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>{t(item.name)}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul>
                       {item.children.map((child, index) => {
@@ -34,7 +37,7 @@ export default function Navigation() {
                             {child.href && (
                               <Link href={child.href} legacyBehavior passHref className="w-full">
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                  {child.name}
+                                  {t(child.name)}
                                 </NavigationMenuLink>
                               </Link>
                             )}

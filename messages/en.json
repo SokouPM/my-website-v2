@@ -1,0 +1,27 @@
+{
+  "header": {
+    "logo": {
+      "alt": "Logo Pierre Marquet - Web Developer and Designer"
+    },
+    "navbar": {
+      "about-me": {
+        "name": "About Me"
+      },
+      "projects": {
+        "name": "My Projects",
+        "children": {
+          "design-projects": "My Design Projects",
+          "web-projects": "My Development Projects"
+        }
+      },
+      "career": {
+        "name": "My Career"
+      },
+      "contact": {
+        "name": "Contact"
+      },
+      "close-menu": "Close Menu"
+    },
+    "theme-selector": "Change Theme"
+  }
+}

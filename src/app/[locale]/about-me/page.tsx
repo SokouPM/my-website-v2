@@ -7,6 +7,8 @@ import ShineBorder from "@/components/animations/shine-border"
 import PageTitle from "@/components/PageTitle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
+import profile from "/public/images/profile.png"
+
 export default function AboutMe(): ReactElement {
   return (
     <main className="mx-auto w-11/12 flex-1 flex-col lg:w-10/12 xl:w-8/12">
@@ -37,7 +39,7 @@ export default function AboutMe(): ReactElement {
         <ShineBorder borderRadius={1000} borderWidth={10} color={["#8D27FF", "#B40A74"]} className="p-1">
           <Avatar className="size-max bg-gray-200 dark:bg-gray-800">
             <AvatarImage
-              src="/profile.png"
+              src={profile.src}
               alt="Pierre Marquet Développeur web et Designer"
               className="size-52"
               draggable={false}

@@ -1,18 +1,20 @@
 "use client"
 
 import { usePathname } from "next/navigation"
+import { useLocale } from "next-intl"
 import { ReactElement, useEffect, useState } from "react"
 
-import LangSelect from "@/components/LangSelect"
-import MobileNav from "@/components/layout/MobileNav"
-import Navigation from "@/components/layout/Navigation"
+import LangSelect from "@/components/header/LangSelect"
+import MobileNav from "@/components/header/MobileNav"
+import Navigation from "@/components/header/Navigation"
+import { ThemeToggle } from "@/components/header/ThemeToggle"
 import Logo from "@/components/Logo"
-import { ThemeToggle } from "@/components/ThemeToggle"
 
 export default function Header(): ReactElement | null {
   const [windowWithSize, setWindowWithSize] = useState<number>(0)
   const pathname = usePathname()
-  const triggerSize = 750
+  const locale = useLocale()
+  const maxTriggerSize = 750
 
   const resizeWindow = (): void => {
     if (typeof window !== "undefined") {
@@ -25,26 +27,29 @@ export default function Header(): ReactElement | null {
     window.addEventListener("resize", resizeWindow)
   }, [])
 
-  if (pathname === "/") return null
+  if (pathname === `/${locale}`) return null
 
   return (
-    <header className="mb-10 flex items-start justify-between p-3">
-      {windowWithSize && windowWithSize < triggerSize ? (
-        <div className="flex-1 md:w-max">
+    <header className="mb-10 flex items-center justify-between gap-4 p-3 md:items-start">
+      <MobileNav />
+      {windowWithSize && windowWithSize < maxTriggerSize ? (
+        <div>
           <MobileNav />
         </div>
       ) : (
         <Logo withHomeLink />
       )}
-      {windowWithSize && windowWithSize < triggerSize && windowWithSize >= 300 ? <Logo withHomeLink /> : null}
-      <div className="flex flex-1 items-center justify-end gap-3 md:w-max md:flex-initial md:justify-between">
-        {windowWithSize && windowWithSize >= triggerSize ? <Navigation /> : null}
-        <div className="flex items-center justify-center gap-4">
-          <LangSelect />
-          <span>
-            <ThemeToggle />
-          </span>
+      {windowWithSize && windowWithSize >= maxTriggerSize ? (
+        <div className="ml-auto">
+          <Navigation />
         </div>
+      ) : (
+        <div className="mx-auto w-max">
+          <LangSelect />
+        </div>
+      )}
+      <div className="flex items-center justify-center gap-4">
+        <ThemeToggle />
       </div>
     </header>
   )

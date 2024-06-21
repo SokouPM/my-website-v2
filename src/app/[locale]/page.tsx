@@ -6,8 +6,8 @@ import { ReactElement } from "react"
 import { CardBody, CardContainer, CardItem } from "@/components/animations/3d-card"
 import RetroGrid from "@/components/animations/retro-grid"
 import WordFadeIn from "@/components/animations/word-fade-in"
+import { ThemeToggle } from "@/components/header/ThemeToggle"
 import Logo from "@/components/Logo"
-import { ThemeToggle } from "@/components/ThemeToggle"
 
 const RenderPortalLogo = (): ReactElement => {
   return (
