@@ -11,10 +11,10 @@ import {
 } from "@/components/ui/navigation-menu"
 import { menu } from "@/config/menu"
 
-export default function Navigation({ orientation = "horizontal" }: { orientation?: "horizontal" | "vertical" }) {
+export default function Navigation() {
   return (
     <NavigationMenu>
-      <NavigationMenuList className={`flex gap-3 ${orientation === "vertical" ? "flex-col" : "flex-row"}`}>
+      <NavigationMenuList>
         {menu.map((item, index) => {
           return (
             <NavigationMenuItem key={index}>
