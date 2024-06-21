@@ -31,7 +31,6 @@ export default function Header(): ReactElement | null {
 
   return (
     <header className="mb-10 flex items-center justify-between gap-4 p-3 md:items-start">
-      <MobileNav />
       {windowWithSize && windowWithSize < maxTriggerSize ? (
         <div>
           <MobileNav />
