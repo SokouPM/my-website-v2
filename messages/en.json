@@ -23,5 +23,39 @@
       "close-menu": "Close Menu"
     },
     "theme-selector": "Change Theme"
+  },
+  "pages": {
+    "home": {
+      "title": "Developer and Designer",
+      "subtitle": "Welcome, click anywhere to enter"
+    },
+    "about-me": {
+      "typewriter-strings": {
+        "web-developper": "Web Developer",
+        "frontend-developper": "Front-end Developer",
+        "backend-developper": "Back-end Developer",
+        "designer": "Designer"
+      },
+      "bio": "Coming from the design world, I worked for five years for the Gendarmerie Nationale, designing educational courses with images and animations. I then moved into web and mobile web development, earning a Bachelor's and Master's degree to become more versatile.",
+      "avatar-alt": "Profile picture of Pierre Marquet - Web Developer and Designer",
+      "links": {
+        "github": {
+          "title": "View my Github",
+          "sr": "External link to GitHub profile"
+        },
+        "linkedin": {
+          "title": "View my LinkedIn",
+          "sr": "External link to LinkedIn profile"
+        },
+        "cv": {
+          "title": "Download my CV",
+          "sr": "Download link for PDF CV"
+        },
+        "contact": {
+          "title": "Contact Me",
+          "sr": "Link to contact page"
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,35 @@
+"use client"
+
+import { ReactElement, useEffect, useState } from "react"
+import { FaArrowUp } from "react-icons/fa6"
+
+import { Button } from "@/components/ui/button"
+
+export default function ReturnToTopButton(): ReactElement | null {
+  const [scrollFromTop, setScrollFromTop] = useState<number>(0)
+
+  const handleScroll = (): void => {
+    setScrollFromTop(window.scrollY)
+  }
+
+  useEffect((): void => {
+    handleScroll()
+
+    window.addEventListener("scroll", handleScroll)
+  }, [])
+
+  if (scrollFromTop < 100) return null
+
+  return (
+    <Button
+      size={"icon"}
+      variant={"outline"}
+      onClick={(): void => {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      }}
+      className="fixed bottom-4 right-4 z-50 animate-bounce rounded-full md:size-14"
+    >
+      <FaArrowUp className="text-lg md:text-2xl" />
+    </Button>
+  )
+}

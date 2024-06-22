@@ -12,8 +12,8 @@
         --popover-foreground: 269 0% 0%;
         --card: 269 34% 98%;
         --card-foreground: 269 0% 0%;
-        --border: 269 5% 91%;
-        --input: 269 5% 91%;
+        --border: 269 0% 70%;
+        --input: 0 0% 70.2%;
         --primary: 269.33 100% 55.88%;
         --primary-foreground: 0 0% 100%;
         --secondary: 321.51 100% 35.38%;
@@ -64,7 +64,12 @@
     .gradient {
         @apply bg-gradient-to-br from-primary to-secondary;
     }
+
+    .main-container {
+        @apply w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto;
+    }
 }
+
 
 .Typewriter {
     display: flex;
@@ -72,13 +77,13 @@
     justify-content: center;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
     .Typewriter {
         justify-content: flex-start;
     }
 }
 
-.typewriterCursor {
+.typewriter-cursor {
     animation: cursorAnimation 1s infinite;
 }
 

@@ -2,16 +2,12 @@
 
 import { notFound } from "next/navigation"
 import { getRequestConfig } from "next-intl/server"
+import { langs } from "@/config/langs"
 
-export enum LANGUAGE {
-  EN = "en",
-  FR = "fr",
-}
-
-export const locales = [LANGUAGE.FR, LANGUAGE.EN]
+export let locales = [...langs.map((lang) => lang.value)]
 
 export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as any)) notFound()
+  if (!locales.includes(locale as string)) notFound()
 
   return {
     messages: (await import(`../messages/${locale}.json`)).default,

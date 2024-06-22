@@ -8,7 +8,15 @@ import { LuMenu, LuX } from "react-icons/lu"
 
 import Logo from "@/components/Logo"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 import { menu, MenuItem } from "@/config/menu"
 
 const RenderNavItem = ({ navItem }: { navItem: MenuItem }) => {
@@ -47,6 +55,7 @@ export default function MobileNav(): ReactElement {
           <SheetTitle className="absolute right-0 top-0">
             <Logo withHomeLink />
           </SheetTitle>
+          <SheetDescription></SheetDescription>
         </SheetHeader>
         <ul>
           {menu.map((item, index) => (

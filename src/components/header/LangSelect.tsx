@@ -5,28 +5,13 @@ import { useLocale } from "next-intl"
 import { ReactElement, useTransition } from "react"
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { langs } from "@/config/langs"
 
 export default function LangSelect(): ReactElement {
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
   const pathName = usePathname()
   const localActive = useLocale()
-  const langs = [
-    {
-      label: {
-        flag: "🇫🇷",
-        text: "Français",
-      },
-      value: "fr",
-    },
-    {
-      label: {
-        flag: "🇺🇸",
-        text: "English",
-      },
-      value: "en",
-    },
-  ]
 
   const redirectedPathName = (locale: string): string => {
     if (!pathName) return "/"

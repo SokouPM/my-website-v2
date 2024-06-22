@@ -23,5 +23,39 @@
       "close-menu": "Fermer le menu"
     },
     "theme-selector": "Changer le theme"
+  },
+  "pages": {
+    "home": {
+      "title": "Développeur et Designer",
+      "subtitle": "Bienvenue, cliquez n'importe où pour entrer"
+    },
+    "about-me": {
+      "typewriter-strings": {
+        "web-developper": "Développeur web",
+        "frontend-developper": "Developpeur front-end",
+        "backend-developper": "Developpeur back-end",
+        "designer": "Designer"
+      },
+      "bio": "Issu du monde du design, j'ai travaillé cinq ans pour la Gendarmerie Nationale en concevant des parcours d'enseignement avec des images et des animations. J'ai ensuite évolué vers le développement web et web mobile, obtenant un Bachelor et un Master pour devenir plus polyvalent.",
+      "avatar-alt": "Photo de profil Pierre Marquet - Développeur web et Designer",
+      "links": {
+        "github": {
+          "title": "Voir mon Github",
+          "sr": "Lien externe profil GitHub"
+        },
+        "linkedin": {
+          "title": "Voir mon Linkedin",
+          "sr": "Lien externe profil LinkedIn"
+        },
+        "cv": {
+          "title": "Télécharger mon CV",
+          "sr": "Lien téléchargement CV PDF"
+        },
+        "contact": {
+          "title": "Me contacter",
+          "sr": "Lien page contact"
+        }
+      }
+    }
   }
 }

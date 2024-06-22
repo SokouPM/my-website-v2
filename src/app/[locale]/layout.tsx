@@ -8,6 +8,7 @@ import { ReactElement } from "react"
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import { ThemeProvider } from "@/components/provider/theme-provider"
+import ReturnToTopButton from "@/components/ReturnToTopButton"
 import { TailwindColorIndicator } from "@/components/utils/TailwindColorIndicator"
 import { TailwindSizeIndicator } from "@/components/utils/TailwindSizeIndicator"
 
@@ -37,6 +38,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <Header />
             {children}
+            <ReturnToTopButton />
             <TailwindSizeIndicator />
             <TailwindColorIndicator />
             <Footer />
