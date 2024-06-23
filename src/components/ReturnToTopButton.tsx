@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { ReactElement, useEffect, useState } from "react"
 import { FaArrowUp } from "react-icons/fa6"
 
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button"
 
 export default function ReturnToTopButton(): ReactElement | null {
   const [scrollFromTop, setScrollFromTop] = useState<number>(0)
+  const t = useTranslations("components")
 
   const handleScroll = (): void => {
     setScrollFromTop(window.scrollY)
@@ -30,6 +32,7 @@ export default function ReturnToTopButton(): ReactElement | null {
       className="fixed bottom-4 right-4 z-50 animate-bounce rounded-full md:size-14"
     >
       <FaArrowUp className="text-lg md:text-2xl" />
+      <span className="sr-only">{t("return-to-top-button")}</span>
     </Button>
   )
 }

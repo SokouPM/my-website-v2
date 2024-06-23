@@ -55,7 +55,13 @@
           "title": "Contact Me",
           "sr": "Link to contact page"
         }
+      },
+      "skills": {
+        "title": "My Skills"
       }
     }
+  },
+  "components": {
+    "return-to-top-button": "Return to top of page"
   }
 }
