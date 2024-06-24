@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     default: "Développeur web / Designer - Pierre Marquet",
   },
   description: "Portfolio - Pierre Marquet, développeur web et infographiste.",
+  icons: [{ url: "/favicon.ico" }],
 }
 
 export default async function RootLayout({
@@ -34,16 +35,16 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${RobotoFlex.className} flex min-h-screen flex-col`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
-          <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
             <Header />
             {children}
             <ReturnToTopButton />
             <TailwindSizeIndicator />
             <TailwindColorIndicator />
             <Footer />
-          </NextIntlClientProvider>
-        </ThemeProvider>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   )
