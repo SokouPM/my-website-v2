@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import "./globals.css"
 import { Roboto_Flex } from "next/font/google"
@@ -11,8 +12,6 @@ import { ThemeProvider } from "@/components/provider/theme-provider"
 import ReturnToTopButton from "@/components/ReturnToTopButton"
 import { TailwindColorIndicator } from "@/components/utils/TailwindColorIndicator"
 import { TailwindSizeIndicator } from "@/components/utils/TailwindSizeIndicator"
-
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const RobotoFlex = Roboto_Flex({ subsets: ["latin"] })
 
