@@ -12,6 +12,8 @@ import ReturnToTopButton from "@/components/ReturnToTopButton"
 import { TailwindColorIndicator } from "@/components/utils/TailwindColorIndicator"
 import { TailwindSizeIndicator } from "@/components/utils/TailwindSizeIndicator"
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const RobotoFlex = Roboto_Flex({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -40,6 +42,7 @@ export default async function RootLayout({
             <Header />
             {children}
             <ReturnToTopButton />
+            <SpeedInsights />
             <TailwindSizeIndicator />
             <TailwindColorIndicator />
             <Footer />
