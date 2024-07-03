@@ -1,16 +1,14 @@
-/* eslint-disable */
-
 import { notFound } from "next/navigation"
 import { getRequestConfig } from "next-intl/server"
-import { langs } from "@/config/langs"
 
-export let locales = [...langs.map((lang) => lang.value)]
+// Can be imported from a shared config
+const locales = ["fr", "en"]
 
 export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as string)) notFound()
+  // Validate that the incoming locale parameter is valid
+  if (!locales.includes(locale as any)) notFound()
 
   return {
     messages: (await import(`../messages/${locale}.json`)).default,
-    timeZone: locale === "fr" ? "Europe/Paris" : "America/New_York",
   }
 })

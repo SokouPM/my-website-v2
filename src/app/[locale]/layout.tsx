@@ -38,7 +38,7 @@ export default async function RootLayout({
       <body className={`${RobotoFlex.className} flex min-h-screen flex-col`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
-            <Header />
+            <Header locale={locale} />
             {children}
             <ReturnToTopButton />
             <SpeedInsights />

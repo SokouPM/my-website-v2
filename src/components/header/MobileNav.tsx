@@ -19,13 +19,13 @@ import {
 } from "@/components/ui/sheet"
 import { menu, MenuItem } from "@/config/menu"
 
-const RenderNavItem = ({ navItem }: { navItem: MenuItem }) => {
+const RenderNavItem = ({ navItem, locale }: { navItem: MenuItem, locale: string }) => {
   const t = useTranslations("header.navbar")
 
   if (navItem.href) {
     return (
       <Button variant="ghost" asChild={true}>
-        <Link className="w-full py-8 text-xl" href={navItem.href}>
+        <Link className="w-full py-8 text-xl" href={`/${locale}/${navItem.href}`}>
           {t(navItem.name)}
         </Link>
       </Button>
@@ -33,7 +33,7 @@ const RenderNavItem = ({ navItem }: { navItem: MenuItem }) => {
   }
 }
 
-export default function MobileNav(): ReactElement {
+export default function MobileNav({locale}:{locale: string}): ReactElement {
   const t = useTranslations("header.navbar")
 
   return (
@@ -60,12 +60,12 @@ export default function MobileNav(): ReactElement {
         <ul>
           {menu.map((item, index) => (
             <li key={index}>
-              {item.href && <RenderNavItem navItem={item} />}
+              {item.href && <RenderNavItem navItem={item} locale={locale} />}
               {item.children && (
                 <ul>
                   {item.children.map((child, childIndex) => (
                     <li key={childIndex}>
-                      <RenderNavItem navItem={child} />
+                      <RenderNavItem navItem={child} locale={locale} />
                     </li>
                   ))}
                 </ul>

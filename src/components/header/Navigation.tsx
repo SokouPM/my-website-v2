@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { menu } from "@/config/menu"
 
-export default function Navigation() {
+export default function Navigation({locale}: {locale: string}) {
   const t = useTranslations("header.navbar")
 
   return (
@@ -22,7 +22,7 @@ export default function Navigation() {
           return (
             <NavigationMenuItem key={index}>
               {item.href && (
-                <Link href={item.href} legacyBehavior passHref>
+                <Link href={`/${locale}/${item.href}`} legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>{t(item.name)}</NavigationMenuLink>
                 </Link>
               )}
@@ -35,7 +35,7 @@ export default function Navigation() {
                         return (
                           <li key={index}>
                             {child.href && (
-                              <Link href={child.href} legacyBehavior passHref className="w-full">
+                              <Link href={`/${locale}/${child.href}`} legacyBehavior passHref className="w-full">
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                   {t(child.name)}
                                 </NavigationMenuLink>

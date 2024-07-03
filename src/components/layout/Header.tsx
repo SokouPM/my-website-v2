@@ -1,7 +1,6 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { useLocale } from "next-intl"
 import { ReactElement } from "react"
 
 import LangSelect from "@/components/header/LangSelect"
@@ -10,9 +9,8 @@ import Navigation from "@/components/header/Navigation"
 import { ThemeToggle } from "@/components/header/ThemeToggle"
 import Logo from "@/components/Logo"
 
-export default function Header(): ReactElement | null {
+export default function Header({locale}:{locale: string}): ReactElement | null {
   const pathname = usePathname()
-  const locale = useLocale()
 
   if (pathname === `/${locale}`) return null
 
@@ -20,7 +18,7 @@ export default function Header(): ReactElement | null {
     <header className="sticky top-0 z-50 mb-10 flex items-center justify-between gap-4 border-b bg-background p-3 opacity-90 md:items-start">
       {/* Mobile */}
       <div className="block md:hidden">
-        <MobileNav />
+        <MobileNav locale={locale} />
       </div>
       <div className="block w-max md:hidden">
         <LangSelect />
@@ -31,7 +29,7 @@ export default function Header(): ReactElement | null {
         <Logo withHomeLink />
       </div>
       <div className="ml-auto hidden md:block">
-        <Navigation />
+        <Navigation locale={locale} />
       </div>
       <div className="hidden w-max md:block">
         <LangSelect />
