@@ -12,7 +12,7 @@ export default function PageTitle(): ReactElement {
   const t = useTranslations("header.navbar")
 
   const getPageTitle = (): string | null => {
-    const menuItem = menu.find((item) => `/${locale}${item.href}` === pathname)
+    const menuItem = menu.find((item): boolean => `/${locale}${item.href}` === pathname)
 
     if (menuItem) {
       return menuItem.name
@@ -20,7 +20,7 @@ export default function PageTitle(): ReactElement {
 
     const subMenuItem = menu
       .flatMap((item) => item.children || [])
-      .find((item) => `/${locale}${item.href}` === pathname)
+      .find((item): boolean => `/${locale}${item.href}` === pathname)
 
     if (subMenuItem) {
       return subMenuItem.name
