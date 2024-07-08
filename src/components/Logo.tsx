@@ -37,11 +37,10 @@ export default function Logo({
 }: {
   size?: "big" | "small"
   withHomeLink?: boolean
-  forcedTheme?: "light" | "dark"
 }): ReactElement {
   if (withHomeLink) {
     return (
-      <Link href={`/`} className="rounded-full transition-all">
+      <Link href="/" className="rounded-full transition-all">
         <LogoImg size={size} />
       </Link>
     )

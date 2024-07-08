@@ -23,7 +23,7 @@ export default function Home(): ReactElement {
       <div className="z-30">
         <CardContainer>
           <CardBody className="size-max">
-            <Link href={`/about-me`} className="flex size-max flex-col items-center justify-center text-center">
+            <Link href={`/about-me`} className="flex size-max flex-col items-center justify-center p-12 text-center">
               <CardItem translateZ={100} translateY={-30}>
                 <Logo size="big" />
               </CardItem>
@@ -40,6 +40,7 @@ export default function Home(): ReactElement {
           </CardBody>
         </CardContainer>
       </div>
+
       <RetroGrid className="z-20" />
     </main>
   )

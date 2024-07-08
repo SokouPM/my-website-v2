@@ -9,7 +9,7 @@ import Navigation from "@/components/header/Navigation"
 import { ThemeToggle } from "@/components/header/ThemeToggle"
 import Logo from "@/components/Logo"
 
-export default function Header({locale}:{locale: string}): ReactElement | null {
+export default function Header({ locale }: { locale: string }): ReactElement | null {
   const pathname = usePathname()
 
   if (pathname === `/${locale}`) return null
@@ -25,7 +25,7 @@ export default function Header({locale}:{locale: string}): ReactElement | null {
       </div>
 
       {/* Desktop */}
-      <div className="absolute left-0 top-2 hidden rounded-br-[40%] border-b bg-background p-2 md:block">
+      <div className="absolute left-0 top-2 hidden rounded-br-[40%] border-b bg-background p-3 md:block">
         <Logo withHomeLink />
       </div>
       <div className="ml-auto hidden md:block">
