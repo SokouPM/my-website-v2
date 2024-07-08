@@ -14,6 +14,12 @@ export default function Home(): ReactElement {
 
   return (
     <main className="flex h-screen w-screen items-center justify-center overflow-hidden">
+      <div className="fixed right-3 top-3 z-30 flex gap-4">
+        <LangSelect />
+        <span>
+          <ThemeToggle />
+        </span>
+      </div>
       <div className="z-30">
         <CardContainer>
           <CardBody className="size-max">
@@ -33,12 +39,6 @@ export default function Home(): ReactElement {
             </Link>
           </CardBody>
         </CardContainer>
-      </div>
-      <div className="fixed right-3 top-3 z-30 flex gap-4">
-        <LangSelect />
-        <span>
-          <ThemeToggle />
-        </span>
       </div>
       <RetroGrid className="z-20" />
     </main>

@@ -11,11 +11,6 @@ const nextConfig = {
       type: "asset/resource"
     })
     return config
-  },
-  images: {
-    domains: [
-      "api.microlink.io"
-    ]
   }
 }
 

@@ -4,7 +4,6 @@ export interface MenuItem {
   children?: MenuItem[]
 }
 
-// use t(name) in components to translate the menu
 export const menu: MenuItem[] = [
   {
     name: "about-me.name",

@@ -7,6 +7,6 @@ interface LangInterface {
 }
 
 export const langs: LangInterface[] = [
-  { value: "fr", label: { flag: "🇫🇷", text: "Français" } },
   { value: "en", label: { flag: "🇺🇸", text: "English" } },
+  { value: "fr", label: { flag: "🇫🇷", text: "Français" } },
 ]

@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { ReactElement } from "react"
@@ -31,7 +33,7 @@ export default function SocialsLinks(): ReactElement {
       </li>
       <li>
         <Button className="bg-red-600 hover:bg-red-700" asChild disabled>
-          <Link href={cv} locale={false} target="_blank" rel="noopener noreferrer">
+          <Link href={cv} target="_blank" rel="noopener noreferrer" aria-label={t("cv.title")}>
             <FaFilePdf className="text-xl md:mr-2" />
             <span className="hidden md:block">{t("cv.title")}</span>
           </Link>

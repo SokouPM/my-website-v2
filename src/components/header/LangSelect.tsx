@@ -36,10 +36,10 @@ export default function LangSelect(): ReactElement {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          {langs.map((item, index) => {
+          {langs.map((lang, index) => {
             return (
-              <SelectItem key={index} value={item.value}>
-                {item.label.flag} {item.label.text}
+              <SelectItem key={index} value={lang.value}>
+                {lang.label.flag} {lang.label.text}
               </SelectItem>
             )
           })}
