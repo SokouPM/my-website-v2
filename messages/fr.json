@@ -59,6 +59,57 @@
       "skills": {
         "title": "Mes compétences"
       }
+    },
+    "contact": {
+      "form": {
+        "firstname": {
+          "label": "Prénom",
+          "placeholder": "John",
+          "description": "Votre prénom",
+          "errors": {
+            "min": "Votre prénom est requis.",
+            "max": "Votre prénom est trop long."
+          }
+        },
+        "lastname": {
+          "label": "Nom",
+          "placeholder": "Doe",
+          "description": "Votre nom",
+          "errors": {
+            "min": "Votre nom est requis.",
+            "max": "Votre nom est trop long."
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "johndoe@email.fr",
+          "description": "Votre adresse email",
+          "errors": {
+            "min": "Votre adresse email est requise.",
+            "max": "Votre adresse email est trop longue.",
+            "email": "Votre adresse email n'est pas valide."
+          }
+        },
+        "subject": {
+          "label": "Objet",
+          "placeholder": "Demande de contact",
+          "description": "L'objet de votre message",
+          "errors": {
+            "min": "L'objet de votre message est requis.",
+            "max": "L'objet de votre message est trop long."
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Bonjour, je vous contacte pour...",
+          "description": "Votre message",
+          "errors": {
+            "min": "Votre message doit contenir au moins 10 caractères.",
+            "max": "Votre message ne doit pas dépasser 500 caractères."
+          }
+        },
+        "submit": "Envoyer"
+      }
     }
   },
   "components": {

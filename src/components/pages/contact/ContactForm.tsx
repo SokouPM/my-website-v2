@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { clsx } from "clsx"
+import { useTranslations } from "next-intl"
 import { ReactElement } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -11,25 +12,24 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
-const contactFormSchema = z.object({
-  firstName: z.string().min(1, "Votre prénom est requis.").max(100, "Votre prénom est trop long."),
-  lastName: z.string().min(1, "Votre nom est requis.").max(100, "Votre nom est trop long."),
-  email: z.string().email("Veuillez entrer une adresse email valide."),
-  object: z.string().min(1, "L'objet de votre message est requis.").max(100, "L'objet de votre message est trop long."),
-  message: z
-    .string()
-    .min(10, "Votre message doit contenir au moins 10 caractères.")
-    .max(500, "Votre message ne doit pas dépasser 500 caractères."),
-})
-
 export default function ContactForm(): ReactElement {
+  const t = useTranslations("pages.contact.form")
+
+  const contactFormSchema = z.object({
+    firstName: z.string().min(1, t("firstname.errors.min")).max(100, t("firstname.errors.max")),
+    lastName: z.string().min(1, t("lastname.errors.min")).max(100, t("lastname.errors.max")),
+    email: z.string().min(1, t("email.errors.min")).max(100, t("email.errors.max")).email(t("email.errors.email")),
+    subject: z.string().min(1, t("subject.errors.min")).max(100, t("subject.errors.max")),
+    message: z.string().min(10, t("message.errors.min")).max(500, t("message.errors.max")),
+  })
+
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
-      object: "",
+      subject: "",
       message: "",
     },
   })
@@ -47,15 +47,15 @@ export default function ContactForm(): ReactElement {
             name="firstName"
             render={({ field, fieldState }) => (
               <FormItem className="mb-5 w-full">
-                <FormLabel className="text-lg">Prénom</FormLabel>
+                <FormLabel className="text-lg">{t("firstname.label")}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Pierre"
+                    placeholder={t("firstname.placeholder")}
                     className={clsx({ "error-field border-2 border-red-500": fieldState.error })}
                     {...field}
                   />
                 </FormControl>
-                <FormDescription className="sr-only">Votre prénom.</FormDescription>
+                <FormDescription className="sr-only">{t("firstname.description")}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -65,15 +65,15 @@ export default function ContactForm(): ReactElement {
             name="lastName"
             render={({ field, fieldState }) => (
               <FormItem className="mb-5 w-full">
-                <FormLabel className="text-lg">Nom</FormLabel>
+                <FormLabel className="text-lg">{t("lastname.label")}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Marquet"
+                    placeholder={t("lastname.placeholder")}
                     className={clsx({ "error-field border-2 border-red-500": fieldState.error })}
                     {...field}
                   />
                 </FormControl>
-                <FormDescription className="sr-only">Votre nom.</FormDescription>
+                <FormDescription className="sr-only">{t("lastname.description")}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -85,34 +85,34 @@ export default function ContactForm(): ReactElement {
             name="email"
             render={({ field, fieldState }) => (
               <FormItem className="mb-5 w-full">
-                <FormLabel className="text-lg">Email</FormLabel>
+                <FormLabel className="text-lg">{t("email.label")}</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder={t("email.placeholder")}
                     className={clsx({ "error-field border-2 border-red-500": fieldState.error })}
                     {...field}
                   />
                 </FormControl>
-                <FormDescription className="sr-only">Votre adresse email.</FormDescription>
+                <FormDescription className="sr-only">{t("email.description")}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
           <FormField
             control={form.control}
-            name="object"
+            name="subject"
             render={({ field, fieldState }) => (
               <FormItem className="mb-5 w-full">
-                <FormLabel className="text-lg">Objet</FormLabel>
+                <FormLabel className="text-lg">{t("subject.label")}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Demande de contact"
+                    placeholder={t("subject.placeholder")}
                     className={clsx({ "error-field border-2 border-red-500": fieldState.error })}
                     {...field}
                   />
                 </FormControl>
-                <FormDescription className="sr-only">L'objet de votre message.</FormDescription>
+                <FormDescription className="sr-only">{t("subject.description")}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -123,23 +123,23 @@ export default function ContactForm(): ReactElement {
           name="message"
           render={({ field, fieldState }) => (
             <FormItem className="mb-5 w-full">
-              <FormLabel className="text-lg">Message</FormLabel>
+              <FormLabel className="text-lg">{t("message.label")}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Votre message"
+                  placeholder={t("message.placeholder")}
                   className={clsx({ "error-field border-2 border-red-500": fieldState.error })}
                   rows={8}
                   {...field}
                 />
               </FormControl>
-              <FormDescription className="sr-only">Votre message.</FormDescription>
+              <FormDescription className="sr-only">{t("message.description")}</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
 
         <Button className="w-full" type="submit">
-          Envoyer
+          {t("submit")}
         </Button>
       </form>
     </Form>

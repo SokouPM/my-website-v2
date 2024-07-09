@@ -59,6 +59,57 @@
       "skills": {
         "title": "My Skills"
       }
+    },
+    "contact": {
+      "form": {
+        "firstname": {
+          "label": "First Name",
+          "placeholder": "John",
+          "description": "Your first name",
+          "errors": {
+            "min": "Your first name is required.",
+            "max": "Your first name is too long."
+          }
+        },
+        "lastname": {
+          "label": "Last Name",
+          "placeholder": "Doe",
+          "description": "Your last name",
+          "errors": {
+            "min": "Your last name is required.",
+            "max": "Your last name is too long."
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "johndoe@email.com",
+          "description": "Your email address",
+          "errors": {
+            "min": "Your email address is required.",
+            "max": "Your email address is too long.",
+            "email": "Your email address is not valid."
+          }
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Contact request",
+          "description": "The subject of your message",
+          "errors": {
+            "min": "The subject of your message is required.",
+            "max": "The subject of your message is too long."
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Hello, I would like to contact you about...",
+          "description": "Your message",
+          "errors": {
+            "min": "Your message must be at least 10 characters long.",
+            "max": "Your message must be less than 500 characters long."
+          }
+        },
+        "submit": "Send"
+      }
     }
   },
   "components": {
