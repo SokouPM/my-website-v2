@@ -1,4 +1,16 @@
 {
+  "metadata": {
+    "title": {
+      "template": "Développeur web / Designer - Pierre Marquet",
+      "default": "Développeur web / Designer - Pierre Marquet",
+      "about-me": "À propos",
+      "web-projects": "Projets de développement",
+      "design-projects": "Projets de design",
+      "career": "Parcours",
+      "contact": "Contact"
+    },
+    "description": "Portfolio - Pierre Marquet, développeur web et infographiste."
+  },
   "header": {
     "logo": {
       "alt": "Logo Pierre Marquet - Développeur web et Designer"
@@ -87,7 +99,7 @@
           "errors": {
             "min": "Votre adresse email est requise.",
             "max": "Votre adresse email est trop longue.",
-            "email": "Votre adresse email n'est pas valide."
+            "type": "Votre adresse email n'est pas valide."
           }
         },
         "subject": {

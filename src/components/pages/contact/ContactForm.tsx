@@ -18,7 +18,7 @@ export default function ContactForm(): ReactElement {
   const contactFormSchema = z.object({
     firstName: z.string().min(1, t("firstname.errors.min")).max(100, t("firstname.errors.max")),
     lastName: z.string().min(1, t("lastname.errors.min")).max(100, t("lastname.errors.max")),
-    email: z.string().min(1, t("email.errors.min")).max(100, t("email.errors.max")).email(t("email.errors.email")),
+    email: z.string().min(1, t("email.errors.min")).max(100, t("email.errors.max")).email(t("email.errors.type")),
     subject: z.string().min(1, t("subject.errors.min")).max(100, t("subject.errors.max")),
     message: z.string().min(10, t("message.errors.min")).max(500, t("message.errors.max")),
   })
@@ -34,7 +34,7 @@ export default function ContactForm(): ReactElement {
     },
   })
 
-  function onSubmit(values: z.infer<typeof contactFormSchema>) {
+  function onSubmit(values: z.infer<typeof contactFormSchema>): void {
     alert(JSON.stringify(values, null, 2))
   }
 

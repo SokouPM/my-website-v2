@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useTranslations } from "next-intl"
+import { ReactElement } from "react"
 
 import {
   NavigationMenu,
@@ -12,7 +13,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { menu } from "@/config/menu"
 
-export default function Navigation({locale}: {locale: string}) {
+export default function Navigation({ locale }: { locale: string }): ReactElement {
   const t = useTranslations("header.navbar")
 
   return (

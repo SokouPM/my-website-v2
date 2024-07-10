@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import { ReactElement } from "react"
 
 import profile from "/public/images/profile.png"
@@ -9,6 +10,16 @@ import SocialsLinks from "@/components/pages/aboutMe/SocialsLinks"
 import TypeWriter from "@/components/pages/aboutMe/Typewriter"
 import PageTitle from "@/components/PageTitle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<{
+  title: string
+}> {
+  const t = await getTranslations({ locale, namespace: ["metadata"] })
+
+  return {
+    title: t("title.about-me"),
+  }
+}
 
 export default function AboutMe(): ReactElement {
   const t = useTranslations("pages.about-me")

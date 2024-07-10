@@ -14,12 +14,14 @@
     "prettier",
     "next",
     "plugin:react/recommended",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "plugins": [
     "react",
     "react-hooks",
-    "import"
+    "import",
+    "@typescript-eslint"
   ],
   "settings": {
     "react": {
@@ -136,6 +138,7 @@
       }
     ],
     "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "error"
   }
 }

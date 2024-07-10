@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { useTranslations } from "next-intl"
-import * as React from "react"
 import { ReactElement } from "react"
 import { LuMenu, LuX } from "react-icons/lu"
 
@@ -19,7 +18,7 @@ import {
 } from "@/components/ui/sheet"
 import { menu, MenuItem } from "@/config/menu"
 
-const RenderNavItem = ({ navItem, locale }: { navItem: MenuItem, locale: string }) => {
+const RenderNavItem = ({ navItem, locale }: { navItem: MenuItem; locale: string }): ReactElement | null => {
   const t = useTranslations("header.navbar")
 
   if (navItem.href) {
@@ -31,9 +30,11 @@ const RenderNavItem = ({ navItem, locale }: { navItem: MenuItem, locale: string 
       </Button>
     )
   }
+
+  return null
 }
 
-export default function MobileNav({locale}:{locale: string}): ReactElement {
+export default function MobileNav({ locale }: { locale: string }): ReactElement {
   const t = useTranslations("header.navbar")
 
   return (

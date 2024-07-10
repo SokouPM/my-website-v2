@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl"
 import { useTheme } from "next-themes"
-import * as React from "react"
 import { ReactElement } from "react"
 import { LuMoon, LuSun } from "react-icons/lu"
 

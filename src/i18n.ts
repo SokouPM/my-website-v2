@@ -3,7 +3,7 @@ import { getRequestConfig } from "next-intl/server"
 
 import { langs } from "@/config/langs"
 
-export const locales = [...langs.map((lang) => lang.value)]
+export const locales: string[] = [...langs.map((lang) => lang.value)]
 
 export default getRequestConfig(async ({ locale }): Promise<{ messages: Record<string, string> }> => {
   if (!locales.includes(locale as string)) notFound()

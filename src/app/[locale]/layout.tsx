@@ -3,8 +3,8 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { Roboto_Flex } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "next-intl/server"
-import { ReactElement } from "react"
+import { getMessages, getTranslations, unstable_setRequestLocale } from "next-intl/server"
+import { ReactElement, ReactNode } from "react"
 
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
@@ -15,28 +15,33 @@ import { TailwindSizeIndicator } from "@/components/utils/TailwindSizeIndicator"
 
 const RobotoFlex = Roboto_Flex({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: {
-    template: "% | Développeur web / Designer - Pierre Marquet",
-    default: "Développeur web / Designer - Pierre Marquet",
-  },
-  description: "Portfolio - Pierre Marquet, développeur web et infographiste.",
-  icons: [{ url: "/favicon.ico" }],
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: ["metadata"] })
+
+  return {
+    title: {
+      template: `%s | ${t("title.template")}`,
+      default: t("title.default"),
+    },
+    description: t("description"),
+    icons: [{ url: "/favicon.ico" }],
+  }
 }
 
 export default async function RootLayout({
   children,
   params: { locale },
 }: {
-  children: ReactElement
+  children: ReactNode
   params: { locale: string }
 }): Promise<ReactElement> {
+  unstable_setRequestLocale(locale)
   const messages = await getMessages()
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${RobotoFlex.className} flex min-h-screen flex-col`}>
-        <NextIntlClientProvider messages={messages}>
+      <body className={`${RobotoFlex.className} flex min-h-dvh flex-col`}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
             <Header locale={locale} />
             {children}

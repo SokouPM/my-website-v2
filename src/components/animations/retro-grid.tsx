@@ -1,6 +1,8 @@
+import { ReactElement } from "react"
+
 import { cn } from "@/lib/utils"
 
-export default function RetroGrid({ className }: { className?: string }) {
+export default function RetroGrid({ className }: { className?: string }): ReactElement {
   return (
     <div
       className={cn(

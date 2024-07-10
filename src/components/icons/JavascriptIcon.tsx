@@ -1,6 +1,6 @@
-import { ComponentProps } from "react"
+import { ComponentProps, ReactElement } from "react"
 
-export const JavascriptIcon = (props: ComponentProps<"svg"> & { size?: number }) => {
+export const JavascriptIcon = (props: ComponentProps<"svg"> & { size?: number }): ReactElement => {
   return (
     <svg
       width={props.size}

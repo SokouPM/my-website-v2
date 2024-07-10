@@ -33,9 +33,9 @@ export default function SocialsLinks(): ReactElement {
       </li>
       <li>
         <Button className="bg-red-600 hover:bg-red-700" asChild disabled>
-          <Link href={cv} target="_blank" rel="noopener noreferrer" aria-label={t("cv.title")}>
+          <Link href={cv} target="_blank" rel="noopener noreferrer" aria-label={t("cv.title")} title={t("cv.title")}>
             <FaFilePdf className="text-xl md:mr-2" />
-            <span className="hidden md:block">{t("cv.title")}</span>
+            <span className="hidden md:block">{t("cv.title")} (PDF)</span>
           </Link>
         </Button>
       </li>

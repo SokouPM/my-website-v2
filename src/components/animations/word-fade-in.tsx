@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, Variants } from "framer-motion"
+import { ReactElement } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -16,14 +17,14 @@ export default function WordFadeIn({
   delay = 0.15,
   variants = {
     hidden: { opacity: 0 },
-    visible: (i: any) => ({
+    visible: (i: number) => ({
       y: 0,
       opacity: 1,
       transition: { delay: i * delay },
     }),
   },
   className,
-}: WordFadeInProps) {
+}: WordFadeInProps): ReactElement {
   const _words = words.split(" ")
 
   return (
