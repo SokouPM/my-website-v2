@@ -14,7 +14,7 @@ export default function TimeLine(): ReactElement {
       {career.map((item, index) => (
         <VerticalTimelineElement
           key={index}
-          visible={false}
+          visible={process.env.NODE_ENV !== "production"}
           date={item.date}
           dateClassName="dark:text-white text-black"
           contentStyle={item.type === "work" ? { background: "#8D27FF" } : { background: "#B40A74" }}
