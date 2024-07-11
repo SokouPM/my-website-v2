@@ -14,13 +14,11 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   }
 }
 
-const TODO: boolean = true
-
 export default function AboutMe(): ReactElement {
   return (
     <main className="main-container flex-1 flex-col">
       <PageTitle />
-      {TODO ? <p className="text-center text-5xl italic">🏗️ In progress</p> : <TimeLine />}
+      <TimeLine />
     </main>
   )
 }

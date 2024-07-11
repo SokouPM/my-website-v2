@@ -1,10 +1,10 @@
-export interface MenuItem {
+export interface MenuItemInterface {
   name: string
   href?: string
-  children?: MenuItem[]
+  children?: MenuItemInterface[]
 }
 
-export const menu: MenuItem[] = [
+export const menu: MenuItemInterface[] = [
   {
     name: "about-me.name",
     href: "/about-me",
