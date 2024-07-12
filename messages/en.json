@@ -72,6 +72,137 @@
         "title": "My Skills"
       }
     },
+    "career": {
+      "work": {
+        "anfsi": {
+          "date": "October 2022 - October 2024",
+          "title": "Full-stack Developer Apprentice",
+          "localisation": "ANFSI - Issy-les-Moulineaux, Hauts-de-Seine (92)",
+          "description": "<ul><li><strong>Design</strong> and <strong>development</strong> of <strong>full-stack web applications</strong>:<ol><li>Recruitment website (Candidate account)</li><li>Reserve management platform (Minotaur)</li></ol></li><li>Assistance in <strong>website design</strong></li><li><strong>Data modeling</strong></li><li><strong>Full-stack development</strong></li><li>Collaborative work</li><li>Continuous integration</li></ul>",
+          "logo-alt": "ANFSI logo, Digital Agency of Internal Security Forces"
+        },
+        "deletec": {
+          "date": "November 2021 - October 2022",
+          "title": "Web Developer / Project Manager Apprentice",
+          "localisation": "DELETEC - Paris (75)",
+          "description": "<ul><li>Completion of tasks for two development projects:</li><ol><li><strong>GDPR-specific management application</strong> for clients</li><li>Multi-tenant client portal for managing DELETEC's provided services</li></ol><li><strong>Organization</strong> and facilitation of presentation and decision-making meetings</li><li><strong>Task</strong> and project phase definition</li><li>Creation and presentation of <strong>application prototypes</strong></li><li><strong>Development</strong> of versions as per specifications</li></ul>",
+          "logo-alt": "DELETEC Logo"
+        },
+        "tr": {
+          "date": "May - July 2020",
+          "title": "Web and Mobile Web Developer / Project Manager Intern",
+          "localisation": "La Team Rocket - Toulouse, Haute-Garonne (31)",
+          "description": "<ul><li><strong>Prototyping</strong> and <strong>design</strong> of a <strong>web application</strong></li><li>Work in <strong>Agile methodology</strong> (SCRUM)</li><li>Teamwork of 5 individuals</li><li><strong>Front-End development</strong> of an MVC application (HTML / CSS / JavaScript)</li><li><strong>Back-End development</strong> of an MVC application (PHP)</li><li>Creation and management of a <strong>database</strong> (SQL / MySQL)</li></ul>",
+          "logo-alt": "Team Rocket logo"
+        },
+        "cpmgn": {
+          "date": "September 2014 - September 2019",
+          "title": "Designer Voluntary Assistant Gendarme",
+          "localisation": "CPMGN - Limoges, Haute-Vienne (87)",
+          "description": "<ul><li>Creation of <strong>DVD covers</strong></li><li><strong>Vector drawing</strong> / <strong>Photo editing</strong> / <strong>Photomontage</strong></li><li><strong>Layout</strong></li><li>Work autonomously or in teams (2 to 10 people)</li><li><strong>Work with deadlines</strong></li><li>Project presentations / <strong>Client contact</strong> / <strong>Needs analysis</strong></li></ul>",
+          "logo-alt": "CPMGN Logo, Multimedia Production Center of the National Gendarmerie"
+        },
+        "scgd": {
+          "date": "May - July 2014",
+          "title": "Designer Intern / Desktop Publishing",
+          "localisation": "Studio CG Designer - Narbonne, Aude (11)",
+          "description": "<ul><li><strong>Web page layout</strong></li><li><strong>Graphic creation</strong> (posters, flyers, logos, ...)</li><li><strong>Vector drawing</strong> / <strong>Photo editing</strong> / <strong>Photomontage</strong></li><li><strong>Layout</strong></li></ul>",
+          "logo-alt": "Studio CG Designer logo"
+        },
+        "creapub": {
+          "date": "April - May 2013",
+          "title": "Designer and Offset Printer Intern",
+          "localisation": "Créapub - Béziers, Hérault (34)",
+          "description": "<ul><li><strong>Graphic creation</strong> (posters, flyers, ...)</li><li>File preparation for <strong>printing</strong></li><li>Offset <strong>printing</strong></li></ul>",
+          "logo-alt": "Créapub logo"
+        },
+        "comg": {
+          "date": "March - April 2013",
+          "title": "Designer Intern",
+          "localisation": "Com.Gaudry - Sérignan, Hérault (34)",
+          "description": "<ul><li><strong>Graphic creation</strong> (posters, flyers, ...)</li><li><strong>Web page layout</strong></li><li><strong>Vector drawing</strong> / <strong>Photo editing</strong> / <strong>Photomontage</strong></li><li><strong>Layout</strong></li></ul>",
+          "logo-alt": "Com.Gaudry logo"
+        },
+        "typoffset": {
+          "date": "January - March 2012",
+          "title": "Designer Intern",
+          "localisation": "Typoffset - Béziers, Hérault (34)",
+          "description": "<ul><li><strong>Graphic creation</strong> (posters, flyers, ...)</li><li>Work autonomously</li></ul>",
+          "logo-alt": "Typoffset logo"
+        },
+        "glazier": {
+          "date": "May - July 2011",
+          "title": "Stained Glass Designer Intern",
+          "localisation": "Stained glass workshop of Mr. Olivier Vigroux - Béziers, Hérault (34)",
+          "description": "<ul><li>Creation of <strong>drawings</strong> for <strong>stained glass</strong></li><li>Teamwork with the master glassmaker</li></ul>",
+          "logo-alt": "Stained glass workshop of Mr. Olivier Vigroux logo"
+        },
+        "lrp": {
+          "date": "January - February 2010",
+          "title": "Screen Printer Intern",
+          "localisation": "Languedoc-roussillon publicité - Sauvian, Hérault (34)",
+          "description": "<ul><li><strong>Graphic creation</strong> (posters, flyers, ...)</li><li>Screen printing</li></ul>",
+          "logo-alt": "Languedoc-roussillon publicité logo"
+        },
+        "vs": {
+          "date": "May - June 2009",
+          "title": "Screen Printer Intern",
+          "localisation": "Vilar sérigraphie - Vendres, Hérault (34)",
+          "description": "<ul><li><strong>Graphic creation</strong> (posters, flyers, ...)</li><li>Screen printing</li></ul>",
+          "logo-alt": "Vilar sérigraphie logo"
+        }
+      },
+      "education": {
+        "sdv": {
+          "localisation": "Sup de vinci - La Défense, Hauts-de-Seine (92)",
+          "master": {
+            "date": "October 2022 - October 2024",
+            "title": "Master's degree in Information Systems Expertise - Development Specialization"
+          },
+          "bachelor": {
+            "date": "September 2021 - September 2022",
+            "title": "Bachelor's degree in Information Systems Administration - Development Specialization"
+          },
+          "logo-alt": "Sup de Vinci logo"
+        },
+        "afpa": {
+          "date": "November 2019 - July 2020",
+          "title": "Professional Title in Web and Mobile Web Development",
+          "localisation": "AFPA - Balma, Haute-Garonne (31)",
+          "logo-alt": "AFPA logo"
+        },
+        "eg": {
+          "date": "August 2014 - September 2014",
+          "title": "Voluntary Assistant Gendarme Trainee",
+          "localisation": "École de Gendarmerie de Montluçon, Allier (03)",
+          "logo-alt": "Montluçon Gendarmerie School logo"
+        },
+        "jfc": {
+          "date": "September 2013 - June 2014",
+          "title": "1st year BTEC Higher National Diploma in Space and Volume Design",
+          "localisation": "Jean François Champollion high school - Lattes, Hérault (34)",
+          "logo-alt": "Jean François Champollion high school logo"
+        },
+        "studiom": {
+          "date": "September 2013 - June 2014",
+          "title": "1st year Bachelor's degree in Art and Multimedia",
+          "localisation": "Studio M - Montpellier, Hérault (34)",
+          "logo-alt": "Studio M logo"
+        },
+        "lfm": {
+          "localisation": "Frédéric Mistral high school - Nîmes, Gard (30)",
+          "bma": {
+            "date": "September 2010 - July 2012",
+            "title": "BTEC National Diploma in Artistic Crafts - Graphic Designer Option"
+          },
+          "cap": {
+            "date": "September 2008 - July 2010",
+            "title": "NVQ in Industrial Screen Printing"
+          },
+          "logo-alt": "Frédéric Mistral high school logo"
+        }
+      }
+    },
     "contact": {
       "form": {
         "firstname": {

@@ -72,6 +72,137 @@
         "title": "Mes compétences"
       }
     },
+    "career": {
+      "work": {
+        "anfsi": {
+          "date": "Octobre 2022 - Octobre 2024",
+          "title": "Apprenti Développeur Fullstack",
+          "localisation": "ANFSI - Issy-les-Moulineaux, Hauts-de-Seine (92)",
+          "description": "<ul><li><strong>Conception</strong> et <strong>développement</strong> d’<strong>application web</strong> <strong>full-stack</strong> :<ol><li>Site de recrutement (Compte candidat)</li><li>Plateforme de gestion des réserviste (Minotaur)</li></ol></li><li>Aide à la <strong>conception de site web</strong></li><li><strong>Modélisation de données</strong></li><li><strong>Développement full-stack</strong></li><li>Travail collaboratif</li><li>Integration continue</li></ul>",
+          "logo-alt": "Logo ANFSI, Agence du Numérique des Forces de Sécurité Intérieure"
+        },
+        "deletec": {
+          "date": "Novembre 2021 - Octobre 2022",
+          "title": "Apprenti Développeur Web / Chef de projet",
+          "localisation": "DELETEC - Paris (75)",
+          "description": "<ul><li>Réalisation de l'ensemble des tâches deux projets de développement :</li><ol><li><strong>Application</strong> de gestion des spécificités RGPD des clients</li><li>Portail client multi tenant de gestion des services fournis par DELETEC</li></ol><li><strong>Organisation</strong> et animation des réunions de présentations et de prises décisions</li><li><strong>Définition des tâches</strong> et des étapes du projet</li><li>Création et présentation des <strong>maquettes</strong> de <strong>l'application</strong></li><li><strong>Développement</strong> des versions selon le cahier des charges</li></ul>",
+          "logo-alt": "Logo DELETEC"
+        },
+        "tr": {
+          "date": "Mai - Juillet 2020",
+          "title": "Stagiaire Développeur Web et web mobile / Chef de projet",
+          "localisation": "La Team Rocket - Toulouse, Haute-Garonne (31)",
+          "description": "<ul><li><strong>Maquettage</strong> et <strong>conception</strong> d’une <strong>application web</strong></li><li>Travail en <strong>méthode Agile</strong> (<strong>SCRUM</strong>)</li><li><strong>Travail en équipe</strong> de 5 personnes</li><li><strong>Développement Front-End</strong> d’une application en <strong>MVC</strong> (<strong>HTML</strong> / <strong>CSS</strong> / <strong>JAVASCRIPT</strong>)</li><li><strong>Développement Back-End</strong> d’une application en <strong>MVC</strong> (<strong>PHP</strong>)</li><li>Création et gestion d’une <strong>base de données</strong> (<strong>SQL</strong> / <strong>MySQL</strong>)</li></ul>",
+          "logo-alt": "Logo La Team Rocket"
+        },
+        "cpmgn": {
+          "date": "Septembre 2014 - Septembre 2019",
+          "title": "Gendarme Adjoint volontaire designer",
+          "localisation": "CPMGN - Limoges, Haute-Vienne (87)",
+          "description": "<ul><li>Création de <strong>jaquette de dvd</strong></li><li><strong>Dessin vectoriel</strong> / <strong>Retouche photo</strong> / <strong>Photomontage</strong></li><li><strong>Mise en page</strong></li><li><strong>Travail en autonomie</strong> ou en équipe (de 2 à 10 personnes)</li><li><strong>Travail avec échéances</strong></li><li>Présentation de projets / <strong>Contact client</strong> / <strong>Analyse des besoins</strong></li></ul>",
+          "logo-alt": "Logo CPMGN, Centre de Production Multimédia de la Gendarmerie Nationale"
+        },
+        "scgd": {
+          "date": "Mai - Juillet 2014",
+          "title": "Stagiaire designer / PAO",
+          "localisation": "Studio CG Designer - Narbonne, Aude (11)",
+          "description": "<ul><li><strong>Maquettage</strong> de <strong>site web</strong></li><li><strong>Création graphique</strong> (<strong>affiche</strong>, <strong>flyers</strong>, <strong>logo</strong> ...)</li><li><strong>Dessin vectoriel</strong> / <strong>Retouche photo</strong> / <strong>Photomontage</strong></li><li><strong>Mise en page</strong></li></ul>",
+          "logo-alt": "Logo Studio CG Designer"
+        },
+        "creapub": {
+          "date": "Avril - Mai 2013",
+          "title": "Stagiaire designer et imprimeur Offset",
+          "localisation": "Créapub - Béziers, Hérault (34)",
+          "description": "<ul><li><strong>Création graphique</strong> (<strong>affiche</strong>, <strong>flyers</strong>, ...)</li><li>Préparation de fichier pour l’<strong>impression</strong></li><li><strong>Impression</strong> offset</li></ul>",
+          "logo-alt": "Logo Créapub"
+        },
+        "comg": {
+          "date": "Mars - Avril 2013",
+          "title": "Stagiaire designer",
+          "localisation": "Com.Gaudry - Sérignan, Hérault (34)",
+          "description": "<ul><li> <strong>Création graphique</strong> (<strong>affiche</strong>, <strong>flyers</strong>, ...) </li><li> <strong>Maquettage</strong> de <strong>site web</strong> </li> <li> <strong>Dessin vectoriel</strong> / <strong>Retouche photo</strong> / <strong>Photomontage</strong> </li> <li> <strong>Mise en page</strong> </li></ul>",
+          "logo-alt": "Logo Com.Gaudry"
+        },
+        "typoffset": {
+          "date": "Janvier - Mars 2012",
+          "title": "Stagiaire designer",
+          "localisation": "Typoffset - Béziers, Hérault (34)",
+          "description": "<ul><li><strong>Création graphique</strong> (<strong>affiche</strong>, <strong>flyers</strong>, ...) </li><li><strong>Travail en autonomie</strong></li></ul>",
+          "logo-alt": "Logo Typoffset"
+        },
+        "glazier": {
+          "date": "Mai - Juillet 2011",
+          "title": "Stagiaire designer de vitrail",
+          "localisation": "Atelier de vitrail de M. Olivier Vigroux - Béziers, Hérault (34)",
+          "description": "<ul><li>Création de <strong>dessin</strong> pour <strong>vitrail</strong></li><li><strong>Travail en équipe</strong> avec le maître verrier</li></ul>",
+          "logo-alt": "Logo Atelier de vitrail de M. Olivier Vigroux"
+        },
+        "lrp": {
+          "date": "Janvier - Février 2010",
+          "title": "Stagiaire sérigraphe",
+          "localisation": "Languedoc-roussillon publicité - Sauvian, Hérault (34)",
+          "description": "<ul><li><strong>Création graphique</strong> (<strong>affiche</strong>, <strong>flyers</strong>, ...)</li><li>Impression en sérigraphique</li></ul>",
+          "logo-alt": "Logo Languedoc-roussillon publicité"
+        },
+        "vs": {
+          "date": "Mai - Juin 2009",
+          "title": "Stagiaire sérigraphe",
+          "localisation": "Vilar sérigraphie - Vendres, Hérault (34)",
+          "description": "<ul><li><strong>Création graphique</strong> (<strong>affiche</strong>, <strong>flyers</strong>, ...)</li><li>Impression en sérigraphique</li></ul>",
+          "logo-alt": "Logo Vilar sérigraphie"
+        }
+      },
+      "education": {
+        "sdv": {
+          "localisation": "Sup de vinci - La Défense, Hauts-de-Seine (92)",
+          "master": {
+            "date": "Octobre 2022 - Octobre 2024",
+            "title": "Master Expert des Systèmes d’Information - Spécialisation Développement"
+          },
+          "bachelor": {
+            "date": "Septembre 2021 - Septembre 2022",
+            "title": "Bachelor 3 Administrateur des Systèmes d'Information - Spécialisation Développement"
+          },
+          "logo-alt": "Logo Sup de Vinci"
+        },
+        "afpa": {
+          "date": "Novembre 2019 - Juillet 2020",
+          "title": "Titre professionnel Développeur Web et web mobile",
+          "localisation": "AFPA - Balma, Haute-Garonne (31)",
+          "logo-alt": "Logo AFPA"
+        },
+        "eg": {
+          "date": "Août 2014 - Septembre 2014",
+          "title": "Élève Gendarme Adjoint Volontaire",
+          "localisation": "École de Gendarmerie de Montluçon, Allier (03)",
+          "logo-alt": "Logo École de Gendarmerie de Montluçon"
+        },
+        "jfc": {
+          "date": "Septembre 2013 - Juin 2014",
+          "title": "1ʳᵉ année BTS Design d'espace et volume",
+          "localisation": "Lycee Jean François Champollion - Lattes, Hérault (34)",
+          "logo-alt": "Logo Lycee Jean François Champollion"
+        },
+        "studiom": {
+          "date": "Septembre 2013 - Juin 2014",
+          "title": "1ʳᵉ année Bachelor Art et Multimedia",
+          "localisation": "Studio M - Montpellier, Hérault (34)",
+          "logo-alt": "Logo Studio M"
+        },
+        "lfm": {
+          "localisation": "Lycee Frédéric Mistral - Nîmes, Gard (30)",
+          "bma": {
+            "date": "Septembre 2010 - Juillet 2012",
+            "title": "Brevet des métiers d'art - Option A graphiste en lettres et décor"
+          },
+          "cap": {
+            "date": "Septembre 2008 - Juillet 2010",
+            "title": "CAP Sérigraphie industrielle"
+          },
+          "logo-alt": "Logo Lycee Frédéric Mistral"
+        }
+      }
+    },
     "contact": {
       "form": {
         "firstname": {
