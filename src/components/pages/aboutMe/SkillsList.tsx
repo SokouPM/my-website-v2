@@ -1,7 +1,9 @@
-import { ReactElement } from "react"
+"use client"
 
+import { forwardRef, ReactElement, ReactNode, useRef } from "react"
+
+import { AnimatedBeam } from "@/components/animations/animated-beam"
 import { DockerIcon } from "@/components/icons/DockerIcon"
-import { JavascriptIcon } from "@/components/icons/JavascriptIcon"
 import { MysqlIcon } from "@/components/icons/MysqlIcon"
 import { NextIcon } from "@/components/icons/NextIcon"
 import { NodeIcon } from "@/components/icons/NodeIcon"
@@ -9,63 +11,102 @@ import { PhpIcon } from "@/components/icons/PhpIcon"
 import { PostgresIcon } from "@/components/icons/PostgresIcon"
 import { ReactIcon } from "@/components/icons/ReactIcon"
 import { SymfonyIcon } from "@/components/icons/SymfonyIcon"
-import { TailwindIcon } from "@/components/icons/TaiwindIcon"
 import { TypescriptIcon } from "@/components/icons/TypescriptIcon"
 import { VueIcon } from "@/components/icons/VueIcon"
+import Logo from "@/components/Logo"
+import { cn } from "@/lib/utils"
+
+const Circle = forwardRef<HTMLDivElement, { className?: string; children?: ReactNode }>(
+  ({ className, children }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          "z-10 flex size-16 items-center justify-center overflow-hidden rounded-full bg-gray-200 p-2 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:bg-gray-800 sm:size-20",
+          className,
+        )}
+      >
+        {children}
+      </div>
+    )
+  },
+)
+
+Circle.displayName = "Circle"
 
 export default function SkillsList(): ReactElement {
-  const size: number = 60
+  const containerRef = useRef<HTMLDivElement>(null)
+  const logoRef = useRef<HTMLDivElement>(null)
+
+  const reactIconRef = useRef<HTMLDivElement>(null)
+  const nextIconRef = useRef<HTMLDivElement>(null)
+  const vueIconRef = useRef<HTMLDivElement>(null)
+  const symfonyIconRef = useRef<HTMLDivElement>(null)
+  const typescriptIconRef = useRef<HTMLDivElement>(null)
+
+  const nodeIconRef = useRef<HTMLDivElement>(null)
+  const phpIconRef = useRef<HTMLDivElement>(null)
+  const postgresqlIconRef = useRef<HTMLDivElement>(null)
+  const mysqlIconRef = useRef<HTMLDivElement>(null)
+  const dockerIconRef = useRef<HTMLDivElement>(null)
+
+  const size = 50
 
   return (
-    <ul className="mb-10 grid grid-cols-2 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-      <li className="flex h-max flex-col items-center gap-2">
-        <ReactIcon size={size} />
-        <strong className="text-xl font-normal">React</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <NextIcon size={size} className="rounded-full dark:border" />
-        <strong className="text-xl font-normal">Next.js</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <VueIcon size={size} />
-        <strong className="text-xl font-normal">Vue.js</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <SymfonyIcon size={size} className="rounded-full dark:border" />
-        <strong className="text-xl font-normal">Symfony</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <JavascriptIcon size={size} className="rounded" />
-        <strong className="text-xl font-normal">Javascript</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <TypescriptIcon size={size} className="rounded" />
-        <strong className="text-xl font-normal">Typescript</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <NodeIcon size={size} />
-        <strong className="text-xl font-normal">Node.js</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <PhpIcon size={size} />
-        <strong className="text-xl font-normal">PHP</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <TailwindIcon size={size} />
-        <strong className="text-xl font-normal">Tailwind CSS</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <PostgresIcon size={size} />
-        <strong className="text-xl font-normal">PostgresSQL</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <MysqlIcon size={size} />
-        <strong className="text-xl font-normal">MySQL</strong>
-      </li>
-      <li className="flex h-max flex-col items-center gap-2">
-        <DockerIcon size={size} />
-        <strong className="text-xl font-normal">Docker</strong>
-      </li>
-    </ul>
+    <div className="relative mx-auto flex min-h-max max-w-[600px] items-center justify-center" ref={containerRef}>
+      <div className="flex size-full flex-row justify-between gap-2">
+        <div className="flex flex-1 flex-col justify-between gap-1">
+          <Circle ref={reactIconRef} className="self-end">
+            <ReactIcon size={size} />
+          </Circle>
+          <Circle ref={nextIconRef} className="self-center">
+            <NextIcon className="rounded-full dark:border" size={size} />
+          </Circle>
+          <Circle ref={vueIconRef} className="self-start">
+            <VueIcon size={size} />
+          </Circle>
+          <Circle ref={symfonyIconRef} className="self-center">
+            <SymfonyIcon className="rounded-full dark:border" size={size} />
+          </Circle>
+          <Circle ref={typescriptIconRef} className="self-end">
+            <TypescriptIcon size={size} />
+          </Circle>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <Circle ref={logoRef} className="size-20 sm:size-24">
+            <Logo />
+          </Circle>
+        </div>
+        <div className="flex flex-1 flex-col justify-between gap-1">
+          <Circle ref={nodeIconRef} className="self-start">
+            <NodeIcon size={size} />
+          </Circle>
+          <Circle ref={phpIconRef} className="self-center">
+            <PhpIcon size={size} />
+          </Circle>
+          <Circle ref={postgresqlIconRef} className="self-end">
+            <PostgresIcon size={size} />
+          </Circle>
+          <Circle ref={mysqlIconRef} className="self-center">
+            <MysqlIcon size={size} />
+          </Circle>
+          <Circle ref={dockerIconRef} className="self-start">
+            <DockerIcon size={size} />
+          </Circle>
+        </div>
+      </div>
+
+      <AnimatedBeam containerRef={containerRef} fromRef={reactIconRef} toRef={logoRef} />
+      <AnimatedBeam containerRef={containerRef} fromRef={nextIconRef} toRef={logoRef} />
+      <AnimatedBeam containerRef={containerRef} fromRef={vueIconRef} toRef={logoRef} />
+      <AnimatedBeam containerRef={containerRef} fromRef={symfonyIconRef} toRef={logoRef} />
+      <AnimatedBeam containerRef={containerRef} fromRef={typescriptIconRef} toRef={logoRef} />
+
+      <AnimatedBeam containerRef={containerRef} fromRef={nodeIconRef} toRef={logoRef} reverse />
+      <AnimatedBeam containerRef={containerRef} fromRef={phpIconRef} toRef={logoRef} reverse />
+      <AnimatedBeam containerRef={containerRef} fromRef={postgresqlIconRef} toRef={logoRef} reverse />
+      <AnimatedBeam containerRef={containerRef} fromRef={mysqlIconRef} toRef={logoRef} reverse />
+      <AnimatedBeam containerRef={containerRef} fromRef={dockerIconRef} toRef={logoRef} reverse />
+    </div>
   )
 }
