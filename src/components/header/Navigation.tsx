@@ -23,7 +23,7 @@ export default function Navigation({ locale }: { locale: string }): ReactElement
           return (
             <NavigationMenuItem key={index}>
               {item.href && (
-                <Link href={`/${locale}/${item.href}`} legacyBehavior passHref>
+                <Link href={`/${locale}${item.href}`} legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>{t(item.name)}</NavigationMenuLink>
                 </Link>
               )}
@@ -36,7 +36,7 @@ export default function Navigation({ locale }: { locale: string }): ReactElement
                         return (
                           <li key={index}>
                             {child.href && (
-                              <Link href={`/${locale}/${child.href}`} legacyBehavior passHref className="w-full">
+                              <Link href={`/${locale}${child.href}`} legacyBehavior passHref className="w-full">
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                   {t(child.name)}
                                 </NavigationMenuLink>

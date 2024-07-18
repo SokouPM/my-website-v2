@@ -26,7 +26,7 @@ export default function Header({ locale }: { locale: string }): ReactElement | n
 
       {/* Desktop */}
       <div className="absolute left-0 top-2 hidden rounded-br-[40%] border-b bg-background p-3 md:block">
-        <Logo withHomeLink />
+        <Logo locale={locale} />
       </div>
       <div className="ml-auto hidden md:block">
         <Navigation locale={locale} />

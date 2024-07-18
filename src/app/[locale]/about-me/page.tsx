@@ -27,7 +27,7 @@ export default function AboutMe(): ReactElement {
   return (
     <main className="main-container flex-1 flex-col">
       <PageTitle />
-      <section className="pb-28">
+      <section className="pb-20">
         <div className="mb-10 flex flex-col-reverse items-center justify-between gap-5 md:flex-row md:gap-10">
           <div>
             <h2 className="text-center text-4xl font-bold md:text-left md:text-5xl">Pierre Marquet</h2>
@@ -48,7 +48,6 @@ export default function AboutMe(): ReactElement {
         <SocialsLinks />
       </section>
       <section>
-        <h2 className="mb-10 text-center text-3xl font-bold">{t("skills.title")}</h2>
         <SkillsList />
       </section>
     </main>

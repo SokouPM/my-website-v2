@@ -31,16 +31,10 @@ export const LogoImg = ({
   )
 }
 
-export default function Logo({
-  size = "small",
-  withHomeLink = false,
-}: {
-  size?: "big" | "small"
-  withHomeLink?: boolean
-}): ReactElement {
-  if (withHomeLink) {
+export default function Logo({ size = "small", locale }: { size?: "big" | "small"; locale?: string }): ReactElement {
+  if (locale) {
     return (
-      <Link href="/" className="rounded-full transition-all">
+      <Link href={`/${locale}`} className="rounded-full transition-all">
         <LogoImg size={size} />
       </Link>
     )

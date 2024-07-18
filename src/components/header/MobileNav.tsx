@@ -54,7 +54,7 @@ export default function MobileNav({ locale }: { locale: string }): ReactElement 
             </Button>
           </SheetClose>
           <SheetTitle className="absolute right-0 top-0">
-            <Logo withHomeLink />
+            <Logo locale={locale} />
           </SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>

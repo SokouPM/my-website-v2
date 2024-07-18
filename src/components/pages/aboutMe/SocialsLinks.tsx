@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { ReactElement } from "react"
 import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
@@ -12,6 +12,7 @@ import cv from "/public/files/cv_fr.pdf"
 
 export default function SocialsLinks(): ReactElement {
   const t = useTranslations("pages.about-me.links")
+  const locale = useLocale()
 
   return (
     <ul className="flex items-center justify-center gap-4">
@@ -41,7 +42,7 @@ export default function SocialsLinks(): ReactElement {
       </li>
       <li>
         <Button asChild>
-          <Link href={"/contact"}>
+          <Link href={`/${locale}/contact`}>
             <IoMdMail className="text-xl md:mr-2" />
             <span className="hidden md:block">{t("contact.title")}</span>
           </Link>

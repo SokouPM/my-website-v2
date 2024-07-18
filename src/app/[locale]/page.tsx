@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { ReactElement } from "react"
 
 import { CardBody, CardContainer, CardItem } from "@/components/animations/3d-card"
@@ -12,6 +12,8 @@ import Logo from "@/components/Logo"
 export default function Home(): ReactElement {
   const t = useTranslations("pages.home")
 
+  const locale = useLocale()
+  
   return (
     <main className="flex h-screen w-screen items-center justify-center overflow-hidden">
       <div className="fixed right-3 top-3 z-30 flex gap-4">
@@ -23,7 +25,10 @@ export default function Home(): ReactElement {
       <div className="z-30">
         <CardContainer>
           <CardBody className="size-max">
-            <Link href={`/about-me`} className="flex size-max flex-col items-center justify-center p-12 text-center">
+            <Link
+              href={`${locale}/about-me`}
+              className="flex size-max flex-col items-center justify-center p-12 text-center"
+            >
               <CardItem translateZ={100} translateY={-30}>
                 <Logo size="big" />
               </CardItem>

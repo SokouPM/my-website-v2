@@ -31,5 +31,5 @@ export default function PageTitle(): ReactElement {
 
   const pageTitle = getPageTitle()
 
-  return <h1 className="mb-10 text-center text-3xl font-bold md:my-14 md:text-5xl">{t(pageTitle)}</h1>
+  return <h1 className="mb-10 text-center text-3xl font-bold md:my-7 md:text-5xl">{t(pageTitle)}</h1>
 }
