@@ -34,7 +34,8 @@
       },
       "close-menu": "Close Menu"
     },
-    "theme-selector": "Change Theme"
+    "theme-selector": "Change Theme",
+    "lang-selector": "Change Language"
   },
   "pages": {
     "home": {
