@@ -24,6 +24,7 @@ const SelectTrigger = forwardRef<
     )}
     {...props}
   >
+    <span className="sr-only">Choix langue</span>
     {children}
     <SelectPrimitive.Icon asChild>
       <LuChevronDown className="size-4 opacity-50" />

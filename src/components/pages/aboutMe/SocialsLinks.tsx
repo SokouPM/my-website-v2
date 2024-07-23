@@ -20,7 +20,7 @@ export default function SocialsLinks(): ReactElement {
         <Button className="bg-gray-600 hover:bg-gray-700" asChild>
           <a href="https://github.com/SokouPM" target="_blank" rel="noreferrer">
             <FaGithub className="text-xl md:mr-2" />
-            <span className="hidden md:block">{t("github.title")}</span>
+            <span className="sr-only md:not-sr-only">{t("github.title")}</span>
           </a>
         </Button>
       </li>
@@ -28,7 +28,7 @@ export default function SocialsLinks(): ReactElement {
         <Button className="bg-blue-600 hover:bg-blue-700" asChild>
           <a href="https://www.linkedin.com/in/pierre-marquet-98987b199/" target="_blank" rel="noreferrer">
             <FaLinkedin className="text-xl md:mr-2" />
-            <span className="hidden md:block">{t("linkedin.title")}</span>
+            <span className="sr-only md:not-sr-only">{t("linkedin.title")}</span>
           </a>
         </Button>
       </li>
@@ -36,7 +36,7 @@ export default function SocialsLinks(): ReactElement {
         <Button className="bg-red-600 hover:bg-red-700" asChild disabled>
           <Link href={cv} target="_blank" rel="noopener noreferrer" aria-label={t("cv.title")} title={t("cv.title")}>
             <FaFilePdf className="text-xl md:mr-2" />
-            <span className="hidden md:block">{t("cv.title")} (PDF)</span>
+            <span className="sr-only md:not-sr-only">{t("cv.title")} (PDF)</span>
           </Link>
         </Button>
       </li>
@@ -44,7 +44,7 @@ export default function SocialsLinks(): ReactElement {
         <Button asChild>
           <Link href={`/${locale}/contact`}>
             <IoMdMail className="text-xl md:mr-2" />
-            <span className="hidden md:block">{t("contact.title")}</span>
+            <span className="sr-only md:not-sr-only">{t("contact.title")}</span>
           </Link>
         </Button>
       </li>
