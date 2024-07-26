@@ -1,4 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import "./globals.css"
 import { Roboto_Flex } from "next/font/google"
@@ -46,9 +45,10 @@ export default async function RootLayout({
             <Header locale={locale} />
             {children}
             <ReturnToTopButton />
-            <SpeedInsights />
-            <TailwindSizeIndicator />
-            <TailwindColorIndicator />
+            <>
+              <TailwindSizeIndicator />
+              <TailwindColorIndicator />
+            </>
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>

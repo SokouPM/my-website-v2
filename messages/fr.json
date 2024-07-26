@@ -32,7 +32,8 @@
       "contact": {
         "name": "Contact"
       },
-      "close-menu": "Fermer le menu"
+      "close-menu": "Fermer le menu",
+      "open-menu": "Ouvrir le menu"
     },
     "theme-selector": "Changer le theme",
     "lang-selector": "Changer la langue"

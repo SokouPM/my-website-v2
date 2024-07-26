@@ -138,7 +138,7 @@ export default function ContactForm(): ReactElement {
           )}
         />
 
-        <Button className="w-full" type="submit">
+        <Button className="w-full" type="submit" aria-label={t("submit")}>
           {t("submit")}
         </Button>
       </form>

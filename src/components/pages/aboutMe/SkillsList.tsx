@@ -22,7 +22,7 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
       <div
         ref={ref}
         className={cn(
-          "z-10 flex size-16 items-center justify-center overflow-hidden rounded-full bg-gray-200 p-2 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:bg-gray-800 sm:size-20",
+          "z-10 flex size-16 items-center justify-center overflow-hidden rounded-full bg-gray-300 p-2 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:bg-gray-800 sm:size-20",
           className,
         )}
       >

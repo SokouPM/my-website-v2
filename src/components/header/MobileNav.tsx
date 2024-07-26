@@ -40,17 +40,17 @@ export default function MobileNav({ locale }: { locale: string }): ReactElement 
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" aria-label={t("open-menu")}>
           <LuMenu className="size-4" />
-          <span className="sr-only">{t("close-menu")}</span>
+          <span className="sr-only">{t("open-menu")}</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="top" customCloseButton={true} className="w-full">
         <SheetHeader className="mb-14">
           <SheetClose className="absolute left-3 top-3" asChild>
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" aria-label={t("close-menu")}>
               <LuX className="size-4" />
-              <span className="sr-only">Fermer le menu</span>
+              <span className="sr-only">{t("close-menu")}</span>
             </Button>
           </SheetClose>
           <SheetTitle className="absolute right-0 top-0">
