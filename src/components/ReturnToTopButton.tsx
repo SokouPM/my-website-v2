@@ -10,14 +10,10 @@ export default function ReturnToTopButton(): ReactElement | null {
   const [scrollFromTop, setScrollFromTop] = useState<number>(0)
   const t = useTranslations("components")
 
-  const handleScroll = (): void => {
-    setScrollFromTop(window.scrollY)
-  }
-
   useEffect((): void => {
-    handleScroll()
-
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", (): void => {
+      setScrollFromTop(window.scrollY)
+    })
   }, [])
 
   if (scrollFromTop < 100) return null
