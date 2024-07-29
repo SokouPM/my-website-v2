@@ -13,7 +13,7 @@ export default function Home(): ReactElement {
   const t = useTranslations("pages.home")
 
   const locale = useLocale()
-  
+
   return (
     <main className="flex h-screen w-screen items-center justify-center overflow-hidden">
       <div className="fixed right-3 top-3 z-30 flex gap-4">
@@ -27,7 +27,7 @@ export default function Home(): ReactElement {
           <CardBody className="size-max">
             <Link
               href={`${locale}/about-me`}
-              className="flex size-max flex-col items-center justify-center p-12 text-center"
+              className="flex size-max flex-col items-center justify-center p-28 text-center"
             >
               <CardItem translateZ={100} translateY={-30}>
                 <Logo size="big" />

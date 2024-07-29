@@ -25,7 +25,7 @@ export default function LangSelect(): ReactElement {
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>): void => {
     const nextLocale = e.target.value
     const nextPath = redirectedPathName(nextLocale)
-    startTransition(() => {
+    startTransition((): void => {
       router.replace(`${nextPath}`)
     })
   }
