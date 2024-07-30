@@ -137,7 +137,7 @@ export function ProjectCardsList(): ReactElement {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 size-full bg-black/20 backdrop-blur-sm"
+            className="fixed inset-0 z-40 size-full bg-black/20 backdrop-blur-sm dark:bg-white/20"
           />
         )}
       </AnimatePresence>
@@ -149,13 +149,13 @@ export function ProjectCardsList(): ReactElement {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="mb-auto mt-4 size-full h-fit w-11/12 bg-background shadow-2xl shadow-secondary md:mt-auto md:max-w-[1000px] md:rounded-xl"
+              className="mb-auto mt-4 size-full h-fit w-11/12 bg-background shadow-2xl shadow-secondary md:mt-auto md:max-w-[1000px] md:rounded-2xl"
             >
               <ShineBorder
-                borderRadius={5}
-                borderWidth={4}
+                borderRadius={10}
+                borderWidth={5}
                 color={["#8D27FF", "#B40A74"]}
-                className="size-full p-2 md:p-4"
+                className="z-10 size-full p-3"
               >
                 <motion.div layoutId={`image-${active.title}-${id}`}>
                   <Image
@@ -165,7 +165,7 @@ export function ProjectCardsList(): ReactElement {
                     src={active.src}
                     draggable="false"
                     alt=""
-                    className="w-full select-none object-cover object-top sm:rounded-t"
+                    className="w-full select-none object-cover object-top sm:rounded"
                   />
                 </motion.div>
                 <div>
@@ -174,9 +174,9 @@ export function ProjectCardsList(): ReactElement {
                       {active.title}
                     </motion.h3>
 
-                    <div className="flex gap-3">
+                    <div className="z-30 flex gap-3">
                       {active.github && (
-                        <Button className="bg-gray-600 hover:bg-gray-700" asChild>
+                        <Button className="bg-gray-600 hover:bg-gray-700" size="sm" asChild>
                           <a href={active.github} target="_blank" rel="noreferrer">
                             <FaGithub className="text-xl md:mr-2" />
                             <span className="sr-only md:not-sr-only">TODO i18n text</span>
@@ -184,7 +184,7 @@ export function ProjectCardsList(): ReactElement {
                         </Button>
                       )}
                       {active.gitlab && (
-                        <Button className="bg-orange-700 hover:bg-orange-800" asChild>
+                        <Button className="bg-orange-700 hover:bg-orange-800" size="sm" asChild>
                           <a href={active.github} target="_blank" rel="noreferrer">
                             <FaGitlab className="text-xl md:mr-2" />
                             <span className="sr-only md:not-sr-only">TODO i18n text</span>
@@ -192,7 +192,7 @@ export function ProjectCardsList(): ReactElement {
                         </Button>
                       )}
                       {active.link && (
-                        <Button asChild>
+                        <Button size="sm" asChild>
                           <a href={active.link} target="_blank" rel="noreferrer">
                             <FaExternalLinkAlt className="text-xl md:mr-2" />
                             <span className="sr-only md:not-sr-only">TODO i18n text</span>
@@ -231,7 +231,7 @@ export function ProjectCardsList(): ReactElement {
             key={index}
             layoutId={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="flex cursor-pointer flex-col rounded shadow-md shadow-secondary hover:bg-neutral-200 dark:hover:bg-neutral-800"
+            className="flex cursor-pointer flex-col rounded-md shadow-md shadow-secondary hover:bg-neutral-200 dark:hover:bg-neutral-800"
           >
             <ShineBorder
               key={index}
