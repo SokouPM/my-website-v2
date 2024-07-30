@@ -13,7 +13,7 @@ const nextConfig = {
     return config
   },
   images: {
-    domains: ["dummyimage.com"]
+    domains: ["dummyimage.com", "api.microlink.io"]
   }
 }
 

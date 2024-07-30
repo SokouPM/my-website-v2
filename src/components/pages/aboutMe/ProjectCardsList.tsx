@@ -151,7 +151,12 @@ export function ProjectCardsList(): ReactElement {
               ref={ref}
               className="mb-auto mt-4 size-full h-fit w-11/12 rounded-xl bg-background shadow-2xl shadow-secondary md:mt-auto md:max-w-[1000px] md:rounded-2xl"
             >
-              <ShineBorder borderRadius={10} borderWidth={5} color={["#8D27FF", "#B40A74"]} className="size-full p-3">
+              <ShineBorder
+                borderRadius={10}
+                borderWidth={5}
+                color={["#8D27FF", "#B40A74"]}
+                className="size-full overflow-hidden p-3"
+              >
                 <motion.div layoutId={`image-${active.title}-${id}`}>
                   <Image
                     priority
