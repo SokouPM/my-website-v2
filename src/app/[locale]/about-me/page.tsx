@@ -5,6 +5,7 @@ import { ReactElement } from "react"
 import profile from "/public/images/profile.png"
 
 import ShineBorder from "@/components/animations/shine-border"
+import { ProjectCardsList } from "@/components/pages/aboutMe/ProjectCardsList"
 import SkillsList from "@/components/pages/aboutMe/SkillsList"
 import SocialsLinks from "@/components/pages/aboutMe/SocialsLinks"
 import TypeWriter from "@/components/pages/aboutMe/Typewriter"
@@ -27,7 +28,7 @@ export default function AboutMe(): ReactElement {
   return (
     <main className="main-container flex-1 flex-col">
       <PageTitle />
-      <section className="pb-20">
+      <section className="mb-20">
         <div className="mb-10 flex flex-col-reverse items-center justify-between gap-5 md:flex-row md:gap-10">
           <div>
             <h2 className="text-center text-4xl font-bold md:text-left md:text-5xl">Pierre Marquet</h2>
@@ -47,8 +48,11 @@ export default function AboutMe(): ReactElement {
         </div>
         <SocialsLinks />
       </section>
-      <section>
+      <section className="mb-32">
         <SkillsList />
+      </section>
+      <section>
+        <ProjectCardsList />
       </section>
     </main>
   )

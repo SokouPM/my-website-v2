@@ -25,7 +25,7 @@ export default function ReturnToTopButton(): ReactElement | null {
       onClick={(): void => {
         window.scrollTo({ top: 0, behavior: "smooth" })
       }}
-      className="fixed bottom-4 right-4 z-50 animate-bounce rounded-full md:size-14"
+      className="fixed bottom-4 right-4 z-30 animate-bounce rounded-full md:size-14"
     >
       <FaArrowUp className="text-lg md:text-2xl" />
       <span className="sr-only">{t("return-to-top-button")}</span>

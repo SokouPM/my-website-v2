@@ -15,7 +15,7 @@ export default function Header({ locale }: { locale: string }): ReactElement | n
   if (pathname === `/${locale}`) return null
 
   return (
-    <header className="sticky top-0 z-50 mb-10 flex items-center justify-between gap-4 border-b bg-background p-3 opacity-90 md:items-start">
+    <header className="sticky top-0 z-40 mb-10 flex items-center justify-between gap-4 border-b bg-background p-3 opacity-90 md:items-start">
       {/* Mobile */}
       <div className="block md:hidden">
         <MobileNav locale={locale} />

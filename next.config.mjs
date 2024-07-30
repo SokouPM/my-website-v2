@@ -11,6 +11,9 @@ const nextConfig = {
       type: "asset/resource"
     })
     return config
+  },
+  images: {
+    domains: ["dummyimage.com"]
   }
 }
 
