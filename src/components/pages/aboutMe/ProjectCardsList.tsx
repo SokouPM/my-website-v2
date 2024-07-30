@@ -3,10 +3,8 @@ import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import React, { ReactElement, useEffect, useId, useRef, useState } from "react"
 import { FaExternalLinkAlt, FaGithub, FaGitlab } from "react-icons/fa"
-import { IoCloseSharp } from "react-icons/io5"
 import { SiAdobeillustrator, SiAdobephotoshop } from "react-icons/si"
 
-import { NeonGradientCard } from "@/components/animations/neon-gradient-card"
 import ShineBorder from "@/components/animations/shine-border"
 import { Button } from "@/components/ui/button"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
@@ -148,22 +146,16 @@ export function ProjectCardsList(): ReactElement {
       <AnimatePresence>
         {active && typeof active === "object" ? (
           <div className="fixed inset-0 z-50 grid place-items-center">
-            <motion.button
-              key={`button-${active.title}-${id}`}
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.05 } }}
-              className="absolute right-2 top-2 flex size-max items-center justify-center rounded-full bg-white lg:hidden"
-              onClick={() => setActive(null)}
+            <motion.div
+              layoutId={`card-${active.title}-${id}`}
+              ref={ref}
+              className="mb-auto mt-4 size-full h-fit w-11/12 bg-background shadow-2xl shadow-secondary md:mt-auto md:max-w-[1000px] md:rounded-xl"
             >
-              <IoCloseSharp className="text-xl text-black" />
-            </motion.button>
-            <motion.div layoutId={`card-${active.title}-${id}`} ref={ref}>
-              <NeonGradientCard
-                borderRadius={10}
-                borderSize={5}
-                className="mb-auto flex size-full h-fit max-h-[90%] max-w-[1000px] flex-col overflow-visible bg-background md:mt-auto"
+              <ShineBorder
+                borderRadius={5}
+                borderWidth={4}
+                color={["#8D27FF", "#B40A74"]}
+                className="size-full p-2 md:p-4"
               >
                 <motion.div layoutId={`image-${active.title}-${id}`}>
                   <Image
@@ -192,7 +184,7 @@ export function ProjectCardsList(): ReactElement {
                         </Button>
                       )}
                       {active.gitlab && (
-                        <Button className="bg-orange-700 hover:bg-orange-900" asChild>
+                        <Button className="bg-orange-700 hover:bg-orange-800" asChild>
                           <a href={active.github} target="_blank" rel="noreferrer">
                             <FaGitlab className="text-xl md:mr-2" />
                             <span className="sr-only md:not-sr-only">TODO i18n text</span>
@@ -209,24 +201,24 @@ export function ProjectCardsList(): ReactElement {
                       )}
                     </div>
                   </div>
-                  <div className="relative p-4">
+                  <div className="relative h-full p-4">
                     <motion.div
                       layout
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="flex h-40 flex-col items-start gap-4 overflow-auto pb-10 text-xs text-neutral-600 [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] dark:text-neutral-400 md:h-fit md:text-sm lg:text-base"
+                      className="flex h-72 flex-1 flex-col items-start gap-4 overflow-auto pb-10 text-sm md:h-fit md:text-base"
                     >
                       {typeof active.content === "function" ? active.content() : active.content}
                     </motion.div>
-                    <ul className="ml-auto flex w-max gap-3">
+                    <ul className="flex w-max gap-2 md:ml-auto">
                       {active.stackIcons.map((icon, index) => (
                         <li key={index}>{icon}</li>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </NeonGradientCard>
+              </ShineBorder>
             </motion.div>
           </div>
         ) : null}
@@ -241,7 +233,13 @@ export function ProjectCardsList(): ReactElement {
             onClick={() => setActive(card)}
             className="flex cursor-pointer flex-col rounded shadow-md shadow-secondary hover:bg-neutral-200 dark:hover:bg-neutral-800"
           >
-            <ShineBorder key={index} borderRadius={5} borderWidth={2} color={["#8D27FF", "#B40A74"]} className="p-4">
+            <ShineBorder
+              key={index}
+              borderRadius={5}
+              borderWidth={2}
+              color={["#8D27FF", "#B40A74"]}
+              className="p-2 md:p-4"
+            >
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={600}
