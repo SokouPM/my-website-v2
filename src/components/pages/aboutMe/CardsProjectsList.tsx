@@ -5,7 +5,7 @@ import React, { ReactElement, useEffect, useId, useRef, useState } from "react"
 import { FaExternalLinkAlt, FaGithub, FaGitlab } from "react-icons/fa"
 import { SiAdobeillustrator, SiAdobephotoshop } from "react-icons/si"
 
-import ShineBorder from "@/components/animations/shine-border"
+import { BackgroundGradient } from "@/components/animations/background-gradient"
 import { Button } from "@/components/ui/button"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
 
@@ -103,7 +103,7 @@ const projects = [
   },
 ]
 
-export function ProjectCardsList(): ReactElement {
+export function CardsProjectsList(): ReactElement {
   const [active, setActive] = useState<(typeof projects)[number] | boolean | null>(null)
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)
@@ -149,14 +149,9 @@ export function ProjectCardsList(): ReactElement {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="mb-auto mt-4 size-full h-fit w-11/12 rounded-xl bg-background shadow-2xl shadow-secondary md:mt-auto md:max-w-[1000px] md:rounded-2xl"
+              className="mb-auto mt-4 size-full h-fit w-11/12 rounded-2xl bg-background md:mt-auto md:max-w-[1000px]"
             >
-              <ShineBorder
-                borderRadius={10}
-                borderWidth={5}
-                color={["#8D27FF", "#B40A74"]}
-                className="size-full overflow-hidden p-3"
-              >
+              <BackgroundGradient className="size-full overflow-hidden rounded-xl bg-background p-3">
                 <motion.div layoutId={`image-${active.title}-${id}`}>
                   <Image
                     priority
@@ -218,7 +213,7 @@ export function ProjectCardsList(): ReactElement {
                     </ul>
                   </div>
                 </div>
-              </ShineBorder>
+              </BackgroundGradient>
             </motion.div>
           </div>
         ) : null}
@@ -231,14 +226,11 @@ export function ProjectCardsList(): ReactElement {
             key={index}
             layoutId={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="flex cursor-pointer flex-col rounded-md shadow-md shadow-secondary hover:bg-neutral-200 dark:hover:bg-neutral-800"
+            className="flex cursor-pointer flex-col"
           >
-            <ShineBorder
+            <BackgroundGradient
               key={index}
-              borderRadius={5}
-              borderWidth={2}
-              color={["#8D27FF", "#B40A74"]}
-              className="p-2 md:p-4"
+              className="rounded-xl bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 md:p-4"
             >
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
@@ -256,7 +248,7 @@ export function ProjectCardsList(): ReactElement {
               >
                 {card.title}
               </motion.h3>
-            </ShineBorder>
+            </BackgroundGradient>
           </motion.li>
         ))}
       </ul>

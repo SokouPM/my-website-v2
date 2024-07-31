@@ -41,7 +41,7 @@ export default function ShineBorder({
           "--border-radius": `${borderRadius}px`,
         } as CSSProperties
       }
-      className={cn("relative min-h-[60px] w-fit rounded-[--border-radius]", className)}
+      className={cn("relative min-h-[60px] rounded-[--border-radius]", className)}
     >
       <div
         style={
