@@ -38,6 +38,14 @@
     "theme-selector": "Changer le theme",
     "lang-selector": "Changer la langue"
   },
+  "projects": {
+    "squid-marketplace": "Projet d'un site e-commerce de vente de meubles en ligne pour mon Bachelor 3. En équipe de 3 personnes (front-end, back-end et mobile), nous avons réalisé un site complet avec un back-office pour la gestion des produits et des commandes, de mon côté, j'ai réalisé le front-end et le back-office. Nous avons choisi pour mascotte un calamar (d'où le nom Squid Marketplace), pour représenter le côté multitâche et polyvalent de celui-ci avec ses tentacules."
+  },
+  "projects-card": {
+    "link": "Voir le projet",
+    "github": "Voir le code sur Github",
+    "gitlab": "Voir le code sur Gitlab"
+  },
   "pages": {
     "home": {
       "title": "Développeur et Designer",
@@ -69,7 +77,8 @@
           "title": "Me contacter",
           "sr": "Lien page contact"
         }
-      }
+      },
+      "best-projects": "Mes meilleurs projets"
     },
     "career": {
       "work": {

@@ -38,6 +38,14 @@
     "theme-selector": "Change Theme",
     "lang-selector": "Change Language"
   },
+  "projects": {
+    "squid-marketplace": "Project of an e-commerce site for online furniture sales for my Bachelor’s degree in the third year. In a team of 3 people (front-end, back-end and mobile), we created a complete site with a back-office for product and order management, for my part, I created the front-end and the back-office. We chose a squid as our mascot (hence the name Squid Marketplace), to represent the multitasking and versatile side of it with its tentacles."
+  },
+  "projects-card": {
+    "link": "View the project",
+    "github": "View the code on Github",
+    "gitlab": "View the code on GitLab"
+  },
   "pages": {
     "home": {
       "title": "Developer and Designer",
@@ -69,7 +77,8 @@
           "title": "Contact Me",
           "sr": "Link to contact page"
         }
-      }
+      },
+      "best-projects": "My Best Projects"
     },
     "career": {
       "work": {

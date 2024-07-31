@@ -66,21 +66,25 @@ export default function SkillsList(): ReactElement {
           <Circle ref={reactIconRef} className="self-end">
             <LinkPreview url="https://reactjs.org/" className="flex size-full items-center justify-center rounded-full">
               <ReactIcon size={size} />
+              <span className="sr-only">React</span>
             </LinkPreview>
           </Circle>
           <Circle ref={nextIconRef} className="self-center">
             <LinkPreview url="https://nextjs.org/" className="flex size-full items-center justify-center rounded-full">
               <NextIcon className="rounded-full dark:border" size={size} />
+              <span className="sr-only">Next.js</span>
             </LinkPreview>
           </Circle>
           <Circle ref={vueIconRef} className="self-start">
             <LinkPreview url="https://vuejs.org/" className="flex size-full items-center justify-center rounded-full">
               <VueIcon size={size} />
+              <span className="sr-only">Vue.js</span>
             </LinkPreview>
           </Circle>
           <Circle ref={symfonyIconRef} className="self-center">
             <LinkPreview url="https://symfony.com/" className="flex size-full items-center justify-center rounded-full">
               <SymfonyIcon className="rounded-full dark:border" size={size} />
+              <span className="sr-only">Symfony</span>
             </LinkPreview>
           </Circle>
           <Circle ref={typescriptIconRef} className="self-end">
@@ -89,6 +93,7 @@ export default function SkillsList(): ReactElement {
               className="flex size-full items-center justify-center rounded-full"
             >
               <TypescriptIcon size={size} />
+              <span className="sr-only">TypeScript</span>
             </LinkPreview>
           </Circle>
         </div>
@@ -100,11 +105,13 @@ export default function SkillsList(): ReactElement {
               className="flex size-full items-center justify-center rounded-full"
             >
               <NodeIcon size={size} />
+              <span className="sr-only">Node.js</span>
             </LinkPreview>
           </Circle>
           <Circle ref={phpIconRef} className="self-center">
             <LinkPreview url="https://www.php.net/" className="flex size-full items-center justify-center rounded-full">
               <PhpIcon size={size} />
+              <span className="sr-only">PHP</span>
             </LinkPreview>
           </Circle>
           <Circle ref={postgresqlIconRef} className="self-end">
@@ -113,6 +120,7 @@ export default function SkillsList(): ReactElement {
               className="flex size-full items-center justify-center rounded-full"
             >
               <PostgresIcon size={size} />
+              <span className="sr-only">PostgreSQL</span>
             </LinkPreview>
           </Circle>
           <Circle ref={mysqlIconRef} className="self-center">
@@ -121,6 +129,7 @@ export default function SkillsList(): ReactElement {
               className="flex size-full items-center justify-center rounded-full"
             >
               <MysqlIcon size={size} />
+              <span className="sr-only">MySQL</span>
             </LinkPreview>
           </Circle>
           <Circle ref={dockerIconRef} className="self-start">
@@ -129,6 +138,7 @@ export default function SkillsList(): ReactElement {
               className="flex size-full items-center justify-center rounded-full"
             >
               <DockerIcon size={size} />
+              <span className="sr-only">Docker</span>
             </LinkPreview>
           </Circle>
         </div>

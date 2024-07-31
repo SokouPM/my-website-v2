@@ -11,6 +11,7 @@ import SocialsLinks from "@/components/pages/aboutMe/SocialsLinks"
 import TypeWriter from "@/components/pages/aboutMe/Typewriter"
 import PageTitle from "@/components/PageTitle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import BestProjects from "@/data/BestProject"
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<{
   title: string
@@ -52,7 +53,8 @@ export default function AboutMe(): ReactElement {
         <SkillsList />
       </section>
       <section>
-        <CardsProjectsList />
+        <h2 className="mb-10 text-center text-4xl font-bold">{t("best-projects")}</h2>
+        <CardsProjectsList projects={BestProjects} />
       </section>
     </main>
   )

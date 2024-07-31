@@ -1,112 +1,22 @@
 "use client"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 import React, { ReactElement, useEffect, useId, useRef, useState } from "react"
 import { FaExternalLinkAlt, FaGithub, FaGitlab } from "react-icons/fa"
-import { SiAdobeillustrator, SiAdobephotoshop } from "react-icons/si"
 
 import { BackgroundGradient } from "@/components/animations/background-gradient"
 import { Button } from "@/components/ui/button"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
 
-const size: number = 35
-const sizeReducer: number = 8
+import ProjectInterface from "../../../../types/project"
 
-const projects = [
-  {
-    title: "Lorem ipsum 1",
-    src: "https://dummyimage.com/600x200/878787/ffffff.jpg",
-    github: "https://github.com",
-    gitlab: "https://gitlab.com",
-    link: "https://project.com",
-    content: (): ReactElement => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum
-        </p>
-      )
-    },
-    stackIcons: [
-      <SiAdobeillustrator size={size - sizeReducer} key="ai" />,
-      <SiAdobephotoshop size={size - sizeReducer} key="ps" />,
-    ],
-  },
-  {
-    title: "Lorem ipsum 2",
-    src: "https://dummyimage.com/600x200/878787/ffffff.jpg",
-    github: "https://github.com",
-    gitlab: "https://gitlab.com",
-    link: "https://project.com",
-    content: (): ReactElement => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum
-        </p>
-      )
-    },
-    stackIcons: [
-      <SiAdobeillustrator size={size - sizeReducer} key="ai" />,
-      <SiAdobephotoshop size={size - sizeReducer} key="ps" />,
-    ],
-  },
-  {
-    title: "Lorem ipsum 3",
-    src: "https://dummyimage.com/600x200/878787/ffffff.jpg",
-    github: "https://github.com",
-    gitlab: "https://gitlab.com",
-    link: "https://project.com",
-    content: (): ReactElement => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum
-        </p>
-      )
-    },
-    stackIcons: [
-      <SiAdobeillustrator size={size - sizeReducer} key="ai" />,
-      <SiAdobephotoshop size={size - sizeReducer} key="ps" />,
-    ],
-  },
-  {
-    title: "Lorem ipsum 4",
-    src: "https://dummyimage.com/600x200/878787/ffffff.jpg",
-    github: "https://github.com",
-    gitlab: "https://gitlab.com",
-    link: "https://project.com",
-    content: (): ReactElement => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum
-        </p>
-      )
-    },
-    stackIcons: [
-      <SiAdobeillustrator size={size - sizeReducer} key="ai" />,
-      <SiAdobephotoshop size={size - sizeReducer} key="ps" />,
-    ],
-  },
-]
-
-export function CardsProjectsList(): ReactElement {
+export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }): ReactElement {
   const [active, setActive] = useState<(typeof projects)[number] | boolean | null>(null)
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)
+
+  const t = useTranslations()
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent): void {
@@ -137,7 +47,7 @@ export function CardsProjectsList(): ReactElement {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 size-full bg-black/20 backdrop-blur-sm dark:bg-white/20"
+            className="fixed inset-0 z-40 size-full bg-black/20 backdrop-blur-sm"
           />
         )}
       </AnimatePresence>
@@ -174,7 +84,7 @@ export function CardsProjectsList(): ReactElement {
                         <Button className="bg-gray-600 hover:bg-gray-700" size="sm" asChild>
                           <a href={active.github} target="_blank" rel="noreferrer">
                             <FaGithub className="text-xl md:mr-2" />
-                            <span className="sr-only md:not-sr-only">TODO i18n text</span>
+                            <span className="sr-only md:not-sr-only">{t("projects-card.github")}</span>
                           </a>
                         </Button>
                       )}
@@ -182,7 +92,7 @@ export function CardsProjectsList(): ReactElement {
                         <Button className="bg-orange-700 hover:bg-orange-800" size="sm" asChild>
                           <a href={active.github} target="_blank" rel="noreferrer">
                             <FaGitlab className="text-xl md:mr-2" />
-                            <span className="sr-only md:not-sr-only">TODO i18n text</span>
+                            <span className="sr-only md:not-sr-only">{t("projects-card.gitlab")}</span>
                           </a>
                         </Button>
                       )}
@@ -190,7 +100,7 @@ export function CardsProjectsList(): ReactElement {
                         <Button size="sm" asChild>
                           <a href={active.link} target="_blank" rel="noreferrer">
                             <FaExternalLinkAlt className="text-xl md:mr-2" />
-                            <span className="sr-only md:not-sr-only">TODO i18n text</span>
+                            <span className="sr-only md:not-sr-only">{t("projects-card.link")}</span>
                           </a>
                         </Button>
                       )}
@@ -204,7 +114,7 @@ export function CardsProjectsList(): ReactElement {
                       exit={{ opacity: 0 }}
                       className="flex h-72 flex-1 flex-col items-start gap-4 overflow-auto pb-10 text-sm md:h-fit md:text-base"
                     >
-                      {typeof active.content === "function" ? active.content() : active.content}
+                      <p>{t(active.description)}</p>
                     </motion.div>
                     <ul className="flex w-max gap-2 md:ml-auto">
                       {active.stackIcons.map((icon, index) => (
@@ -220,33 +130,33 @@ export function CardsProjectsList(): ReactElement {
       </AnimatePresence>
 
       {/* ? ---------------------------------------------- Cards list ----------------------------------------------- */}
-      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {projects.map((card, index) => (
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {projects.map((project, index) => (
           <motion.li
             key={index}
-            layoutId={`card-${card.title}-${id}`}
-            onClick={() => setActive(card)}
+            layoutId={`card-${project.title}-${id}`}
+            onClick={() => setActive(project)}
             className="flex cursor-pointer flex-col"
           >
             <BackgroundGradient
               key={index}
               className="rounded-xl bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 md:p-4"
             >
-              <motion.div layoutId={`image-${card.title}-${id}`}>
+              <motion.div layoutId={`image-${project.title}-${id}`}>
                 <Image
                   width={600}
                   height={100}
-                  src={card.src}
+                  src={project.src}
                   draggable="false"
                   alt=""
                   className="mb-4 h-60 w-full select-none rounded object-cover object-top"
                 />
               </motion.div>
               <motion.h3
-                layoutId={`title-${card.title}-${id}`}
-                className="text-center text-base font-medium text-neutral-800 dark:text-neutral-200 md:text-left"
+                layoutId={`title-${project.title}-${id}`}
+                className="text-center text-lg font-bold text-neutral-800 dark:text-neutral-200 md:text-left"
               >
-                {card.title}
+                {project.title}
               </motion.h3>
             </BackgroundGradient>
           </motion.li>

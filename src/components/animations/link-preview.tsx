@@ -71,7 +71,7 @@ export const LinkPreview = ({
     <>
       {isMounted ? (
         <div className="hidden">
-          <Image src={src} width={width} height={height} quality={quality} priority={true} alt="hidden image" />
+          <Image src={src} width={width} height={height} quality={quality} priority={true} alt="" />
         </div>
       ) : null}
 
@@ -122,17 +122,17 @@ export const LinkPreview = ({
                   href={url}
                   target="_blank"
                   rel="noreferrer"
-                  className="block rounded-xl border-2 border-transparent bg-white p-1 shadow hover:border-neutral-200 dark:hover:border-neutral-800"
+                  className="block rounded-xl border-2 border-transparent bg-secondary p-1 shadow-md shadow-secondary"
                   style={{ fontSize: 0 }}
                 >
                   <Image
                     src={isStatic ? imageSrc : src}
+                    alt=""
                     width={width}
                     height={height}
                     quality={quality}
                     priority={true}
                     className="rounded-lg"
-                    alt=""
                   />
                 </a>
               </motion.div>
