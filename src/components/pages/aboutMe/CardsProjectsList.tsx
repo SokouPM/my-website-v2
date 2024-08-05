@@ -83,7 +83,10 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
               ref={ref}
               className="mb-auto mt-4 size-full h-fit w-11/12 rounded-2xl bg-background md:mt-auto md:max-w-[1000px]"
             >
-              <BackgroundGradient className="size-full overflow-hidden rounded-xl bg-background p-3">
+              <BackgroundGradient
+                className="size-full overflow-hidden rounded-xl bg-background p-2"
+                gradientClassName="md:blur-xl"
+              >
                 <motion.div layoutId={`image-${active.title}-${id}`}>
                   <Image
                     priority
@@ -92,7 +95,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                     src={active.src}
                     draggable="false"
                     alt=""
-                    className="w-full select-none object-cover object-top sm:rounded"
+                    className="w-full select-none rounded-t-lg object-cover object-top"
                   />
                 </motion.div>
                 <div>
@@ -162,7 +165,8 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
           >
             <BackgroundGradient
               key={index}
-              className="rounded-xl bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 md:p-4"
+              className="rounded-xl bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+              gradientClassName="md:blur"
             >
               <motion.div layoutId={`image-${project.title}-${id}`}>
                 <Image
@@ -171,7 +175,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                   src={project.src}
                   draggable="false"
                   alt=""
-                  className="mb-4 h-60 w-full select-none rounded object-cover object-top"
+                  className="mb-4 h-60 w-full select-none rounded-t-lg object-cover object-top"
                 />
               </motion.div>
               <motion.h3
