@@ -4,6 +4,7 @@ import Image from "next/image"
 import { useTranslations } from "next-intl"
 import React, { ReactElement, useEffect, useId, useRef, useState } from "react"
 import { FaExternalLinkAlt, FaGithub, FaGitlab } from "react-icons/fa"
+import { MdOutlineClose } from "react-icons/md"
 
 import { BackgroundGradient } from "@/components/animations/background-gradient"
 import { Button } from "@/components/ui/button"
@@ -47,7 +48,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 size-full bg-black/20 backdrop-blur-sm"
+            className="fixed inset-0 z-40 size-full bg-background/20 backdrop-blur-sm"
           />
         )}
       </AnimatePresence>
@@ -56,6 +57,27 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
       <AnimatePresence>
         {active && typeof active === "object" ? (
           <div className="fixed inset-0 z-50 grid place-items-center">
+            <motion.button
+              key={`button-${active.title}-${id}`}
+              layout
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{
+                opacity: 0,
+                transition: {
+                  duration: 0.05,
+                },
+              }}
+              className="absolute right-10 top-10 z-20 inline-flex size-10 animate-bounce items-center justify-center whitespace-nowrap rounded-full border border-input bg-background lg:hidden"
+              onClick={() => setActive(null)}
+            >
+              <MdOutlineClose />
+              <p className="sr-only">{t("components.projects-card.close")}</p>
+            </motion.button>
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
@@ -84,7 +106,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                         <Button className="bg-gray-600 hover:bg-gray-700" size="sm" asChild>
                           <a href={active.github} target="_blank" rel="noreferrer">
                             <FaGithub className="text-xl md:mr-2" />
-                            <span className="sr-only md:not-sr-only">{t("projects-card.github")}</span>
+                            <span className="sr-only md:not-sr-only">{t("components.projects-card.github")}</span>
                           </a>
                         </Button>
                       )}
@@ -92,7 +114,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                         <Button className="bg-orange-700 hover:bg-orange-800" size="sm" asChild>
                           <a href={active.github} target="_blank" rel="noreferrer">
                             <FaGitlab className="text-xl md:mr-2" />
-                            <span className="sr-only md:not-sr-only">{t("projects-card.gitlab")}</span>
+                            <span className="sr-only md:not-sr-only">{t("components.projects-card.gitlab")}</span>
                           </a>
                         </Button>
                       )}
@@ -100,7 +122,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                         <Button size="sm" asChild>
                           <a href={active.link} target="_blank" rel="noreferrer">
                             <FaExternalLinkAlt className="text-xl md:mr-2" />
-                            <span className="sr-only md:not-sr-only">{t("projects-card.link")}</span>
+                            <span className="sr-only md:not-sr-only">{t("components.projects-card.link")}</span>
                           </a>
                         </Button>
                       )}
@@ -130,7 +152,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
       </AnimatePresence>
 
       {/* ? ---------------------------------------------- Cards list ----------------------------------------------- */}
-      <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.li
             key={index}
