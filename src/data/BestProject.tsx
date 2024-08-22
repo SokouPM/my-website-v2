@@ -18,7 +18,7 @@ import { Badge } from "@/components/ui/badge"
 const baseBadgeClassName: string = "size-max bg-transparent px-0 text-black dark:text-white md:h-6 md:px-2.5"
 
 const normalBadgeColorClassName: string = `${baseBadgeClassName} md:bg-secondary md:text-white md:hover:bg-secondary`
-const disabledBadgeColorClassName: string = `${baseBadgeClassName} opacity-50 dark:text-black md:bg-black md:text-white md:hover:bg-black dark:md:bg-white dark:md:hover:bg-white`
+const disabledBadgeColorClassName: string = `${baseBadgeClassName} opacity-50 md:bg-black md:text-white md:hover:bg-black dark:md:bg-white md:dark:text-black dark:md:hover:bg-white`
 const newBadgeColorClassName: string = `${baseBadgeClassName} md:bg-primary md:text-white md:hover:bg-primary`
 
 const iconClassName: string = "size-6 md:mr-1 md:size-4"
