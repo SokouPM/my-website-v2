@@ -7,7 +7,7 @@ import implicActionJob from "/public/images/projects/web/implicActionJob.png"
 import React from "react"
 import { SiAxios, SiExpress, SiPrisma } from "react-icons/si"
 
-import Project from "../../types/project"
+import Project from "@/interfaces/project"
 
 import { RiJavascriptFill, RiNextjsFill, RiSupabaseFill } from "react-icons/ri"
 import { BiLogoDocker, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi"

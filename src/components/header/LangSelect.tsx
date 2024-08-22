@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
 import { ChangeEvent, ReactElement, useTransition } from "react"
 
-import { langs } from "@/config/langs"
+import { langs } from "@/interfaces/langs"
 
 export default function LangSelect(): ReactElement {
   const t = useTranslations("header")

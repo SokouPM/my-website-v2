@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import { getRequestConfig } from "next-intl/server"
 
-import { langs } from "@/config/langs"
+import { langs } from "@/interfaces/langs"
 
 export const locales: string[] = [...langs.map((lang) => lang.value)]
 

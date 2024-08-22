@@ -16,7 +16,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { menu, MenuItemInterface } from "@/config/menu"
+import { menu, MenuItemInterface } from "@/interfaces/menu"
 
 const RenderNavItem = ({ navItem, locale }: { navItem: MenuItemInterface; locale: string }): ReactElement | null => {
   const t = useTranslations("header.navbar")

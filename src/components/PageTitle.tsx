@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
 import { ReactElement } from "react"
 
-import { menu } from "@/config/menu"
+import { menu } from "@/interfaces/menu"
 
 export default function PageTitle(): ReactElement {
   const pathname = usePathname()

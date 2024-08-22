@@ -9,8 +9,7 @@ import { MdOutlineClose } from "react-icons/md"
 import { BackgroundGradient } from "@/components/animations/background-gradient"
 import { Button } from "@/components/ui/button"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
-
-import Project from "../../../../types/project"
+import Project from "@/interfaces/project"
 
 export function CardsProjectsList({ projects }: { projects: Project[] }): ReactElement {
   const [active, setActive] = useState<(typeof projects)[number] | boolean | null>(null)

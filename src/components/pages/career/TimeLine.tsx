@@ -46,15 +46,7 @@ import lfm from "/public/images/career/lfm.png"
 import lrp from "/public/images/career/lrp.jpg"
 import vs from "/public/images/career/vs.jpg"
 
-export interface careerInterface {
-  date: string
-  logo: ReactElement
-  title: string
-  localisation: string
-  description?: ReactNode
-  type: "work" | "education"
-  stackIcons?: ReactElement[]
-}
+import { careerInterface } from "@/interfaces/career"
 
 const RenderTimelineContent = ({
   title,

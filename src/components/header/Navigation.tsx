@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { menu } from "@/config/menu"
+import { menu } from "@/interfaces/menu"
 
 export default function Navigation({ locale }: { locale: string }): ReactElement {
   const t = useTranslations("header.navbar")
