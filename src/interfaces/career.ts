@@ -2,7 +2,7 @@ import { ReactElement, ReactNode } from "react"
 
 export interface careerInterface {
   date: string
-  logo: ReactElement
+  logo?: { src: string; alt: string }
   title: string
   localisation: string
   description?: ReactNode
