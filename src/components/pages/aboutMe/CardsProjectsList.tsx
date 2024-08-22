@@ -10,9 +10,9 @@ import { BackgroundGradient } from "@/components/animations/background-gradient"
 import { Button } from "@/components/ui/button"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
 
-import ProjectInterface from "../../../../types/project"
+import Project from "../../../../types/project"
 
-export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }): ReactElement {
+export function CardsProjectsList({ projects }: { projects: Project[] }): ReactElement {
   const [active, setActive] = useState<(typeof projects)[number] | boolean | null>(null)
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)

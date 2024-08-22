@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image"
 import { ReactElement } from "react"
 
-export default interface ProjectInterface {
+type Project = {
   title: string
   src: StaticImageData | string
   github?: string
@@ -10,3 +10,5 @@ export default interface ProjectInterface {
   description: string
   stackIcons: ReactElement[]
 }
+
+export default Project

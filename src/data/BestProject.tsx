@@ -7,7 +7,7 @@ import implicActionJob from "/public/images/projects/web/implicActionJob.png"
 import React from "react"
 import { SiAxios, SiExpress, SiPrisma } from "react-icons/si"
 
-import ProjectInterface from "../../types/project"
+import Project from "../../types/project"
 
 import { RiJavascriptFill, RiNextjsFill, RiSupabaseFill } from "react-icons/ri"
 import { BiLogoDocker, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi"
@@ -15,15 +15,16 @@ import { FaStripe } from "react-icons/fa6"
 
 import { Badge } from "@/components/ui/badge"
 
-const size: number = 15
+const baseBadgeClassName: string = "size-max bg-transparent px-0 text-black dark:text-white md:h-6 md:px-2.5"
 
-const badgeClassName: string = "bg-secondary text-white hover:bg-secondary h-5"
-const disabledBadgeClassName: string = "bg-white text-black hover:bg-white opacity-50 h-5"
-const newBadgeClassName: string = "bg-primary text-white hover:bg-primary h-5"
+const normalBadgeColorClassName: string = `${baseBadgeClassName} md:bg-secondary md:text-white md:hover:bg-secondary`
+const disabledBadgeColorClassName: string = `${baseBadgeClassName} opacity-50 dark:text-black md:bg-black md:text-white md:hover:bg-black dark:md:bg-white dark:md:hover:bg-white`
+const newBadgeColorClassName: string = `${baseBadgeClassName} md:bg-primary md:text-white md:hover:bg-primary`
 
-const iconClassName: string = "mr-1"
+const iconClassName: string = "size-6 md:mr-1 md:size-4"
+const textClassName: string = "sr-only md:not-sr-only"
 
-const BestProjects: ProjectInterface[] = [
+const BestProjects: Project[] = [
   {
     title: "Squid Marketplace",
     src: squidMarketPlace,
@@ -31,33 +32,33 @@ const BestProjects: ProjectInterface[] = [
     link: "https://squid-marketplace-frontend.vercel.app",
     description: "projects.squid-marketplace",
     stackIcons: [
-      <Badge key="js" className={badgeClassName}>
-        <RiJavascriptFill size={size} className={iconClassName} />
-        JavaScript
+      <Badge key="js" className={normalBadgeColorClassName}>
+        <RiJavascriptFill className={iconClassName} />
+        <p className={textClassName}>JavaScript</p>
       </Badge>,
-      <Badge key="react" className={badgeClassName}>
-        <BiLogoReact size={size} className={iconClassName} />
-        React
+      <Badge key="react" className={normalBadgeColorClassName}>
+        <BiLogoReact className={iconClassName} />
+        <p className={textClassName}>React</p>
       </Badge>,
-      <Badge key="next" className={badgeClassName}>
-        <RiNextjsFill size={size} className={iconClassName} />
-        Next.js
+      <Badge key="next" className={normalBadgeColorClassName}>
+        <RiNextjsFill className={iconClassName} />
+        <p className={textClassName}>Next.js</p>
       </Badge>,
-      <Badge key="tailwind" className={badgeClassName}>
-        <BiLogoTailwindCss size={size} className={iconClassName} />
-        Tailwind CSS
+      <Badge key="tailwind" className={normalBadgeColorClassName}>
+        <BiLogoTailwindCss className={iconClassName} />
+        <p className={textClassName}>Tailwind CSS</p>
       </Badge>,
-      <Badge key="axios" className={disabledBadgeClassName}>
-        <SiAxios size={size} className={iconClassName} />
-        Axios
+      <Badge key="axios" className={disabledBadgeColorClassName}>
+        <SiAxios className={iconClassName} />
+        <p className={textClassName}>Axios</p>
       </Badge>,
-      <Badge key="stripe" className={disabledBadgeClassName}>
-        <FaStripe size={size} className={iconClassName} />
-        Stripe
+      <Badge key="stripe" className={disabledBadgeColorClassName}>
+        <FaStripe className={iconClassName} />
+        <p className={textClassName}>Stripe</p>
       </Badge>,
-      <Badge key="supabase" className={newBadgeClassName}>
-        <RiSupabaseFill size={size} className={iconClassName} />
-        Supabase
+      <Badge key="supabase" className={newBadgeColorClassName}>
+        <RiSupabaseFill className={iconClassName} />
+        <p className={textClassName}>Supabase</p>
       </Badge>,
     ],
   },
@@ -68,37 +69,37 @@ const BestProjects: ProjectInterface[] = [
     link: "http://jobs.leboncitoyen.fr",
     description: "projects.implic-action-job",
     stackIcons: [
-      <Badge key="react" className={badgeClassName}>
-        <BiLogoReact size={size} className={iconClassName} />
-        React
+      <Badge key="react" className={normalBadgeColorClassName}>
+        <BiLogoReact className={iconClassName} />
+        <p className={textClassName}>React</p>
       </Badge>,
-      <Badge key="ts" className={badgeClassName}>
-        <BiLogoTypescript size={size} className={iconClassName} />
-        TypeScript
+      <Badge key="ts" className={normalBadgeColorClassName}>
+        <BiLogoTypescript className={iconClassName} />
+        <p className={textClassName}>TypeScript</p>
       </Badge>,
-      <Badge key="next" className={badgeClassName}>
-        <RiNextjsFill size={size} className={iconClassName} />
-        Next.js
+      <Badge key="next" className={normalBadgeColorClassName}>
+        <RiNextjsFill className={iconClassName} />
+        <p className={textClassName}>Next.js</p>
       </Badge>,
-      <Badge key="tailwind" className={badgeClassName}>
-        <BiLogoTailwindCss size={size} className={iconClassName} />
-        Tailwind CSS
+      <Badge key="tailwind" className={normalBadgeColorClassName}>
+        <BiLogoTailwindCss className={iconClassName} />
+        <p className={textClassName}>Tailwind CSS</p>
       </Badge>,
-      <Badge key="axios" className={badgeClassName}>
-        <SiAxios size={size} className={iconClassName} />
-        Axios
+      <Badge key="axios" className={normalBadgeColorClassName}>
+        <SiAxios className={iconClassName} />
+        <p className={textClassName}>Axios</p>
       </Badge>,
-      <Badge key="prisma" className={badgeClassName}>
-        <SiPrisma size={size} className={iconClassName} />
-        Prisma
+      <Badge key="prisma" className={normalBadgeColorClassName}>
+        <SiPrisma className={iconClassName} />
+        <p className={textClassName}>Prisma</p>
       </Badge>,
-      <Badge key="postgresql" className={badgeClassName}>
-        <BiLogoPostgresql size={size} className={iconClassName} />
-        PostgreSQL
+      <Badge key="postgresql" className={normalBadgeColorClassName}>
+        <BiLogoPostgresql className={iconClassName} />
+        <p className={textClassName}>PostgreSQL</p>
       </Badge>,
-      <Badge key="docker" className={badgeClassName}>
-        <BiLogoDocker size={size} className={iconClassName} />
-        Docker
+      <Badge key="docker" className={normalBadgeColorClassName}>
+        <BiLogoDocker className={iconClassName} />
+        <p className={textClassName}>Docker</p>
       </Badge>,
     ],
   },
@@ -109,37 +110,37 @@ const BestProjects: ProjectInterface[] = [
     link: "http://makeyourdish.dga-code.fr",
     description: "projects.make-your-dish",
     stackIcons: [
-      <Badge key="js" className={badgeClassName}>
-        <RiJavascriptFill size={size} className={iconClassName} />
-        JavaScript
+      <Badge key="js" className={normalBadgeColorClassName}>
+        <RiJavascriptFill className={iconClassName} />
+        <p className={textClassName}>JavaScript</p>
       </Badge>,
-      <Badge key="react" className={badgeClassName}>
-        <BiLogoReact size={size} className={iconClassName} />
-        React
+      <Badge key="react" className={normalBadgeColorClassName}>
+        <BiLogoReact className={iconClassName} />
+        <p className={textClassName}>React</p>
       </Badge>,
-      <Badge key="next" className={badgeClassName}>
-        <RiNextjsFill size={size} className={iconClassName} />
-        Next.js
+      <Badge key="next" className={normalBadgeColorClassName}>
+        <RiNextjsFill className={iconClassName} />
+        <p className={textClassName}>Next.js</p>
       </Badge>,
-      <Badge key="tailwind" className={badgeClassName}>
-        <BiLogoTailwindCss size={size} className={iconClassName} />
-        Tailwind CSS
+      <Badge key="tailwind" className={normalBadgeColorClassName}>
+        <BiLogoTailwindCss className={iconClassName} />
+        <p className={textClassName}>Tailwind CSS</p>
       </Badge>,
-      <Badge key="axios" className={badgeClassName}>
-        <SiAxios size={size} className={iconClassName} />
-        Axios
+      <Badge key="axios" className={normalBadgeColorClassName}>
+        <SiAxios className={iconClassName} />
+        <p className={textClassName}>Axios</p>
       </Badge>,
-      <Badge key="express" className={badgeClassName}>
-        <SiExpress size={size} className={iconClassName} />
-        Express
+      <Badge key="express" className={normalBadgeColorClassName}>
+        <SiExpress className={iconClassName} />
+        <p className={textClassName}>Express</p>
       </Badge>,
-      <Badge key="prisma" className={badgeClassName}>
-        <SiPrisma size={size} className={iconClassName} />
-        Prisma
+      <Badge key="prisma" className={normalBadgeColorClassName}>
+        <SiPrisma className={iconClassName} />
+        <p className={textClassName}>Prisma</p>
       </Badge>,
-      <Badge key="postgresql" className={badgeClassName}>
-        <BiLogoPostgresql size={size} className={iconClassName} />
-        PostgreSQL
+      <Badge key="postgresql" className={normalBadgeColorClassName}>
+        <BiLogoPostgresql className={iconClassName} />
+        <p className={textClassName}>PostgreSQL</p>
       </Badge>,
     ],
   },
