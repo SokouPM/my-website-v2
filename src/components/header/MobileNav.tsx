@@ -23,11 +23,13 @@ const RenderNavItem = ({ navItem, locale }: { navItem: MenuItemInterface; locale
 
   if (navItem.href) {
     return (
-      <Button variant="ghost" asChild={true}>
-        <Link className="w-full py-8 text-xl" href={`/${locale}/${navItem.href}`}>
-          {t(navItem.name)}
-        </Link>
-      </Button>
+      <SheetClose asChild>
+        <Button variant="ghost" asChild={true}>
+          <Link className="w-full py-8 text-xl" href={`/${locale}/${navItem.href}`}>
+            {t(navItem.name)}
+          </Link>
+        </Button>
+      </SheetClose>
     )
   }
 
