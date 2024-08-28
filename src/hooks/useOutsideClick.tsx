@@ -1,14 +1,13 @@
 import { RefObject, useEffect } from "react"
 
-// eslint-disable-next-line
-export const useOutsideClick = (ref: RefObject<HTMLDivElement>, callback: Function): void => {
+export const useOutsideClick = (ref: RefObject<HTMLDivElement>, callback: () => void): void => {
   useEffect(() => {
     const listener = (event: Event): void => {
       if (!ref.current || ref.current.contains(event.target as Node)) {
         return
       }
 
-      callback(event)
+      callback()
     }
 
     document.addEventListener("mousedown", listener)

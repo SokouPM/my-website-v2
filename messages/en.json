@@ -51,9 +51,10 @@
     "about-me": {
       "typewriter-strings": {
         "web-developper": "Web Developer",
+        "designer": "Designer",
         "frontend-developper": "Front-end Developer",
         "backend-developper": "Back-end Developer",
-        "designer": "Designer"
+        "graphic-designer": "Graphic Designer"
       },
       "bio": "Coming from the world of <strong>design</strong>, I worked for five years for the Gendarmerie Nationale, creating educational courses with images and animations. I then transitioned to <strong>web development</strong> and <strong>mobile web development</strong>, obtaining a Bachelor's and a Master's degree to become more versatile.",
       "avatar-alt": "Profile picture of Pierre Marquet - Web Developer and Designer",

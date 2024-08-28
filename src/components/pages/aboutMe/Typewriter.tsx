@@ -15,9 +15,10 @@ export default function TypeWriter(): ReactElement {
           autoStart: true,
           strings: [
             t("typewriter-strings.web-developper"),
+            t("typewriter-strings.designer"),
             t("typewriter-strings.frontend-developper"),
             t("typewriter-strings.backend-developper"),
-            t("typewriter-strings.designer"),
+            t("typewriter-strings.graphic-designer"),
           ],
           cursor: "|",
           cursorClassName: "text-3xl md:text-4xl typewriter-cursor",

@@ -51,9 +51,10 @@
     "about-me": {
       "typewriter-strings": {
         "web-developper": "Développeur web",
+        "designer": "Designer",
         "frontend-developper": "Développeur front-end",
         "backend-developper": "Développeur back-end",
-        "designer": "Designer"
+        "graphic-designer": "Infographiste"
       },
       "bio": "Issu du monde du <strong>design</strong>, j'ai travaillé cinq ans pour la Gendarmerie Nationale en concevant des parcours d'enseignement avec des images et des animations. J'ai ensuite évolué vers le <strong>développement web</strong> et <strong>web mobile</strong>, obtenant un Bachelor et un Master pour devenir plus polyvalent.",
       "avatar-alt": "Photo de profil Pierre Marquet - Développeur web et Designer",
