@@ -84,6 +84,8 @@
     }
 }
 
+/**************************************** Animations ****************************************/
+
 .typewriter-cursor {
     animation: cursorAnimation 1s infinite;
 }
