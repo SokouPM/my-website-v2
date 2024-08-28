@@ -67,7 +67,6 @@ export default function ContactForm(): ReactElement {
   const t = useTranslations("pages.contact.form")
 
   const contactFormSchema = ContactFormSchema(t)
-
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -94,13 +93,11 @@ export default function ContactForm(): ReactElement {
 
     return response.json()
   }
-
   const { mutate, isError, isLoading, isSuccess, reset } = useMutation(sendData, {
     onSuccess: () => {
       form.reset()
     },
   })
-
   const onSubmit = (values: z.infer<typeof contactFormSchema>): void => {
     mutate(values)
   }
