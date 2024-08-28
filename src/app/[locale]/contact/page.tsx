@@ -3,6 +3,7 @@ import { ReactElement } from "react"
 
 import ContactForm from "@/components/pages/contact/ContactForm"
 import PageTitle from "@/components/PageTitle"
+import { QueryProvider } from "@/components/provider/query-provider"
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<{
   title: string
@@ -16,9 +17,11 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export default function AboutMe(): ReactElement {
   return (
-    <main className="main-container flex-1 flex-col">
-      <PageTitle />
-      <ContactForm />
-    </main>
+    <QueryProvider>
+      <main className="main-container flex-1 flex-col">
+        <PageTitle />
+        <ContactForm />
+      </main>
+    </QueryProvider>
   )
 }
