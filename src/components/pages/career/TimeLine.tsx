@@ -8,7 +8,7 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 
 import "react-vertical-timeline-component/style.min.css"
 import career from "@/data/Career"
-import { careerInterface } from "@/interfaces/career"
+import { CareerInterface } from "@/interfaces/career"
 
 const RenderTimelineContent = ({
   title,
@@ -40,7 +40,7 @@ export default function TimeLine(): ReactElement {
 
   return (
     <VerticalTimeline lineColor="gray" className="w-full">
-      {career.map((item: careerInterface, index) => (
+      {career.map((item: CareerInterface, index) => (
         <VerticalTimelineElement
           key={index}
           visible={process.env.NODE_ENV !== "production"}

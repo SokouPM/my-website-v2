@@ -7,7 +7,7 @@ import implicActionJob from "/public/images/projects/web/implicActionJob.png"
 import React from "react"
 import { SiAxios, SiExpress, SiPrisma } from "react-icons/si"
 
-import Project from "@/interfaces/project"
+import ProjectInterface from "@/interfaces/project"
 
 import { RiJavascriptFill, RiNextjsFill, RiSupabaseFill } from "react-icons/ri"
 import { BiLogoDocker, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi"
@@ -24,7 +24,7 @@ const newBadgeColorClassName: string = `${baseBadgeClassName} md:bg-primary md:t
 const iconClassName: string = "size-6 md:mr-1 md:size-4"
 const textClassName: string = "sr-only md:not-sr-only"
 
-const BestProjects: Project[] = [
+const BestProjects: ProjectInterface[] = [
   {
     title: "Squid Marketplace",
     src: squidMarketPlace,

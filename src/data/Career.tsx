@@ -20,7 +20,7 @@ import { RiJavascriptFill, RiNextjsFill } from "react-icons/ri"
 import { SiAdobedreamweaver, SiAdobeillustrator, SiAdobeindesign, SiAdobephotoshop, SiCoreldraw } from "react-icons/si"
 import { TbBrandKotlin } from "react-icons/tb"
 
-import { careerInterface } from "@/interfaces/career"
+import { CareerInterface } from "@/interfaces/career"
 
 import anfsi from "/public/images/career/anfsi.jpeg"
 import sdv from "/public/images/career/sdv.jpeg"
@@ -42,7 +42,7 @@ import vs from "/public/images/career/vs.jpg"
 const size: number = 35
 const sizeReducer: number = 8
 
-const career: careerInterface[] = [
+const career: CareerInterface[] = [
   {
     date: "work.anfsi.date",
     logo: { src: anfsi.src, alt: "work.anfsi.logo-alt" },
