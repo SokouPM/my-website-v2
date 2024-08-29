@@ -108,7 +108,7 @@ export default function Email({
               <Button
                 className="bg-secondary font-bold text-white"
                 style={{ padding: "1rem 0.75rem", borderRadius: "5px" }}
-                href={`mailto:${email}?subject=Re:${subject || "Demande de contact"}`}
+                href={`mailto:${email}?subject=Re: ${subject || "Demande de contact"}`}
               >
                 Répondre à la demande
               </Button>
