@@ -113,7 +113,7 @@ export const LinkPreview = ({
                   },
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="rounded-xl shadow-xl"
+                className="other-diagonal-sides shadow-xl"
                 style={{
                   x: translateX,
                 }}
@@ -122,7 +122,7 @@ export const LinkPreview = ({
                   href={url}
                   target="_blank"
                   rel="noreferrer"
-                  className="block rounded-xl border-2 border-transparent bg-secondary p-1 shadow-md shadow-secondary"
+                  className="other-diagonal-sides block border-2 border-transparent bg-secondary p-1 shadow-md shadow-secondary"
                   style={{ fontSize: 0 }}
                 >
                   <Image
@@ -132,7 +132,7 @@ export const LinkPreview = ({
                     height={height}
                     quality={quality}
                     priority={true}
-                    className="rounded-lg"
+                    className="other-diagonal-sides"
                   />
                 </a>
               </motion.div>
