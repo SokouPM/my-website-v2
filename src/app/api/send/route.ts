@@ -1,3 +1,5 @@
+import { constants as httpConstants } from "http2"
+
 import { NextRequest, NextResponse } from "next/server"
 import { getTranslations } from "next-intl/server"
 import { ReactElement } from "react"
@@ -38,17 +40,17 @@ export async function POST(request: NextRequest): Promise<Response> {
 
     if (error) {
       const resendError = error as ResendError
-      const statusCode = resendError.statusCode || 500
+      const statusCode = resendError.statusCode || httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR
 
       return NextResponse.json({ message: error.message }, { status: statusCode })
     }
 
-    return NextResponse.json({ message: "Email send successfully" }, { status: 200 })
+    return NextResponse.json({ message: "Email send successfully" }, { status: httpConstants.HTTP_STATUS_OK })
   } catch (error) {
     if (error instanceof ZodError) {
-      return NextResponse.json({ error: error.errors }, { status: 400 })
+      return NextResponse.json({ error: error.errors }, { status: httpConstants.HTTP_STATUS_BAD_REQUEST })
     }
 
-    return NextResponse.json({ error }, { status: 500 })
+    return NextResponse.json({ error }, { status: httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR })
   }
 }
