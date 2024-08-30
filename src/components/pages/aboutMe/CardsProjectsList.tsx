@@ -80,10 +80,10 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="mb-auto mt-4 size-full h-fit w-11/12 rounded-2xl bg-background md:mt-auto md:max-w-[1000px]"
+              className="card-diagonal-sides-opened mb-auto mt-4 size-full h-fit w-11/12 bg-background md:mt-auto md:max-w-[1000px]"
             >
               <BackgroundGradient
-                className="size-full overflow-hidden rounded-xl bg-background p-2"
+                className="card-diagonal-sides-opened size-full overflow-hidden bg-background p-2"
                 gradientClassName="md:blur-xl"
               >
                 <motion.div layoutId={`image-${active.title}-${id}`}>
@@ -94,7 +94,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                     src={active.src}
                     draggable="false"
                     alt=""
-                    className="w-full select-none rounded-t-lg object-cover object-top"
+                    className="card-diagonal-sides-top-opened w-full select-none object-cover object-top"
                   />
                 </motion.div>
                 <div>
@@ -160,11 +160,11 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
             key={index}
             layoutId={`card-${project.title}-${id}`}
             onClick={() => setActive(project)}
-            className="flex cursor-pointer flex-col"
+            className="card-diagonal-sides flex cursor-pointer flex-col"
           >
             <BackgroundGradient
               key={index}
-              className="rounded-xl bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+              className="card-diagonal-sides bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
               gradientClassName="md:blur"
             >
               <motion.div layoutId={`image-${project.title}-${id}`}>
@@ -174,12 +174,12 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                   src={project.src}
                   draggable="false"
                   alt=""
-                  className="mb-4 h-60 w-full select-none rounded-t-lg object-cover object-top"
+                  className="card-diagonal-sides-top mb-4 h-60 w-full select-none object-cover object-top"
                 />
               </motion.div>
               <motion.h3
                 layoutId={`title-${project.title}-${id}`}
-                className="text-center text-lg font-bold text-neutral-800 dark:text-neutral-200 md:text-left"
+                className="text-center text-lg font-bold text-neutral-800 dark:text-neutral-200"
               >
                 {project.title}
               </motion.h3>

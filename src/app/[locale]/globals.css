@@ -72,16 +72,44 @@
 
 /**************************************** Classic CSS ****************************************/
 
-.Typewriter {
+:root {
+    --card-ext-clip-pos: 30px;
+    --card-int-clip-pos: calc(var(--card-ext-clip-pos) - 6px);
+    --card-ext-clip-pos-opened: 60px;
+    --card-int-clip-pos-opened: calc(var(--card-ext-clip-pos-opened) - 5px);
+    --other-clip-pos: 10px;
+}
+
+.typewriter {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
-    .Typewriter {
+    .typewriter {
         justify-content: flex-start;
     }
+}
+
+.card-diagonal-sides {
+    clip-path: polygon(0% 0%, calc(100% - var(--card-ext-clip-pos)) 0%, 100% calc(0% + var(--card-ext-clip-pos)), 100% 100%, calc(0% + var(--card-ext-clip-pos)) 100%, 0% calc(100% - var(--card-ext-clip-pos)));
+}
+
+.card-diagonal-sides-top {
+    clip-path: polygon(0% 0%, calc(100% - var(--card-int-clip-pos)) 0%, 100% calc(0% + var(--card-int-clip-pos)), 100% 100%, 0% 100%);
+}
+
+.card-diagonal-sides-opened {
+    clip-path: polygon(0% 0%, calc(100% - var(--card-ext-clip-pos-opened)) 0%, 100% calc(0% + var(--card-ext-clip-pos-opened)), 100% 100%, calc(0% + var(--card-ext-clip-pos-opened)) 100%, 0% calc(100% - var(--card-ext-clip-pos-opened)));
+}
+
+.card-diagonal-sides-top-opened {
+    clip-path: polygon(0% 0%, calc(100% - var(--card-int-clip-pos-opened)) 0%, 100% calc(0% + var(--card-int-clip-pos-opened)), 100% 100%, 0% 100%);
+}
+
+.other-diagonal-sides {
+    clip-path: polygon(0% 0%, calc(100% - var(--other-clip-pos)) 0%, 100% calc(0% + var(--other-clip-pos)), 100% 100%, calc(0% + var(--other-clip-pos)) 100%, 0% calc(100% - var(--other-clip-pos)));
 }
 
 /**************************************** Animations ****************************************/

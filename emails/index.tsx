@@ -53,7 +53,14 @@ export default function Email({
       </Head>
       <Preview>Une demande a été effectuée sur pierre-marquet.fr</Preview>
       <Body className="font-sans">
-        <Container className="bg-black" style={{ padding: "20px", borderRadius: "5px" }}>
+        <Container
+          className="bg-black"
+          style={{
+            padding: "20px",
+            clipPath:
+              "polygon(0% 0%, calc(100% - 20px) 0%, 100% calc(0% + 20px), 100% 100%, calc(0% + 20px) 100%, 0% calc(100% - 20px))",
+          }}
+        >
           <Img
             src="https://camo.githubusercontent.com/0985d32ad9836d70523e52283e68744a94b9042742bb49ae3191936424088b5d/68747470733a2f2f7777772e7069657272652d6d6172717565742e66722f5f6e6578742f7374617469632f6d656469612f77686974654c6f676f2e63646332646637642e737667"
             height={200}
@@ -91,7 +98,14 @@ export default function Email({
             </Row>
           </Section>
 
-          <Section className="mb-5 bg-white" style={{ padding: "0 20px", borderRadius: "5px" }}>
+          <Section
+            className="mb-0 bg-white"
+            style={{
+              padding: "0 20px",
+              clipPath:
+                "polygon(0% 0%, calc(100% - 10px) 0%, 100% calc(0% + 10px), 100% 100%, calc(0% + 10px) 100%, 0% calc(100% - 10px))",
+            }}
+          >
             <Text>
               <span className="font-bold underline">Objet :</span>{" "}
               {subject || "Une erreur est survenue lors de la récupération de l'objet."}
@@ -100,14 +114,18 @@ export default function Email({
           </Section>
 
           {email && (
-            <Section className="text-white">
+            <Section className="mt-5 text-white">
               <Text className="text-justify">
                 Vous pouvez répondre à cette demande en cliquant sur le lien ci-dessous :
               </Text>
 
               <Button
                 className="bg-secondary font-bold text-white"
-                style={{ padding: "1rem 0.75rem", borderRadius: "5px" }}
+                style={{
+                  padding: "1rem 0.75rem",
+                  clipPath:
+                    "polygon(0% 0%, calc(100% - 10px) 0%, 100% calc(0% + 10px), 100% 100%, calc(0% + 10px) 100%, 0% calc(100% - 10px))",
+                }}
                 href={`mailto:${email}?subject=Re: ${subject || "Demande de contact"}`}
               >
                 Répondre à la demande
