@@ -69,11 +69,11 @@ export default function ContactForm(): ReactElement {
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      firstName: "Pierre",
-      lastName: "Marquet",
-      email: "test@test.fr",
-      subject: "test",
-      message: "test de mail",
+      firstName: "",
+      lastName: "",
+      email: "",
+      subject: "",
+      message: "",
     },
   })
 
