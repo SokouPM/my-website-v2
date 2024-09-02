@@ -64,25 +64,45 @@ export default function SkillsList(): ReactElement {
 
         <div className="order-1 flex flex-1 flex-col justify-between gap-1">
           <Circle ref={reactIconRef} className="self-end">
-            <LinkPreview url="https://reactjs.org/" className="flex size-full items-center justify-center rounded-full">
+            <LinkPreview
+              url="https://reactjs.org/"
+              className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
+            >
               <ReactIcon size={size} />
               <span className="sr-only">React</span>
             </LinkPreview>
           </Circle>
           <Circle ref={nextIconRef} className="self-center">
-            <LinkPreview url="https://nextjs.org/" className="flex size-full items-center justify-center rounded-full">
+            <LinkPreview
+              url="https://nextjs.org/"
+              className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
+            >
               <NextIcon className="rounded-full dark:border" size={size} />
               <span className="sr-only">Next.js</span>
             </LinkPreview>
           </Circle>
           <Circle ref={vueIconRef} className="self-start">
-            <LinkPreview url="https://vuejs.org/" className="flex size-full items-center justify-center rounded-full">
+            <LinkPreview
+              url="https://vuejs.org/"
+              className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
+            >
               <VueIcon size={size} />
               <span className="sr-only">Vue.js</span>
             </LinkPreview>
           </Circle>
           <Circle ref={symfonyIconRef} className="self-center">
-            <LinkPreview url="https://symfony.com/" className="flex size-full items-center justify-center rounded-full">
+            <LinkPreview
+              url="https://symfony.com/"
+              className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
+            >
               <SymfonyIcon className="rounded-full dark:border" size={size} />
               <span className="sr-only">Symfony</span>
             </LinkPreview>
@@ -91,6 +111,8 @@ export default function SkillsList(): ReactElement {
             <LinkPreview
               url="https://www.typescriptlang.org/"
               className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
             >
               <TypescriptIcon size={size} />
               <span className="sr-only">TypeScript</span>
@@ -103,13 +125,20 @@ export default function SkillsList(): ReactElement {
             <LinkPreview
               url={"https://nodejs.org/"}
               className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
             >
               <NodeIcon size={size} />
               <span className="sr-only">Node.js</span>
             </LinkPreview>
           </Circle>
           <Circle ref={phpIconRef} className="self-center">
-            <LinkPreview url="https://www.php.net/" className="flex size-full items-center justify-center rounded-full">
+            <LinkPreview
+              url="https://www.php.net/"
+              className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
+            >
               <PhpIcon size={size} />
               <span className="sr-only">PHP</span>
             </LinkPreview>
@@ -118,6 +147,8 @@ export default function SkillsList(): ReactElement {
             <LinkPreview
               url="https://www.postgresql.org/"
               className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
             >
               <PostgresIcon size={size} />
               <span className="sr-only">PostgreSQL</span>
@@ -127,6 +158,8 @@ export default function SkillsList(): ReactElement {
             <LinkPreview
               url="https://www.mysql.com/"
               className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
             >
               <MysqlIcon size={size} />
               <span className="sr-only">MySQL</span>
@@ -136,6 +169,8 @@ export default function SkillsList(): ReactElement {
             <LinkPreview
               url="https://www.docker.com/"
               className="flex size-full items-center justify-center rounded-full"
+              isStatic={false}
+              imageSrc={undefined}
             >
               <DockerIcon size={size} />
               <span className="sr-only">Docker</span>

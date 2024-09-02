@@ -8,7 +8,7 @@ export default function TypeWriter(): ReactElement {
   const t = useTranslations("pages.about-me")
 
   return (
-    <div className="h-12 content-center md:h-16">
+    <div className="h-12 content-center text-center md:h-16 md:text-left">
       <Typewriter
         component={"h3"}
         options={{

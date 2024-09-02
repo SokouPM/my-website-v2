@@ -20,6 +20,10 @@ interface ResendError {
 
 export async function POST(request: NextRequest): Promise<Response> {
   try {
+    setTimeout(() => {
+      return NextResponse.json({ message: "Ok test" }, { status: httpConstants.HTTP_STATUS_OK })
+    }, 5000)
+
     const t = await getTranslations({ locale: "en", namespace: "pages.contact.form" })
     const body = await request.json()
 
@@ -42,7 +46,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       const resendError = error as ResendError
       const statusCode = resendError.statusCode || httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR
 
-      return NextResponse.json({ message: error.message }, { status: statusCode })
+      return NextResponse.json({ ...error }, { status: statusCode })
     }
 
     return NextResponse.json({ message: "Email send successfully" }, { status: httpConstants.HTTP_STATUS_OK })

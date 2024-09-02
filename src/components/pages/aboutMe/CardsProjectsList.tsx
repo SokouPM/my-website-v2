@@ -140,7 +140,7 @@ export function CardsProjectsList({ projects }: { projects: ProjectInterface[] }
                     >
                       <p>{t(active.description)}</p>
                     </motion.div>
-                    <ul className="flex w-max gap-2 md:ml-auto">
+                    <ul className="ml-auto flex w-max gap-2">
                       {active.stackIcons.map((icon, index) => (
                         <li key={index}>{icon}</li>
                       ))}
