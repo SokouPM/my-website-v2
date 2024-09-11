@@ -65,7 +65,6 @@ const BestProjects: ProjectInterface[] = [
   {
     title: "Implic'action - job",
     src: implicActionJob,
-    github: "https://github.com/Implic-Action/job",
     link: "http://jobs.leboncitoyen.fr",
     description: "projects.implic-action-job",
     stackIcons: [
