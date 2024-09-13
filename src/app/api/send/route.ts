@@ -20,17 +20,13 @@ interface ResendError {
 
 export async function POST(request: NextRequest): Promise<Response> {
   try {
-    setTimeout(() => {
-      return NextResponse.json({ message: "Ok test" }, { status: httpConstants.HTTP_STATUS_OK })
-    }, 5000)
-
     const t = await getTranslations({ locale: "en", namespace: "pages.contact.form" })
     const body = await request.json()
 
     const { firstName, lastName, email, subject, message } = ContactFormSchema(t).parse(body)
 
     const { error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "contact@pierre-marquet.fr",
       to: "marquet_pierre@yahoo.fr",
       subject: "Demande de contact depuis le site",
       react: Email({
@@ -46,7 +42,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       const resendError = error as ResendError
       const statusCode = resendError.statusCode || httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR
 
-      return NextResponse.json({ ...error }, { status: statusCode })
+      return NextResponse.json(error, { status: statusCode })
     }
 
     return NextResponse.json({ message: "Email send successfully" }, { status: httpConstants.HTTP_STATUS_OK })
