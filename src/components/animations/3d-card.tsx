@@ -1,4 +1,3 @@
-/* eslint-disable  */
 "use client"
 
 import React, { createContext, useContext, useEffect, useRef, useState } from "react"
@@ -103,7 +102,7 @@ export const CardItem = ({
     handleAnimations()
   }, [isMouseEntered])
 
-  const handleAnimations = () => {
+  const handleAnimations = (): void => {
     if (!ref.current) return
 
     if (isMouseEntered) {

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import createNextIntlPlugin from "next-intl/plugin"
 
 const withNextIntl = createNextIntlPlugin()

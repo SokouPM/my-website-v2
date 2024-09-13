@@ -1,7 +1,6 @@
 import { z } from "zod"
 
 export const ContactFormSchema = (
-  // eslint-disable-next-line no-unused-vars
   t: (key: string) => string,
 ): z.ZodObject<{
   firstName: z.ZodString
