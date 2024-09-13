@@ -1,7 +1,7 @@
 "use client"
 
-import Link from "next/link"
 import { useTranslations } from "next-intl"
+import Link from "next/link"
 import { ReactElement } from "react"
 import { LuMenu, LuX } from "react-icons/lu"
 
@@ -16,7 +16,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { menu, MenuItemInterface } from "@/interfaces/menu"
+import { MenuItemInterface, menu } from "@/interfaces/menu"
 
 const RenderNavItem = ({ navItem, locale }: { navItem: MenuItemInterface; locale: string }): ReactElement | null => {
   const t = useTranslations("header.navbar")

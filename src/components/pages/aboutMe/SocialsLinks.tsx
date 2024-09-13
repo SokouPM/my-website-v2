@@ -1,7 +1,7 @@
 "use client"
 
-import Link from "next/link"
 import { useLocale, useTranslations } from "next-intl"
+import Link from "next/link"
 import { ReactElement } from "react"
 import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"

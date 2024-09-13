@@ -32,10 +32,10 @@ export const LinkPreview = ({
   if (!isStatic) {
     const params = encode({
       url,
-      "screenshot": true,
-      "meta": false,
-      "embed": "screenshot.url",
-      "colorScheme": "dark",
+      screenshot: true,
+      meta: false,
+      embed: "screenshot.url",
+      colorScheme: "dark",
       "viewport.isMobile": true,
       "viewport.deviceScaleFactor": 1,
       "viewport.width": width * 3,
@@ -59,7 +59,7 @@ export const LinkPreview = ({
 
   const translateX = useSpring(x, springConfig)
 
-  // eslint-disable-next-line
+  // biome-ignore lint/suspicious/noExplicitAny: Need to use any here to match the TailwindCSS plugin signature
   const handleMouseMove = (event: any): void => {
     const targetRect = event.target.getBoundingClientRect()
     const eventOffsetX = event.clientX - targetRect.left

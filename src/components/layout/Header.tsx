@@ -3,11 +3,11 @@
 import { usePathname } from "next/navigation"
 import { ReactElement } from "react"
 
+import Logo from "@/components/Logo"
 import LangSelect from "@/components/header/LangSelect"
 import MobileNav from "@/components/header/MobileNav"
 import Navigation from "@/components/header/Navigation"
 import { ThemeToggle } from "@/components/header/ThemeToggle"
-import Logo from "@/components/Logo"
 
 export default function Header({ locale }: { locale: string }): ReactElement | null {
   const pathname = usePathname()

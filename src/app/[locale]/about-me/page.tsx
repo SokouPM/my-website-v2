@@ -4,12 +4,12 @@ import { ReactElement } from "react"
 
 import profile from "/public/images/profile.png"
 
+import PageTitle from "@/components/PageTitle"
 import ShineBorder from "@/components/animations/shine-border"
 import { CardsProjectsList } from "@/components/pages/aboutMe/CardsProjectsList"
 import SkillsList from "@/components/pages/aboutMe/SkillsList"
 import SocialsLinks from "@/components/pages/aboutMe/SocialsLinks"
 import TypeWriter from "@/components/pages/aboutMe/Typewriter"
-import PageTitle from "@/components/PageTitle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import BestProjects from "@/data/BestProject"
 

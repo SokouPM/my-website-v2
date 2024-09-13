@@ -1,7 +1,7 @@
 import { constants as httpConstants } from "http2"
 
-import { NextRequest, NextResponse } from "next/server"
 import { getTranslations } from "next-intl/server"
+import { NextRequest, NextResponse } from "next/server"
 import { ReactElement } from "react"
 import { Resend } from "resend"
 import { ZodError } from "zod"

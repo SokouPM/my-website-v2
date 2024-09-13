@@ -1,7 +1,7 @@
 "use client"
 
-import { usePathname, useRouter } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
+import { usePathname, useRouter } from "next/navigation"
 import { ChangeEvent, ReactElement, useTransition } from "react"
 
 import { langs } from "@/interfaces/langs"

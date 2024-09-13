@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, Variants } from "framer-motion"
+import { Variants, motion } from "framer-motion"
 import { ReactElement } from "react"
 
 import { cn } from "@/lib/utils"

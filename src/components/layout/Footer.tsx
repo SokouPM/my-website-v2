@@ -1,7 +1,7 @@
 "use client"
 
-import { usePathname } from "next/navigation"
 import { useLocale } from "next-intl"
+import { usePathname } from "next/navigation"
 import { ReactElement } from "react"
 
 export default function Footer(): ReactElement | null {

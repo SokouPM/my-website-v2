@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server"
 import { ReactElement } from "react"
 
-import TimeLine from "@/components/pages/career/TimeLine"
 import PageTitle from "@/components/PageTitle"
+import TimeLine from "@/components/pages/career/TimeLine"
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<{
   title: string

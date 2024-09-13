@@ -1,13 +1,13 @@
-import Link from "next/link"
 import { useLocale, useTranslations } from "next-intl"
+import Link from "next/link"
 import { ReactElement } from "react"
 
+import Logo from "@/components/Logo"
 import { CardBody, CardContainer, CardItem } from "@/components/animations/3d-card"
 import RetroGrid from "@/components/animations/retro-grid"
 import WordFadeIn from "@/components/animations/word-fade-in"
 import LangSelect from "@/components/header/LangSelect"
 import { ThemeToggle } from "@/components/header/ThemeToggle"
-import Logo from "@/components/Logo"
 
 export default function Home(): ReactElement {
   const t = useTranslations("pages.home")

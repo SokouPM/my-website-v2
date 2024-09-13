@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import { useTranslations } from "next-intl"
+import Image from "next/image"
 import { ReactElement, ReactNode } from "react"
 import { MdOutlineSchool, MdWorkOutline } from "react-icons/md"
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component"

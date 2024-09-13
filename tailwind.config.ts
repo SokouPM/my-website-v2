@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss"
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette")
 
 const config = {
@@ -67,11 +66,11 @@ const config = {
           "50%": {
             "background-position": "100% 100%",
           },
-          "to": {
+          to: {
             "background-position": "0% 0%",
           },
         },
-        "grid": {
+        grid: {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0)" },
         },
@@ -79,14 +78,14 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "grid": "grid 30s linear infinite",
+        grid: "grid 30s linear infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],
 } satisfies Config
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Need to use any here to match the TailwindCSS plugin signature
 function addVariablesForColors({ addBase, theme }: any): void {
   const allColors = flattenColorPalette(theme("colors"))
   const newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]))

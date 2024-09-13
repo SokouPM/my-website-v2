@@ -1,8 +1,8 @@
 "use client"
 
-import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { useTheme } from "next-themes"
+import Link from "next/link"
 import { ReactElement } from "react"
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar"

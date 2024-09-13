@@ -1,7 +1,7 @@
 "use client"
 
-import { usePathname } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
+import { usePathname } from "next/navigation"
 import { ReactElement } from "react"
 
 import { menu } from "@/interfaces/menu"

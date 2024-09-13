@@ -1,7 +1,7 @@
 "use client"
 import { AnimatePresence, motion } from "framer-motion"
-import Image from "next/image"
 import { useTranslations } from "next-intl"
+import Image from "next/image"
 import React, { ReactElement, useEffect, useId, useRef, useState } from "react"
 import { FaExternalLinkAlt, FaGithub, FaGitlab } from "react-icons/fa"
 import { MdOutlineClose } from "react-icons/md"

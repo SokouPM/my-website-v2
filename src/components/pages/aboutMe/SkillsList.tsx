@@ -1,7 +1,8 @@
 "use client"
 
-import { forwardRef, ReactElement, ReactNode, useRef } from "react"
+import { ReactElement, ReactNode, forwardRef, useRef } from "react"
 
+import Logo from "@/components/Logo"
 import { AnimatedBeam } from "@/components/animations/animated-beam"
 import { LinkPreview } from "@/components/animations/link-preview"
 import { DockerIcon } from "@/components/icons/DockerIcon"
@@ -14,7 +15,6 @@ import { ReactIcon } from "@/components/icons/ReactIcon"
 import { SymfonyIcon } from "@/components/icons/SymfonyIcon"
 import { TypescriptIcon } from "@/components/icons/TypescriptIcon"
 import { VueIcon } from "@/components/icons/VueIcon"
-import Logo from "@/components/Logo"
 import { cn } from "@/lib/utils"
 
 const Circle = forwardRef<HTMLDivElement, { className?: string; children?: ReactNode }>(

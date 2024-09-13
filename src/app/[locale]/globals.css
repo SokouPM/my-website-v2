@@ -3,151 +3,183 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --background: 269 34% 98%;
-        --foreground: 269 0% 0%;
-        --muted: 270 5% 92.16%;
-        --muted-foreground: 269 12% 28%;
-        --popover: 269 34% 98%;
-        --popover-foreground: 269 0% 0%;
-        --card: 269 34% 98%;
-        --card-foreground: 269 0% 0%;
-        --border: 269 0% 70%;
-        --input: 0 0% 70.2%;
-        --primary: 269.33 100% 55.88%;
-        --primary-foreground: 0 0% 100%;
-        --secondary: 321.51 100% 35.38%;
-        --secondary-foreground: 269 0% 100%;
-        --accent: 269 5% 92%;
-        --accent-foreground: 268.24 11.89% 28.04%;
-        --destructive: 0 100% 43.46%;
-        --destructive-foreground: 6 0% 100%;
-        --ring: 269 100% 56%;
-        --radius: 0.5rem;
-    }
+  :root {
+    --background: 269 34% 98%;
+    --foreground: 269 0% 0%;
+    --muted: 270 5% 92.16%;
+    --muted-foreground: 269 12% 28%;
+    --popover: 269 34% 98%;
+    --popover-foreground: 269 0% 0%;
+    --card: 269 34% 98%;
+    --card-foreground: 269 0% 0%;
+    --border: 269 0% 70%;
+    --input: 0 0% 70.2%;
+    --primary: 269.33 100% 55.88%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 321.51 100% 35.38%;
+    --secondary-foreground: 269 0% 100%;
+    --accent: 269 5% 92%;
+    --accent-foreground: 268.24 11.89% 28.04%;
+    --destructive: 0 100% 43.46%;
+    --destructive-foreground: 6 0% 100%;
+    --ring: 269 100% 56%;
+    --radius: 0.5rem;
+  }
 
-    .dark {
-        --background: 269 0% 0%;
-        --foreground: 269 0% 100%;
-        --muted: 0 0% 19.61%;
-        --muted-foreground: 270 0% 56.15%;
-        --popover: 269 0% 0%;
-        --popover-foreground: 269 25% 99%;
-        --card: 269 0% 0%;
-        --card-foreground: 269 0% 100%;
-        --border: 0 0% 31.54%;
-        --input: 0 0% 45.38%;
-        --primary: 269.33 100% 55.88%;
-        --primary-foreground: 0 0% 100%;
-        --secondary: 321.33 100% 35.29%;
-        --secondary-foreground: 269 0% 100%;
-        --accent: 0 0% 19.61%;
-        --accent-foreground: 269 0% 100%;
-        --destructive: 0 100% 69.02%;
-        --destructive-foreground: 0 0% 0%;
-        --ring: 269 100% 56%;
-    }
+  .dark {
+    --background: 269 0% 0%;
+    --foreground: 269 0% 100%;
+    --muted: 0 0% 19.61%;
+    --muted-foreground: 270 0% 56.15%;
+    --popover: 269 0% 0%;
+    --popover-foreground: 269 25% 99%;
+    --card: 269 0% 0%;
+    --card-foreground: 269 0% 100%;
+    --border: 0 0% 31.54%;
+    --input: 0 0% 45.38%;
+    --primary: 269.33 100% 55.88%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 321.33 100% 35.29%;
+    --secondary-foreground: 269 0% 100%;
+    --accent: 0 0% 19.61%;
+    --accent-foreground: 269 0% 100%;
+    --destructive: 0 100% 69.02%;
+    --destructive-foreground: 0 0% 0%;
+    --ring: 269 100% 56%;
+  }
 }
 
-
 @layer base {
-    * {
-        @apply border-border;
-    }
+  * {
+    @apply border-border;
+  }
 
-    body {
-        @apply bg-background text-foreground;
-    }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer components {
-    .gradient {
-        @apply bg-gradient-to-br from-primary to-secondary;
-    }
+  .gradient {
+    @apply bg-gradient-to-br from-primary to-secondary;
+  }
 
-    .main-container {
-        @apply w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto;
-    }
+  .main-container {
+    @apply w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto;
+  }
 }
 
 /**************************************** Classic CSS ****************************************/
 
 :root {
-    --card-ext-clip-pos: 30px;
-    --card-int-clip-pos: calc(var(--card-ext-clip-pos) - 6px);
-    --card-ext-clip-pos-opened: 60px;
-    --card-int-clip-pos-opened: calc(var(--card-ext-clip-pos-opened) - 5px);
-    --other-clip-pos: 10px;
+  --card-ext-clip-pos: 30px;
+  --card-int-clip-pos: calc(var(--card-ext-clip-pos) - 6px);
+  --card-ext-clip-pos-opened: 60px;
+  --card-int-clip-pos-opened: calc(var(--card-ext-clip-pos-opened) - 5px);
+  --other-clip-pos: 10px;
 }
 
 .typewriter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
-    .typewriter {
-        justify-content: flex-start;
-    }
+  .typewriter {
+    justify-content: flex-start;
+  }
 }
 
 .card-diagonal-sides {
-    clip-path: polygon(0% 0%, calc(100% - var(--card-ext-clip-pos)) 0%, 100% calc(0% + var(--card-ext-clip-pos)), 100% 100%, calc(0% + var(--card-ext-clip-pos)) 100%, 0% calc(100% - var(--card-ext-clip-pos)));
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--card-ext-clip-pos)) 0%,
+    100% calc(0% + var(--card-ext-clip-pos)),
+    100% 100%,
+    calc(0% + var(--card-ext-clip-pos)) 100%,
+    0% calc(100% - var(--card-ext-clip-pos))
+  );
 }
 
 .card-diagonal-sides-top {
-    clip-path: polygon(0% 0%, calc(100% - var(--card-int-clip-pos)) 0%, 100% calc(0% + var(--card-int-clip-pos)), 100% 100%, 0% 100%);
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--card-int-clip-pos)) 0%,
+    100% calc(0% + var(--card-int-clip-pos)),
+    100% 100%,
+    0% 100%
+  );
 }
 
 .card-diagonal-sides-opened {
-    clip-path: polygon(0% 0%, calc(100% - var(--card-ext-clip-pos-opened)) 0%, 100% calc(0% + var(--card-ext-clip-pos-opened)), 100% 100%, calc(0% + var(--card-ext-clip-pos-opened)) 100%, 0% calc(100% - var(--card-ext-clip-pos-opened)));
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--card-ext-clip-pos-opened)) 0%,
+    100% calc(0% + var(--card-ext-clip-pos-opened)),
+    100% 100%,
+    calc(0% + var(--card-ext-clip-pos-opened)) 100%,
+    0% calc(100% - var(--card-ext-clip-pos-opened))
+  );
 }
 
 .card-diagonal-sides-top-opened {
-    clip-path: polygon(0% 0%, calc(100% - var(--card-int-clip-pos-opened)) 0%, 100% calc(0% + var(--card-int-clip-pos-opened)), 100% 100%, 0% 100%);
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--card-int-clip-pos-opened)) 0%,
+    100% calc(0% + var(--card-int-clip-pos-opened)),
+    100% 100%,
+    0% 100%
+  );
 }
 
 .other-diagonal-sides {
-    clip-path: polygon(0% 0%, calc(100% - var(--other-clip-pos)) 0%, 100% calc(0% + var(--other-clip-pos)), 100% 100%, calc(0% + var(--other-clip-pos)) 100%, 0% calc(100% - var(--other-clip-pos)));
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--other-clip-pos)) 0%,
+    100% calc(0% + var(--other-clip-pos)),
+    100% 100%,
+    calc(0% + var(--other-clip-pos)) 100%,
+    0% calc(100% - var(--other-clip-pos))
+  );
 }
 
 /**************************************** Animations ****************************************/
 
 .typewriter-cursor {
-    animation: cursorAnimation 1s infinite;
+  animation: cursorAnimation 1s infinite;
 }
 
 @keyframes cursorAnimation {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .error-field {
-    animation: errorEntrance 0.2s ease 0s 1 normal forwards;
+  animation: errorEntrance 0.2s ease 0s 1 normal forwards;
 }
 
 @keyframes errorEntrance {
-    0% {
-        transform: translateX(100px);
-    }
+  0% {
+    transform: translateX(100px);
+  }
 
-    33% {
-        transform: translateX(-80px);
-    }
+  33% {
+    transform: translateX(-80px);
+  }
 
-    66% {
-        transform: translateX(40px);
-    }
+  66% {
+    transform: translateX(40px);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }

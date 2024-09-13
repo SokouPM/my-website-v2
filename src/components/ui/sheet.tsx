@@ -1,8 +1,8 @@
 "use client"
 
 import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cva, type VariantProps } from "class-variance-authority"
-import { ComponentPropsWithoutRef, ElementRef, forwardRef, HTMLAttributes, ReactElement } from "react"
+import { type VariantProps, cva } from "class-variance-authority"
+import { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, ReactElement, forwardRef } from "react"
 import { LuX } from "react-icons/lu"
 
 import { cn } from "@/lib/utils"

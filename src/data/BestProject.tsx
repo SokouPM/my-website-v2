@@ -1,17 +1,17 @@
 "use client"
 
-import squidMarketPlace from "/public/images/projects/web/squidMarketPlace.png"
-import makeYourDish from "/public/images/projects/web/makeYourDish.png"
 import implicActionJob from "/public/images/projects/web/implicActionJob.png"
+import makeYourDish from "/public/images/projects/web/makeYourDish.png"
+import squidMarketPlace from "/public/images/projects/web/squidMarketPlace.png"
 
 import React from "react"
 import { SiAxios, SiExpress, SiPrisma } from "react-icons/si"
 
 import ProjectInterface from "@/interfaces/project"
 
-import { RiJavascriptFill, RiNextjsFill, RiSupabaseFill } from "react-icons/ri"
 import { BiLogoDocker, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi"
 import { FaStripe } from "react-icons/fa6"
+import { RiJavascriptFill, RiNextjsFill, RiSupabaseFill } from "react-icons/ri"
 
 import { Badge } from "@/components/ui/badge"
 
