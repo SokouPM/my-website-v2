@@ -17,6 +17,7 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
+  AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -39,6 +40,7 @@ const EmailFormDialog = ({
     <AlertDialog open={isError || isSuccess} onOpenChange={(): void => {}}>
       <AlertDialogContent>
         <AlertDialogHeader>
+          <AlertDialogTitle>{t("title")}</AlertDialogTitle>
           <AlertDialogDescription className="flex items-center justify-center gap-4 font-bold">
             {isError ? (
               <IoAlertCircleOutline size={80} className="text-destructive" />
@@ -54,7 +56,7 @@ const EmailFormDialog = ({
               reset()
             }}
           >
-            Fermer
+            {t("close")}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

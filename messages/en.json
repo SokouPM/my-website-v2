@@ -260,8 +260,10 @@
         "submit": "Send"
       },
       "dialog": {
+        "title": "About Your Message",
         "success": "Your message has been successfully sent. I will get back to you as soon as possible.",
-        "error": "An error occurred while sending your message. Please try again later."
+        "error": "An error occurred while sending your message. Please try again later.",
+        "close": "Close"
       }
     }
   },
