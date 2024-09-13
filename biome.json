@@ -44,7 +44,7 @@
         "noPrecisionLoss": "error",
         "noUnusedVariables": "error",
         "useArrayLiterals": "off",
-        "useExhaustiveDependencies": "warn",
+        "useExhaustiveDependencies": "off",
         "useHookAtTopLevel": "error",
         "useJsxKeyInIterable": "error"
       },

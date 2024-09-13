@@ -100,7 +100,7 @@ export const CardItem = ({
   const [isMouseEntered] = useMouseEnter()
 
   useEffect(() => {
-    isMouseEntered ? handleAnimations() : handleAnimations()
+    handleAnimations()
   }, [isMouseEntered])
 
   const handleAnimations = () => {
