@@ -26,8 +26,8 @@ export async function POST(request: NextRequest): Promise<Response> {
     const { firstName, lastName, email, subject, message } = ContactFormSchema(t).parse(body)
 
     const { error } = await resend.emails.send({
-      from: "contact@pierre-marquet.fr",
-      to: "marquet_pierre@yahoo.fr",
+      from: "Pierre Marquet <contact@pierre-marquet.fr>",
+      to: "contact@pierre-marquet.fr",
       subject: "Demande de contact depuis le site",
       react: Email({
         firstName,
