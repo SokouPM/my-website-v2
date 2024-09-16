@@ -29,6 +29,8 @@ export default function Email({
   subject: string
   message: string
 }): ReactElement {
+  const year = new Date().getFullYear()
+
   return (
     <Tailwind
       config={{
@@ -134,7 +136,7 @@ export default function Email({
           )}
         </Container>
 
-        <Text className="text-center text-sm text-gray-500">© {new Date().getFullYear()} Pierre Marquet.</Text>
+        <Text className="text-center text-sm text-gray-500">&copy; {year} - Pierre Marquet.</Text>
       </Body>
     </Tailwind>
   )

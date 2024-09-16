@@ -27,7 +27,7 @@ export async function POST(request: NextRequest): Promise<Response> {
 
     const { error } = await resend.emails.send({
       from: "Pierre Marquet <contact@pierre-marquet.fr>",
-      to: "contact@pierre-marquet.fr",
+      to: process.env.NODE_ENV === "production" ? "marquet_pierre@yahoo.fr" : "delivered@resend.dev",
       subject: "Demande de contact depuis le site",
       react: Email({
         firstName,
