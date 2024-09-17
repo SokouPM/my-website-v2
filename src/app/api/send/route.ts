@@ -3,14 +3,12 @@ import { constants as httpConstants } from "http2"
 import { getTranslations } from "next-intl/server"
 import { NextRequest, NextResponse } from "next/server"
 import { ReactElement } from "react"
-import { Resend } from "resend"
 import { ZodError } from "zod"
 
+import { resend } from "@/lib/resend"
 import { ContactFormSchema } from "@/schemas/ContactFormSchema"
 
 import Email from "../../../../emails"
-
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 interface ResendError {
   statusCode?: number

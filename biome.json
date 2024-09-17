@@ -1,17 +1,19 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
   "vcs": {
-    "enabled": false,
+    "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false,
+    "ignoreUnknown": true,
     "ignore": ["node_modules/*", ".next/*", "idea/*", ".vscode/*"]
+  },
+  "organizeImports": {
+    "enabled": true
   },
   "formatter": {
     "enabled": true,
-    "useEditorconfig": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
@@ -24,9 +26,6 @@
     "formatter": {
       "semicolons": "asNeeded"
     }
-  },
-  "organizeImports": {
-    "enabled": true
   },
   "linter": {
     "enabled": true,
@@ -46,16 +45,33 @@
         "useArrayLiterals": "off",
         "useExhaustiveDependencies": "off",
         "useHookAtTopLevel": "error",
-        "useJsxKeyInIterable": "error"
+        "useJsxKeyInIterable": "error",
+        "noConstAssign": "error",
+        "noGlobalObjectCalls": "error",
+        "noInvalidBuiltinInstantiation": "error",
+        "noInvalidConstructorSuper": "error",
+        "noNewSymbol": "error",
+        "noSetterReturn": "error",
+        "noUndeclaredVariables": "error",
+        "noUnreachable": "warn",
+        "noUnreachableSuper": "error",
+        "noVoidTypeReturn": "error"
       },
       "security": {
-        "noDangerouslySetInnerHtmlWithChildren": "error"
+        "noDangerouslySetInnerHtml": "error",
+        "noDangerouslySetInnerHtmlWithChildren": "error",
+        "noGlobalEval": "error"
       },
       "style": {
         "noNamespace": "error",
         "useAsConstAssertion": "error",
         "useBlockStatements": "off",
-        "useConst": "error"
+        "useConst": "warn",
+        "noArguments": "error",
+        "noVar": "error",
+        "useDefaultSwitchClause": "error",
+        "noUselessElse": "warn",
+        "useConsistentArrayType": "warn"
       },
       "suspicious": {
         "noCommentText": "error",
@@ -64,43 +80,25 @@
         "noExplicitAny": "error",
         "noExtraNonNullAssertion": "error",
         "noMisleadingInstantiator": "error",
-        "noUnsafeDeclarationMerging": "error"
-      }
-    }
-  },
-  "overrides": [
-    {
-      "include": ["*.js", "*.jsx", "*.mjs", "*.cjs", "*.ts", "*.tsx", "*.mts", "*.cts"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noConstAssign": "off",
-            "noGlobalObjectCalls": "off",
-            "noInvalidBuiltinInstantiation": "off",
-            "noInvalidConstructorSuper": "off",
-            "noNewSymbol": "off",
-            "noSetterReturn": "off",
-            "noUndeclaredVariables": "off",
-            "noUnreachable": "off",
-            "noUnreachableSuper": "off"
-          },
-          "style": {
-            "noArguments": "error",
-            "noVar": "error",
-            "useConst": "error"
-          },
-          "suspicious": {
-            "noDuplicateClassMembers": "off",
-            "noDuplicateObjectKeys": "off",
-            "noDuplicateParameters": "off",
-            "noFunctionAssign": "off",
-            "noImportAssign": "off",
-            "noRedeclare": "off",
-            "noUnsafeNegation": "off",
-            "useGetterReturn": "off"
+        "noUnsafeDeclarationMerging": "error",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateObjectKeys": "error",
+        "noDuplicateParameters": "error",
+        "noFunctionAssign": "error",
+        "noImportAssign": "error",
+        "noRedeclare": "error",
+        "noUnsafeNegation": "error",
+        "useGetterReturn": "error"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cva", "tw"]
           }
         }
       }
     }
-  ]
+  }
 }

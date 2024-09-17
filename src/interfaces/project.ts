@@ -9,4 +9,5 @@ export default interface ProjectInterface {
   link?: string
   description: string
   stackIcons: ReactElement[]
+  isBest?: boolean
 }

@@ -49,13 +49,13 @@ export default function MobileNav({ locale }: { locale: string }): ReactElement 
       </SheetTrigger>
       <SheetContent side="top" customCloseButton={true} className="w-full">
         <SheetHeader className="mb-14">
-          <SheetClose className="absolute left-3 top-3" asChild>
+          <SheetClose className="absolute top-3 left-3" asChild>
             <Button variant="outline" size="icon" aria-label={t("close-menu")}>
               <LuX className="size-4" />
               <span className="sr-only">{t("close-menu")}</span>
             </Button>
           </SheetClose>
-          <SheetTitle className="absolute right-0 top-0">
+          <SheetTitle className="absolute top-0 right-0">
             <Logo locale={locale} />
           </SheetTitle>
           <SheetDescription></SheetDescription>

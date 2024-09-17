@@ -12,14 +12,14 @@ export const menu: MenuItemInterface[] = [
   // {
   //   name: "projects.name",
   //   children: [
-  //     {
-  //       name: "projects.children.design-projects",
-  //       href: "/design-projects",
-  //     },
-  //     {
-  //       name: "projects.children.web-projects",
-  //       href: "/web-projects",
-  //     },
+  //     // {
+  //   name: "projects.children.design-projects",
+  //   href: "/design-projects",
+  // },
+  {
+    name: "projects.children.web-projects",
+    href: "/web-projects",
+  },
   //   ],
   // },
   {

@@ -136,7 +136,7 @@ export default function Email({
           )}
         </Container>
 
-        <Text className="text-center text-sm text-gray-500">&copy; {year} - Pierre Marquet.</Text>
+        <Text className="text-center text-gray-500 text-sm">&copy; {year} - Pierre Marquet.</Text>
       </Body>
     </Tailwind>
   )

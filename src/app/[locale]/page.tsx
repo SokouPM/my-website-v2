@@ -16,7 +16,7 @@ export default function Home(): ReactElement {
 
   return (
     <main className="flex h-screen w-screen items-center justify-center overflow-hidden">
-      <div className="fixed right-3 top-3 z-40 flex gap-4">
+      <div className="fixed top-3 right-3 z-40 flex gap-4">
         <LangSelect />
         <span>
           <ThemeToggle />
@@ -33,7 +33,7 @@ export default function Home(): ReactElement {
                 <Logo size="big" />
               </CardItem>
               <CardItem translateZ={200} translateY={-25}>
-                <WordFadeIn words="Pierre Marquet" className="z-10 select-none text-3xl font-bold sm:text-5xl" />
+                <WordFadeIn words="Pierre Marquet" className="z-10 select-none font-bold text-3xl sm:text-5xl" />
               </CardItem>
               <CardItem translateZ={200} translateY={-25}>
                 <WordFadeIn words={t("title")} className="z-10 select-none text-3xl sm:my-3 sm:text-5xl" />
