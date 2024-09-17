@@ -18,7 +18,7 @@ import {
   BiLogoReact,
   BiLogoTailwindCss,
   BiLogoTypescript,
-  BiLogoVuejs
+  BiLogoVuejs,
 } from "react-icons/bi"
 import { FaStripe } from "react-icons/fa6"
 import {
@@ -27,7 +27,7 @@ import {
   RiHtml5Fill,
   RiJavascriptFill,
   RiNextjsFill,
-  RiSupabaseFill
+  RiSupabaseFill,
 } from "react-icons/ri"
 
 import { Badge } from "@/components/ui/badge"
@@ -218,7 +218,7 @@ export const webProjects: ProjectInterface[] = [
   {
     title: "Team Rocket",
     src: teamRocket,
-    github: "",
+    github: "https://github.com/Team-Rocket-Projet-Afpa",
     description: "projects.team-rocket",
     stackIcons: [
       <Badge key="html" className={normalBadgeColorClassName}>
@@ -233,6 +233,10 @@ export const webProjects: ProjectInterface[] = [
         <RiJavascriptFill className={iconClassName} />
         <p className={textClassName}>JavaScript</p>
       </Badge>,
+      <Badge key="php" className={normalBadgeColorClassName}>
+        <SiPhp className={iconClassName} />
+        <p className={textClassName}>PHP</p>
+      </Badge>,
       <Badge key="bootsrap" className={normalBadgeColorClassName}>
         <RiBootstrapFill className={iconClassName} />
         <p className={textClassName}>Bootstrap</p>
@@ -245,4 +249,4 @@ export const webProjects: ProjectInterface[] = [
   },
 ]
 
-export const bestWebProjects: ProjectInterface[] = webProjects.filter((project) => project.isBest)
+export const bestWebProjects: ProjectInterface[] = webProjects.filter((project): boolean | undefined => project.isBest)
