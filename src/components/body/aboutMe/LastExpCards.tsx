@@ -1,11 +1,12 @@
 import { useTranslations } from "next-intl"
 import Image from "next/image"
+import { ReactElement } from "react"
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Career from "@/data/Career"
 import { CareerInterface } from "@/interfaces/career"
 
-export default function LastExpCards() {
+export default function LastExpCards(): ReactElement | null {
   const t = useTranslations("pages.career")
 
   const lastJob: CareerInterface = Career.filter((job): boolean => job.type === "work")[0]

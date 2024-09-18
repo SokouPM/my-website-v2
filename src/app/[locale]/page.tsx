@@ -26,7 +26,7 @@ export default function Home(): ReactElement {
         <CardContainer>
           <CardBody className="size-max">
             <Link
-              href={`${locale}/about-me`}
+              href={`/${locale}/about-me`}
               className="flex size-max flex-col items-center justify-center p-28 text-center"
             >
               <CardItem translateZ={100} translateY={-30}>
