@@ -19,7 +19,11 @@ export default function WebProjects(): ReactElement {
   return (
     <main className="main-container flex-1 flex-col">
       <PageTitle />
-      <CardsProjectsList projects={webProjects} className="mt-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" />
+      <CardsProjectsList
+        projects={webProjects}
+        imgHeight="h-36"
+        className="mt-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      />
     </main>
   )
 }

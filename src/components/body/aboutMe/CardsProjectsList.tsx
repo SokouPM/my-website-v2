@@ -14,8 +14,9 @@ import { cn } from "@/lib/utils"
 
 export function CardsProjectsList({
   projects,
+  imgHeight,
   className,
-}: { projects: ProjectInterface[]; className?: string }): ReactElement {
+}: { projects: ProjectInterface[]; imgHeight?: string; className?: string }): ReactElement {
   const [active, setActive] = useState<(typeof projects)[number] | boolean | null>(null)
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)
@@ -40,7 +41,7 @@ export function CardsProjectsList({
     return (): void => window.removeEventListener("keydown", onKeyDown)
   }, [active])
 
-  useOutsideClick(ref, () => setActive(null))
+  useOutsideClick(ref, (): void => setActive(null))
 
   return (
     <>
@@ -163,7 +164,7 @@ export function CardsProjectsList({
           <motion.li
             key={index}
             layoutId={`card-${project.title}-${id}`}
-            onClick={() => setActive(project)}
+            onClick={(): void => setActive(project)}
             className="card-diagonal-sides flex cursor-pointer flex-col"
           >
             <BackgroundGradient
@@ -178,7 +179,7 @@ export function CardsProjectsList({
                   src={project.src}
                   draggable="false"
                   alt=""
-                  className="card-diagonal-sides-top mb-4 h-60 w-full select-none object-cover object-top"
+                  className={`card-diagonal-sides-top mb-4 h-60 w-full select-none object-cover object-top ${imgHeight}`}
                 />
               </motion.div>
               <motion.h3
