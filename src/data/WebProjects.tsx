@@ -83,7 +83,6 @@ export const webProjects: ProjectInterface[] = [
   {
     title: "Implic'action - job",
     src: implicActionJob,
-    link: "http://jobs.leboncitoyen.fr",
     description: "projects.implic-action-job",
     stackIcons: [
       <Badge key="react" className={normalBadgeColorClassName}>
