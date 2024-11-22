@@ -93,6 +93,7 @@
         "useGetterReturn": "error"
       },
       "nursery": {
+        "useExplicitType": "error",
         "useSortedClasses": {
           "level": "warn",
           "options": {

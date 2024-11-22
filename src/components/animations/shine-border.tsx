@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { CSSProperties, ReactNode } from "react"
+import { CSSProperties, ReactElement, ReactNode } from "react"
 
 type TColorProp = `#${string}` | `#${string}`[]
 
@@ -31,7 +31,7 @@ export default function ShineBorder({
   color = "#fff",
   className,
   children,
-}: ShineBorderProps) {
+}: ShineBorderProps): ReactElement {
   return (
     <div
       style={

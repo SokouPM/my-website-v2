@@ -16,7 +16,11 @@ export function CardsProjectsList({
   projects,
   imgHeight,
   className,
-}: { projects: ProjectInterface[]; imgHeight?: string; className?: string }): ReactElement {
+}: {
+  projects: ProjectInterface[]
+  imgHeight?: string
+  className?: string
+}): ReactElement {
   const [active, setActive] = useState<(typeof projects)[number] | boolean | null>(null)
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)
@@ -77,7 +81,7 @@ export function CardsProjectsList({
                 },
               }}
               className="absolute top-10 right-10 z-20 inline-flex size-10 animate-bounce items-center justify-center whitespace-nowrap rounded-full border border-input bg-background lg:hidden"
-              onClick={() => setActive(null)}
+              onClick={(): void => setActive(null)}
             >
               <MdOutlineClose />
               <p className="sr-only">{t("components.projects-card.close")}</p>

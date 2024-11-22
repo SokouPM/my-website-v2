@@ -37,7 +37,7 @@ export default function AboutMe(): ReactElement {
             <TypeWriter />
             <p>
               {t.rich("bio", {
-                strong: (chunks) => <strong>{chunks}</strong>,
+                strong: (chunks): ReactElement => <strong>{chunks}</strong>,
               })}
             </p>
           </div>

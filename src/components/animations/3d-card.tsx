@@ -1,6 +1,6 @@
 "use client"
 
-import React, { createContext, useContext, useEffect, useRef, useState } from "react"
+import React, { createContext, ReactElement, useContext, useEffect, useRef, useState } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -14,11 +14,11 @@ export const CardContainer = ({
   children?: React.ReactNode
   className?: string
   containerClassName?: string
-}) => {
+}): ReactElement => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isMouseEntered, setIsMouseEntered] = useState(false)
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
     if (!containerRef.current) return
 
     const { left, top, width, height } = containerRef.current.getBoundingClientRect()
@@ -27,13 +27,13 @@ export const CardContainer = ({
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`
   }
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (): void => {
     setIsMouseEntered(true)
 
     if (!containerRef.current) return
   }
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (): void => {
     if (!containerRef.current) return
 
     setIsMouseEntered(false)
@@ -65,7 +65,7 @@ export const CardContainer = ({
   )
 }
 
-export const CardBody = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+export const CardBody = ({ children, className }: { children: React.ReactNode; className?: string }): ReactElement => {
   return (
     <div className={cn("h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]", className)}>
       {children}
@@ -94,11 +94,11 @@ export const CardItem = ({
   rotateX?: number | string
   rotateY?: number | string
   rotateZ?: number | string
-}) => {
+}): ReactElement => {
   const ref = useRef<HTMLDivElement>(null)
   const [isMouseEntered] = useMouseEnter()
 
-  useEffect(() => {
+  useEffect((): void => {
     handleAnimations()
   }, [isMouseEntered])
 
@@ -120,7 +120,7 @@ export const CardItem = ({
 }
 
 // Create a hook to use the context
-export const useMouseEnter = () => {
+export const useMouseEnter = (): [boolean, React.Dispatch<React.SetStateAction<boolean>>] => {
   const context = useContext(MouseEnterContext)
 
   if (context === undefined) {

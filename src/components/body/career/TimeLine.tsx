@@ -66,10 +66,10 @@ export default function TimeLine(): ReactElement {
             description={
               item.description &&
               t.rich(item.description, {
-                ul: (chunks) => <ul className="list-inside list-disc">{chunks}</ul>,
-                ol: (chunks) => <ol className="list-inside list-decimal pl-10">{chunks}</ol>,
-                li: (chunks) => <li>{chunks}</li>,
-                strong: (chunks) => <strong>{chunks}</strong>,
+                ul: (chunks): ReactElement => <ul className="list-inside list-disc">{chunks}</ul>,
+                ol: (chunks): ReactElement => <ol className="list-inside list-decimal pl-10">{chunks}</ol>,
+                li: (chunks): ReactElement => <li>{chunks}</li>,
+                strong: (chunks): ReactElement => <strong>{chunks}</strong>,
               })
             }
             stackIcons={item.stackIcons}
