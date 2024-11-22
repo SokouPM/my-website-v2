@@ -44,6 +44,23 @@ const sizeReducer: number = 8
 
 const career: CareerInterface[] = [
   {
+    date: "work.anfsi2.date",
+    logo: { src: anfsi.src, alt: "work.anfsi2.logo-alt" },
+    title: "work.anfsi2.title",
+    localisation: "work.anfsi2.localisation",
+    description: "work.anfsi2.description",
+    type: "work",
+    stackIcons: [
+      <RiJavascriptFill size={size} key="js" />,
+      <BiLogoReact size={size} key="react" />,
+      <BiLogoPhp size={size} key="php" />,
+      <DiSymfonyBadge size={size} key="symfony" />,
+      <BiLogoJava size={size} key="java" />,
+      <BiLogoSpringBoot size={size} key="spring" />,
+      <BiLogoDocker size={size} key="docker" />,
+    ],
+  },
+  {
     date: "work.anfsi.date",
     logo: { src: anfsi.src, alt: "work.anfsi.logo-alt" },
     title: "work.anfsi.title",

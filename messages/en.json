@@ -83,6 +83,13 @@
     },
     "career": {
       "work": {
+        "anfsi2": {
+          "date": "November 2024 - Present",
+          "title": "Expert in Tools, Operating Systems, and Networks",
+          "localisation": "ANFSI - Issy-les-Moulineaux, Hauts-de-Seine (92)",
+          "description": "",
+          "logo-alt": "ANFSI logo, Digital Agency of Internal Security Forces"
+        },
         "anfsi": {
           "date": "October 2022 - October 2024",
           "title": "Full-stack Developer Apprentice",
