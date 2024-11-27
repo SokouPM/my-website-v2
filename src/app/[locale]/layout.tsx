@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import "./globals.css"
 import { NextIntlClientProvider } from "next-intl"
-import { getMessages, getTranslations, unstable_setRequestLocale } from "next-intl/server"
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server"
 import { Roboto_Flex } from "next/font/google"
 import { ReactElement, ReactNode } from "react"
 
@@ -36,7 +36,7 @@ export default async function RootLayout({
   children: ReactNode
   params: { locale: string }
 }): Promise<ReactElement> {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
   const messages = await getMessages()
 
   return (
