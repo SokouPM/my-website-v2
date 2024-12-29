@@ -17,15 +17,21 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { MenuItemInterface, menu } from "@/interfaces/menu"
+import { usePathname } from "next/navigation"
 
 const RenderNavItem = ({ navItem, locale }: { navItem: MenuItemInterface; locale: string }): ReactElement | null => {
   const t = useTranslations("header.navbar")
+  const pathname = usePathname()
 
   if (navItem.href) {
     return (
       <SheetClose asChild>
         <Button variant="ghost" asChild={true}>
-          <Link className="w-full py-8 text-xl" href={`/${locale}/${navItem.href}`}>
+          <Link
+            className="w-full py-8 text-xl"
+            href={`/${locale}${navItem.href}`}
+            aria-current={`/${locale}${navItem.href}` === pathname ? "page" : undefined}
+          >
             {t(navItem.name)}
           </Link>
         </Button>
@@ -66,11 +72,13 @@ export default function MobileNav({ locale }: { locale: string }): ReactElement 
               {item.href && <RenderNavItem navItem={item} locale={locale} />}
               {item.children && (
                 <ul>
-                  {item.children.map((child, childIndex) => (
-                    <li key={childIndex}>
-                      <RenderNavItem navItem={child} locale={locale} />
-                    </li>
-                  ))}
+                  {item.children.map(
+                    (child, childIndex): ReactElement => (
+                      <li key={childIndex}>
+                        <RenderNavItem navItem={child} locale={locale} />
+                      </li>
+                    ),
+                  )}
                 </ul>
               )}
             </li>

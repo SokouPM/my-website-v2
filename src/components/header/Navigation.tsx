@@ -12,9 +12,11 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { menu } from "@/interfaces/menu"
+import { usePathname } from "next/navigation"
 
 export default function Navigation({ locale }: { locale: string }): ReactElement {
   const t = useTranslations("header.navbar")
+  const pathname = usePathname()
 
   return (
     <NavigationMenu>
@@ -24,7 +26,12 @@ export default function Navigation({ locale }: { locale: string }): ReactElement
             <NavigationMenuItem key={index}>
               {item.href && (
                 <Link href={`/${locale}${item.href}`} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>{t(item.name)}</NavigationMenuLink>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    aria-current={`/${locale}${item.href}` === pathname ? "page" : undefined}
+                  >
+                    {t(item.name)}
+                  </NavigationMenuLink>
                 </Link>
               )}
               {item.children ? (
@@ -37,7 +44,10 @@ export default function Navigation({ locale }: { locale: string }): ReactElement
                           <li key={index}>
                             {child.href && (
                               <Link href={`/${locale}${child.href}`} legacyBehavior passHref className="w-full">
-                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                <NavigationMenuLink
+                                  className={navigationMenuTriggerStyle()}
+                                  aria-current={`/${locale}${child.href}` === pathname ? "page" : undefined}
+                                >
                                   {t(child.name)}
                                 </NavigationMenuLink>
                               </Link>
