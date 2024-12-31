@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactElement, ReactNode, forwardRef, useRef } from "react"
+import { ForwardedRef, ReactElement, ReactNode, RefObject, forwardRef, useRef } from "react"
 
 import Logo from "@/components/Logo"
 import { AnimatedBeam } from "@/components/animations/animated-beam"
@@ -18,7 +18,7 @@ import { VueIcon } from "@/components/icons/VueIcon"
 import { cn } from "@/lib/utils"
 
 const Circle = forwardRef<HTMLDivElement, { className?: string; children?: ReactNode }>(
-  ({ className, children }, ref) => {
+  ({ className, children }, ref: ForwardedRef<HTMLDivElement>): ReactElement => {
     return (
       <div
         ref={ref}
@@ -36,20 +36,20 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
 Circle.displayName = "Circle"
 
 export default function SkillsList(): ReactElement {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const logoRef = useRef<HTMLDivElement>(null)
+  const containerRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const logoRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
-  const reactIconRef = useRef<HTMLDivElement>(null)
-  const nextIconRef = useRef<HTMLDivElement>(null)
-  const vueIconRef = useRef<HTMLDivElement>(null)
-  const symfonyIconRef = useRef<HTMLDivElement>(null)
-  const typescriptIconRef = useRef<HTMLDivElement>(null)
+  const reactIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const nextIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const vueIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const symfonyIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const typescriptIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
-  const nodeIconRef = useRef<HTMLDivElement>(null)
-  const phpIconRef = useRef<HTMLDivElement>(null)
-  const postgresqlIconRef = useRef<HTMLDivElement>(null)
-  const mysqlIconRef = useRef<HTMLDivElement>(null)
-  const dockerIconRef = useRef<HTMLDivElement>(null)
+  const nodeIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const phpIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const postgresqlIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const mysqlIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const dockerIconRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   const size = 50
 

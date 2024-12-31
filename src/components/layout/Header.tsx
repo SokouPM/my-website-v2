@@ -10,7 +10,7 @@ import Navigation from "@/components/header/Navigation"
 import { ThemeToggle } from "@/components/header/ThemeToggle"
 
 export default function Header({ locale }: { locale: string }): ReactElement | null {
-  const pathname = usePathname()
+  const pathname: string = usePathname()
 
   if (pathname === `/${locale}`) return null
 

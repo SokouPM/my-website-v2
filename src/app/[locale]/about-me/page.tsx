@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl"
 import { getTranslations } from "next-intl/server"
-import { ReactElement } from "react"
+import { ReactElement, ReactNode } from "react"
 
 import profile from "/public/images/profile.png"
 
@@ -37,7 +37,7 @@ export default function AboutMe(): ReactElement {
             <TypeWriter />
             <p>
               {t.rich("bio", {
-                strong: (chunks): ReactElement => <strong>{chunks}</strong>,
+                strong: (chunks: ReactNode): ReactElement => <strong>{chunks}</strong>,
               })}
             </p>
           </div>

@@ -38,7 +38,7 @@ export async function POST(request: NextRequest): Promise<Response> {
 
     if (error) {
       const resendError = error as ResendError
-      const statusCode = resendError.statusCode || httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR
+      const statusCode: number = resendError.statusCode || httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR
 
       return NextResponse.json(error, { status: statusCode })
     }

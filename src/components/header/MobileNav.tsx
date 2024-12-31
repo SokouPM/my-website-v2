@@ -21,7 +21,7 @@ import { usePathname } from "next/navigation"
 
 const RenderNavItem = ({ navItem, locale }: { navItem: MenuItemInterface; locale: string }): ReactElement | null => {
   const t = useTranslations("header.navbar")
-  const pathname = usePathname()
+  const pathname: string = usePathname()
 
   if (navItem.href) {
     return (
@@ -67,22 +67,24 @@ export default function MobileNav({ locale }: { locale: string }): ReactElement 
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <ul>
-          {menu.map((item, index) => (
-            <li key={index}>
-              {item.href && <RenderNavItem navItem={item} locale={locale} />}
-              {item.children && (
-                <ul>
-                  {item.children.map(
-                    (child, childIndex): ReactElement => (
-                      <li key={childIndex}>
-                        <RenderNavItem navItem={child} locale={locale} />
-                      </li>
-                    ),
-                  )}
-                </ul>
-              )}
-            </li>
-          ))}
+          {menu.map(
+            (item: MenuItemInterface, index: number): ReactElement => (
+              <li key={index}>
+                {item.href && <RenderNavItem navItem={item} locale={locale} />}
+                {item.children && (
+                  <ul>
+                    {item.children.map(
+                      (child: MenuItemInterface, childIndex: number): ReactElement => (
+                        <li key={childIndex}>
+                          <RenderNavItem navItem={child} locale={locale} />
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                )}
+              </li>
+            ),
+          )}
         </ul>
       </SheetContent>
     </Sheet>

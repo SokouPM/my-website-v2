@@ -12,7 +12,7 @@ import cv from "/public/files/cv_fr.pdf"
 
 export default function SocialsLinks(): ReactElement {
   const t = useTranslations("pages.about-me.links")
-  const locale = useLocale()
+  const locale: string = useLocale()
 
   return (
     <ul className="flex items-center justify-center gap-4">

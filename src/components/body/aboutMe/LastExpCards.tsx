@@ -9,8 +9,8 @@ import { CareerInterface } from "@/interfaces/career"
 export default function LastExpCards(): ReactElement | null {
   const t = useTranslations("pages.career")
 
-  const lastJob: CareerInterface = Career.filter((job): boolean => job.type === "work")[0]
-  const lastInternship: CareerInterface = Career.filter((job): boolean => job.type === "education")[0]
+  const lastJob: CareerInterface = Career.filter((job: CareerInterface): boolean => job.type === "work")[0]
+  const lastInternship: CareerInterface = Career.filter((job: CareerInterface): boolean => job.type === "education")[0]
   const imgSize = 75
 
   if (!lastJob && !lastInternship) return null

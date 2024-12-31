@@ -12,7 +12,7 @@ import { ThemeToggle } from "@/components/header/ThemeToggle"
 export default function Home(): ReactElement {
   const t = useTranslations("pages.home")
 
-  const locale = useLocale()
+  const locale: string = useLocale()
 
   return (
     <main className="flex h-screen w-screen items-center justify-center overflow-hidden">

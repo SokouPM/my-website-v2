@@ -80,7 +80,7 @@ export default function ContactForm(): ReactElement {
   })
 
   const sendData = async (data: z.infer<typeof contactFormSchema>): Promise<void> => {
-    const response = await fetch("/api/send", {
+    const response: Response = await fetch("/api/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

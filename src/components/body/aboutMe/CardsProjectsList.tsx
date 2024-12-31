@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import React, { ReactElement, useEffect, useId, useRef, useState } from "react"
+import React, { ReactElement, RefObject, useEffect, useId, useRef, useState } from "react"
 import { FaExternalLinkAlt, FaGithub, FaGitlab } from "react-icons/fa"
 import { MdOutlineClose } from "react-icons/md"
 
@@ -22,12 +22,12 @@ export function CardsProjectsList({
   className?: string
 }): ReactElement {
   const [active, setActive] = useState<(typeof projects)[number] | boolean | null>(null)
-  const id = useId()
-  const ref = useRef<HTMLDivElement>(null)
+  const id: string = useId()
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   const t = useTranslations()
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     function onKeyDown(event: KeyboardEvent): void {
       if (event.key === "Escape") {
         setActive(false)
@@ -164,37 +164,39 @@ export function CardsProjectsList({
 
       {/* ? ---------------------------------------------- Cards list ----------------------------------------------- */}
       <ul className={cn("grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3", className)}>
-        {projects.map((project, index) => (
-          <motion.li
-            key={index}
-            layoutId={`card-${project.title}-${id}`}
-            onClick={(): void => setActive(project)}
-            className="card-diagonal-sides flex cursor-pointer flex-col"
-          >
-            <BackgroundGradient
+        {projects.map(
+          (project: ProjectInterface, index: number): ReactElement => (
+            <motion.li
               key={index}
-              className="card-diagonal-sides bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-              gradientClassName="md:blur"
+              layoutId={`card-${project.title}-${id}`}
+              onClick={(): void => setActive(project)}
+              className="card-diagonal-sides flex cursor-pointer flex-col"
             >
-              <motion.div layoutId={`image-${project.title}-${id}`}>
-                <Image
-                  width={600}
-                  height={100}
-                  src={project.src}
-                  draggable="false"
-                  alt=""
-                  className={`card-diagonal-sides-top mb-4 h-60 w-full select-none object-cover object-top ${imgHeight}`}
-                />
-              </motion.div>
-              <motion.h3
-                layoutId={`title-${project.title}-${id}`}
-                className="text-center font-bold text-lg text-neutral-800 dark:text-neutral-200"
+              <BackgroundGradient
+                key={index}
+                className="card-diagonal-sides bg-background p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+                gradientClassName="md:blur"
               >
-                {project.title}
-              </motion.h3>
-            </BackgroundGradient>
-          </motion.li>
-        ))}
+                <motion.div layoutId={`image-${project.title}-${id}`}>
+                  <Image
+                    width={600}
+                    height={100}
+                    src={project.src}
+                    draggable="false"
+                    alt=""
+                    className={`card-diagonal-sides-top mb-4 h-60 w-full select-none object-cover object-top ${imgHeight}`}
+                  />
+                </motion.div>
+                <motion.h2
+                  layoutId={`title-${project.title}-${id}`}
+                  className="text-center font-bold text-lg text-neutral-800 dark:text-neutral-200"
+                >
+                  {project.title}
+                </motion.h2>
+              </BackgroundGradient>
+            </motion.li>
+          ),
+        )}
       </ul>
     </>
   )

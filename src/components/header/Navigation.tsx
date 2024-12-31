@@ -11,17 +11,17 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { menu } from "@/interfaces/menu"
+import { MenuItemInterface, menu } from "@/interfaces/menu"
 import { usePathname } from "next/navigation"
 
 export default function Navigation({ locale }: { locale: string }): ReactElement {
   const t = useTranslations("header.navbar")
-  const pathname = usePathname()
+  const pathname: string = usePathname()
 
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {menu.map((item, index) => {
+        {menu.map((item: MenuItemInterface, index: number): ReactElement => {
           return (
             <NavigationMenuItem key={index}>
               {item.href && (
@@ -39,7 +39,7 @@ export default function Navigation({ locale }: { locale: string }): ReactElement
                   <NavigationMenuTrigger>{t(item.name)}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul>
-                      {item.children.map((child, index) => {
+                      {item.children.map((child: MenuItemInterface, index: number): ReactElement => {
                         return (
                           <li key={index}>
                             {child.href && (
