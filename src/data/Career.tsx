@@ -20,7 +20,7 @@ import { RiJavascriptFill, RiNextjsFill } from "react-icons/ri"
 import { SiAdobedreamweaver, SiAdobeillustrator, SiAdobeindesign, SiAdobephotoshop, SiCoreldraw } from "react-icons/si"
 import { TbBrandKotlin } from "react-icons/tb"
 
-import { CareerInterface } from "@/interfaces/career"
+import CareerInterface from "@/interfaces/career"
 
 import afpa from "/public/images/career/afpa.png"
 import anfsi from "/public/images/career/anfsi.jpeg"

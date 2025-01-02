@@ -11,7 +11,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { MenuItemInterface, menu } from "@/interfaces/menu"
+import navMenu from "@/data/NavMenu"
+import NavMenuItemInterface from "@/interfaces/navMenu"
 import { usePathname } from "next/navigation"
 
 export default function Navigation({ locale }: { locale: string }): ReactElement {
@@ -21,7 +22,7 @@ export default function Navigation({ locale }: { locale: string }): ReactElement
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {menu.map((item: MenuItemInterface, index: number): ReactElement => {
+        {navMenu.map((item: NavMenuItemInterface, index: number): ReactElement => {
           return (
             <NavigationMenuItem key={index}>
               {item.href && (
@@ -39,7 +40,7 @@ export default function Navigation({ locale }: { locale: string }): ReactElement
                   <NavigationMenuTrigger>{t(item.name)}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul>
-                      {item.children.map((child: MenuItemInterface, index: number): ReactElement => {
+                      {item.children.map((child: NavMenuItemInterface, index: number): ReactElement => {
                         return (
                           <li key={index}>
                             {child.href && (

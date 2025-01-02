@@ -1,10 +1,6 @@
-export interface MenuItemInterface {
-  name: string
-  href?: string
-  children?: MenuItemInterface[]
-}
+import NavMenuItemInterface from "@/interfaces/navMenu"
 
-export const menu: MenuItemInterface[] = [
+const navMenu: NavMenuItemInterface[] = [
   {
     name: "about-me.name",
     href: "/about-me",
@@ -31,3 +27,5 @@ export const menu: MenuItemInterface[] = [
     href: "/contact",
   },
 ]
+
+export default navMenu

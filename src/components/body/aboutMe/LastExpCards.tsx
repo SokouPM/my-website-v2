@@ -4,7 +4,7 @@ import { ReactElement } from "react"
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Career from "@/data/Career"
-import { CareerInterface } from "@/interfaces/career"
+import CareerInterface from "@/interfaces/career"
 
 export default function LastExpCards(): ReactElement | null {
   const t = useTranslations("pages.career")

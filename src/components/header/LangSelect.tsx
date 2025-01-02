@@ -4,7 +4,8 @@ import { useLocale, useTranslations } from "next-intl"
 import { usePathname, useRouter } from "next/navigation"
 import { ChangeEvent, ReactElement, useTransition } from "react"
 
-import { LangInterface, langs } from "@/interfaces/langs"
+import Languages from "@/data/Languages"
+import LanguagesInterface from "@/interfaces/languages"
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime"
 
 export default function LangSelect(): ReactElement {
@@ -14,7 +15,7 @@ export default function LangSelect(): ReactElement {
   const pathName: string = usePathname()
   const localActive: string = useLocale()
 
-  const redirectedPathName = (locale: string): string => {
+  const redirectedPathName: (locale: string) => string = (locale: string): string => {
     if (!pathName) return "/"
 
     const segments: string[] = pathName.split("/")
@@ -40,7 +41,7 @@ export default function LangSelect(): ReactElement {
       name="lang-selector"
       className="h-10 cursor-pointer border border-input bg-background px-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
     >
-      {langs.map((lang: LangInterface, index: number): ReactElement => {
+      {Languages.map((lang: LanguagesInterface, index: number): ReactElement => {
         return (
           <option key={index} value={lang.value}>
             {lang.label.flag} {lang.label.text}

@@ -248,4 +248,5 @@ export const webProjects: ProjectInterface[] = [
   },
 ]
 
+/************************************ For the best projects section in about page ************************************/
 export const bestWebProjects: ProjectInterface[] = webProjects.filter((project): boolean | undefined => project.isBest)

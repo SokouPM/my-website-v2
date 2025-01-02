@@ -4,7 +4,8 @@ import { useLocale, useTranslations } from "next-intl"
 import { usePathname } from "next/navigation"
 import { ReactElement } from "react"
 
-import { MenuItemInterface, menu } from "@/interfaces/menu"
+import NavMenu from "@/data/NavMenu"
+import NavMenuItemInterface from "@/interfaces/navMenu"
 
 export default function PageTitle(): ReactElement {
   const pathname: string = usePathname()
@@ -12,17 +13,17 @@ export default function PageTitle(): ReactElement {
   const t = useTranslations("header.navbar")
 
   const getPageTitle: () => string | null = (): string | null => {
-    const menuItem: MenuItemInterface | undefined = menu.find(
-      (item: MenuItemInterface): boolean => `/${locale}${item.href}` === pathname,
+    const menuItem: NavMenuItemInterface | undefined = NavMenu.find(
+      (item: NavMenuItemInterface): boolean => `/${locale}${item.href}` === pathname,
     )
 
     if (menuItem) {
       return menuItem.name
     }
 
-    const subMenuItem: MenuItemInterface | undefined = menu
-      .flatMap((item: MenuItemInterface): MenuItemInterface[] => item.children || [])
-      .find((item: MenuItemInterface): boolean => `/${locale}${item.href}` === pathname)
+    const subMenuItem: NavMenuItemInterface | undefined = NavMenu.flatMap(
+      (item: NavMenuItemInterface): NavMenuItemInterface[] => item.children || [],
+    ).find((item: NavMenuItemInterface): boolean => `/${locale}${item.href}` === pathname)
 
     if (subMenuItem) {
       return subMenuItem.name

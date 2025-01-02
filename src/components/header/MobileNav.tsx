@@ -16,10 +16,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { MenuItemInterface, menu } from "@/interfaces/menu"
+import navMenu from "@/data/NavMenu"
+import NavMenuItemInterface from "@/interfaces/navMenu"
 import { usePathname } from "next/navigation"
 
-const RenderNavItem = ({ navItem, locale }: { navItem: MenuItemInterface; locale: string }): ReactElement | null => {
+const RenderNavItem = ({ navItem, locale }: { navItem: NavMenuItemInterface; locale: string }): ReactElement | null => {
   const t = useTranslations("header.navbar")
   const pathname: string = usePathname()
 
@@ -67,14 +68,14 @@ export default function MobileNav({ locale }: { locale: string }): ReactElement 
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <ul>
-          {menu.map(
-            (item: MenuItemInterface, index: number): ReactElement => (
+          {navMenu.map(
+            (item: NavMenuItemInterface, index: number): ReactElement => (
               <li key={index}>
                 {item.href && <RenderNavItem navItem={item} locale={locale} />}
                 {item.children && (
                   <ul>
                     {item.children.map(
-                      (child: MenuItemInterface, childIndex: number): ReactElement => (
+                      (child: NavMenuItemInterface, childIndex: number): ReactElement => (
                         <li key={childIndex}>
                           <RenderNavItem navItem={child} locale={locale} />
                         </li>

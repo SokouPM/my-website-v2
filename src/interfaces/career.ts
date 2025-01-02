@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from "react"
 
-export interface CareerInterface {
+export default interface CareerInterface {
   date: string
   logo?: { src: string; alt: string }
   title: string

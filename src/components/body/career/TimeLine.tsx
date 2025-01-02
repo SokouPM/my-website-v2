@@ -13,7 +13,7 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 
 import "react-vertical-timeline-component/style.min.css"
 import career from "@/data/Career"
-import { CareerInterface } from "@/interfaces/career"
+import CareerInterface from "@/interfaces/career"
 
 const RenderTimelineContent = ({
   title,
@@ -33,7 +33,7 @@ const RenderTimelineContent = ({
     {stackIcons && (
       <ul className="mt-5 flex flex-wrap items-center justify-center gap-2">
         {stackIcons.map(
-          (icon, index: number): ReactElement => (
+          (icon: ReactElement, index: number): ReactElement => (
             <li key={index}>{icon}</li>
           ),
         )}
