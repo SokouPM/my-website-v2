@@ -2,7 +2,7 @@
     <img src="https://www.pierre-marquet.fr/_next/static/media/whiteLogo.cdc2df7d.svg" alt="MyWebSite" height="300" />
 </p>
 
-# Pierre Marquet - Développeur et Designer ()
+# Pierre Marquet - Développeur et Designer
 
 Bienvenue sur le dépôt GitHub de mon site web personnel (en version 2). Vous pouvez visiter mon site à l'adresse suivante : [https://www.pierre-marquet.fr](https://www.pierre-marquet.fr).
 
