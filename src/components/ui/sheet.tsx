@@ -2,12 +2,13 @@
 
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { type VariantProps, cva } from "class-variance-authority"
-import { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, ReactElement, forwardRef } from "react"
+import { ComponentPropsWithoutRef, ElementRef, FC, ForwardedRef, HTMLAttributes, ReactElement, forwardRef } from "react"
 import { LuX } from "react-icons/lu"
 
 import { cn } from "@/lib/utils"
+import { DialogProps } from "@radix-ui/react-dialog"
 
-const Sheet = SheetPrimitive.Root
+const Sheet: FC<DialogProps> = SheetPrimitive.Root
 const SheetTrigger = SheetPrimitive.Trigger
 const SheetClose = SheetPrimitive.Close
 const SheetPortal = SheetPrimitive.Portal
@@ -15,16 +16,18 @@ const SheetPortal = SheetPrimitive.Portal
 const SheetOverlay = forwardRef<
   ElementRef<typeof SheetPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <SheetPrimitive.Overlay
-    className={cn(
-      "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-background/20 backdrop-blur-sm data-[state=closed]:animate-out data-[state=open]:animate-in",
-      className,
-    )}
-    {...props}
-    ref={ref}
-  />
-))
+>(
+  ({ className, ...props }, ref: ForwardedRef<HTMLDivElement>): ReactElement => (
+    <SheetPrimitive.Overlay
+      className={cn(
+        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-background/20 backdrop-blur-sm data-[state=closed]:animate-out data-[state=open]:animate-in",
+        className,
+      )}
+      {...props}
+      ref={ref}
+    />
+  ),
+)
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
 
 const sheetVariants = cva(

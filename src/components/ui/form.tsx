@@ -4,9 +4,12 @@ import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
 import {
   ComponentPropsWithoutRef,
+  Context,
   ElementRef,
+  ForwardedRef,
   HTMLAttributes,
   ReactElement,
+  ReactNode,
   createContext,
   forwardRef,
   useContext,
@@ -62,7 +65,7 @@ const useFormField = (): {
   formMessageId: string
 } => {
   const fieldContext = useContext(FormFieldContext)
-  const itemContext = useContext(FormItemContext)
+  const itemContext: FormItemContextValue = useContext(FormItemContext)
   const { getFieldState, formState } = useFormContext()
 
   const fieldState = getFieldState(fieldContext.name, formState)
@@ -87,46 +90,53 @@ type FormItemContextValue = {
   id: string
 }
 
-const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue)
+const FormItemContext: Context<FormItemContextValue> = createContext<FormItemContextValue>({} as FormItemContextValue)
 
-const FormItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => {
-  const id = useId()
+const FormItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }: HTMLAttributes<HTMLDivElement>, ref: ForwardedRef<HTMLDivElement>): ReactElement => {
+    const id: string = useId()
 
-  return (
-    <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
-    </FormItemContext.Provider>
-  )
-})
+    return (
+      <FormItemContext.Provider value={{ id }}>
+        <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      </FormItemContext.Provider>
+    )
+  },
+)
 FormItem.displayName = "FormItem"
 
 const FormLabel = forwardRef<
   ElementRef<typeof LabelPrimitive.Root>,
   ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, ref: ForwardedRef<HTMLLabelElement>): ReactElement => {
   const { error, formItemId } = useFormField()
 
   return <Label ref={ref} className={cn(error && "text-destructive", className)} htmlFor={formItemId} {...props} />
 })
 FormLabel.displayName = "FormLabel"
 
-const FormControl = forwardRef<ElementRef<typeof Slot>, ComponentPropsWithoutRef<typeof Slot>>(({ ...props }, ref) => {
-  const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
+const FormControl = forwardRef<ElementRef<typeof Slot>, ComponentPropsWithoutRef<typeof Slot>>(
+  ({ ...props }, ref: ForwardedRef<HTMLElement>): ReactElement => {
+    const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
-  return (
-    <Slot
-      ref={ref}
-      id={formItemId}
-      aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
-      aria-invalid={!!error}
-      {...props}
-    />
-  )
-})
+    return (
+      <Slot
+        ref={ref}
+        id={formItemId}
+        aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
+        aria-invalid={!!error}
+        {...props}
+      />
+    )
+  },
+)
 FormControl.displayName = "FormControl"
 
 const FormDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...props }, ref) => {
+  (
+    { className, ...props }: HTMLAttributes<HTMLParagraphElement>,
+    ref: ForwardedRef<HTMLParagraphElement>,
+  ): ReactElement => {
     const { formDescriptionId } = useFormField()
 
     return <p ref={ref} id={formDescriptionId} className={cn("text-muted-foreground text-sm", className)} {...props} />
@@ -135,9 +145,12 @@ const FormDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLPara
 FormDescription.displayName = "FormDescription"
 
 const FormMessage = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, children, ...props }, ref) => {
+  (
+    { className, children, ...props }: HTMLAttributes<HTMLParagraphElement>,
+    ref: ForwardedRef<HTMLParagraphElement>,
+  ): ReactElement | null => {
     const { error, formMessageId } = useFormField()
-    const body = error ? String(error?.message) : children
+    const body: ReactNode = error ? String(error?.message) : children
 
     if (!body) {
       return null
