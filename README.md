@@ -4,11 +4,14 @@
 
 # Pierre Marquet - Développeur et Designer
 
-Bienvenue sur le dépôt GitHub de mon site web personnel (en version 2). Vous pouvez visiter mon site à l'adresse suivante : [https://www.pierre-marquet.fr](https://www.pierre-marquet.fr).
+Bienvenue sur le dépôt GitHub de mon site web personnel (en version 2). Vous pouvez visiter mon site à l'adresse
+suivante : [https://www.pierre-marquet.fr](https://www.pierre-marquet.fr).
 
 ## À propos
 
-Ce projet présente mon portfolio en tant que développeur et designer. Il met en avant mes compétences, mes projets réalisés et fournit des informations de contact.
+Ce projet présente mon portfolio en tant que développeur et designer.
+Il met en avant mes compétences, mes projets
+réalisés et fournit des informations de contact.
 
 ## Fonctionnalités
 
@@ -18,5 +21,6 @@ Ce projet présente mon portfolio en tant que développeur et designer. Il met e
 
 ## Technologies utilisées
 
-- **Frontend :** Typescript, Next.JS, Tailwind + Schadcn + Aceternity UI et Magic UI
-- **Autres :** Responsive design pour une compatibilité sur tous les appareils
+- Typescript
+- Next.JS
+- Tailwind + Schadcn + Aceternity UI et Magic UI
