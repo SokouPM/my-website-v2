@@ -11,8 +11,9 @@ import { ThemeToggle } from "@/components/header/ThemeToggle"
 
 export default function Header({ locale }: { locale: string }): ReactElement | null {
   const pathname: string = usePathname()
+  const pagesVisibility = ["/about-me", "/web-projects", "/design-projects", "/career", "/contact"]
 
-  if (pathname === `/${locale}`) return null
+  if (!pagesVisibility.includes(pathname.replace(`/${locale}`, ""))) return null
 
   return (
     <header className="sticky top-0 z-40 mb-10 flex items-center justify-between gap-4 border-b bg-background p-3 opacity-90 md:items-start">

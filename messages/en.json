@@ -275,6 +275,10 @@
         "error": "An error occurred while sending your message. Please try again later.",
         "close": "Close"
       }
+    },
+    "404": {
+      "title": "Page not found",
+      "button": "Return to the home page"
     }
   },
   "components": {

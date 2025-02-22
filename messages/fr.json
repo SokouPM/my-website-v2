@@ -275,6 +275,10 @@
         "error": "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard.",
         "close": "Fermer"
       }
+    },
+    "404": {
+      "title": "Page non trouvée",
+      "button": "Retour à l'accueil"
     }
   },
   "components": {

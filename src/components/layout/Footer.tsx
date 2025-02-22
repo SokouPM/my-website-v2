@@ -8,7 +8,9 @@ export default function Footer(): ReactElement | null {
   const pathname: string = usePathname()
   const locale: string = useLocale()
 
-  if (pathname === `/${locale}`) return null
+  const pagesVisibility = ["/about-me", "/web-projects", "/design-projects", "/career", "/contact"]
+
+  if (!pagesVisibility.includes(pathname.replace(`/${locale}`, ""))) return null
 
   const year: number = new Date().getFullYear()
 
