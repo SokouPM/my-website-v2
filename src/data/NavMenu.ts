@@ -13,8 +13,8 @@ const navMenu: NavMenuItemInterface[] = [
       //   href: "/design-projects",
       // },
       // {
-  name: "projects.children.web-projects",
-  href: "/web-projects",
+    name: "projects.children.web-projects",
+    href: "/web-projects",
       // },
     // ],
   },
