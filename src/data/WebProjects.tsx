@@ -1,5 +1,6 @@
 "use client"
 
+import espaceCandidat from "/public/images/projects/web/espaceCandidat.png"
 import falloutFanGameMap from "/public/images/projects/web/falloutFanGameMap.png"
 import implicActionJob from "/public/images/projects/web/implicActionJob.png"
 import makeYourDish from "/public/images/projects/web/makeYourDish.png"
@@ -78,7 +79,6 @@ export const webProjects: ProjectInterface[] = [
         <p className={textClassName}>Supabase</p>
       </Badge>,
     ],
-    isBest: true,
   },
   {
     title: "Implic'action - job",
@@ -160,6 +160,31 @@ export const webProjects: ProjectInterface[] = [
         <p className={textClassName}>PostgreSQL</p>
       </Badge>,
     ],
+  },
+  {
+    title: "Espace Candidat",
+    src: espaceCandidat,
+    description: "projects.espace-candidat",
+    link: "https://espacecandidat.gendarmerie.interieur.gouv.fr/",
+    stackIcons: [
+      <Badge key="js" className={normalBadgeColorClassName}>
+        <RiJavascriptFill className={iconClassName} />
+        <p className={textClassName}>JavaScript</p>
+      </Badge>,
+      <Badge key="php" className={normalBadgeColorClassName}>
+        <SiPhp className={iconClassName} />
+        <p className={textClassName}>PHP</p>
+      </Badge>,
+      <Badge key="symfony" className={normalBadgeColorClassName}>
+        <SiSymfony className={iconClassName} />
+        <p className={textClassName}>Symfony</p>
+      </Badge>,
+      <Badge key="mysql" className={normalBadgeColorClassName}>
+        <SiMysql className={iconClassName} />
+        <p className={textClassName}>MySQL</p>
+      </Badge>,
+    ],
+    isBest: true,
   },
   {
     title: "Minotaur",

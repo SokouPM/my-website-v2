@@ -53,11 +53,12 @@ const career: CareerInterface[] = [
     stackIcons: [
       <RiJavascriptFill size={size} key="js" />,
       <BiLogoReact size={size} key="react" />,
+      <RiNextjsFill size={size} key="react" />,
       <BiLogoPhp size={size} key="php" />,
       <DiSymfonyBadge size={size} key="symfony" />,
-      <BiLogoJava size={size} key="java" />,
-      <BiLogoSpringBoot size={size} key="spring" />,
       <BiLogoDocker size={size} key="docker" />,
+      <DiMysql size={size} key="mysql" />,
+      <BiLogoPostgresql size={size} key="postgresql" />,
     ],
   },
   {
