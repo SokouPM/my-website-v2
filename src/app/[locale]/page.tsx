@@ -4,7 +4,6 @@ import { ReactElement } from "react"
 
 import Logo from "@/components/Logo"
 import { CardBody, CardContainer, CardItem } from "@/components/animations/3d-card"
-import RetroGrid from "@/components/animations/retro-grid"
 import WordFadeIn from "@/components/animations/word-fade-in"
 import LangSelect from "@/components/header/LangSelect"
 import { ThemeToggle } from "@/components/header/ThemeToggle"
@@ -45,8 +44,6 @@ export default function Home(): ReactElement {
           </CardBody>
         </CardContainer>
       </div>
-
-      <RetroGrid className="z-20" />
     </main>
   )
 }
