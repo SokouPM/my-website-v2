@@ -22,12 +22,14 @@ export default function Email({
   email,
   subject,
   message,
+  hasLink = false,
 }: {
   firstName: string
   lastName: string
   email: string
   subject: string
   message: string
+  hasLink?: boolean
 }): ReactElement {
   const year = new Date().getFullYear()
 
@@ -75,6 +77,15 @@ export default function Email({
               pierre-marquet.fr
             </Link>
           </Heading>
+
+          {hasLink && (
+            <Section className="mb-4 bg-secondary px-4 text-white">
+              <Text className="font-bold">
+                ⚠ Ce message contient un lien. Les demandes légitimes en contiennent rarement : c'est un signe fréquent
+                de phishing. Le lien a été neutralisé (hxxp, [.]) et n'est pas cliquable.
+              </Text>
+            </Section>
+          )}
 
           <Section className="text-white">
             <Text>Bonjour Pierre,</Text>

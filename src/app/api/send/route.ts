@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { ReactElement } from "react"
 import { ZodError } from "zod"
 
+import { containsLink, defangLinks, isBotSubmission, isRateLimited } from "@/lib/antiSpam"
 import { resend } from "@/lib/resend"
 import { ContactFormSchema } from "@/schemas/ContactFormSchema"
 
@@ -21,18 +22,31 @@ export async function POST(request: NextRequest): Promise<Response> {
     const t = await getTranslations({ locale: "en", namespace: "pages.contact.form" })
     const body = await request.json()
 
+    // Robot détecté : on renvoie un faux succès pour ne pas l'aider à s'adapter
+    if (isBotSubmission(body)) {
+      return NextResponse.json({ message: "Email send successfully" }, { status: httpConstants.HTTP_STATUS_OK })
+    }
+
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? request.ip ?? "unknown"
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json({ error: "Too many requests" }, { status: httpConstants.HTTP_STATUS_TOO_MANY_REQUESTS })
+    }
+
     const { firstName, lastName, email, subject, message } = ContactFormSchema(t).parse(body)
+    const hasLink = containsLink(`${subject} ${message} ${firstName} ${lastName}`)
 
     const { error } = await resend.emails.send({
       from: "Pierre Marquet <contact@pierre-marquet.fr>",
       to: process.env.NODE_ENV === "production" ? "contact@pierre-marquet.fr" : "delivered@resend.dev",
-      subject: "Demande de contact depuis le site",
+      subject: hasLink ? "[⚠ LIEN SUSPECT] Demande de contact depuis le site" : "Demande de contact depuis le site",
       react: Email({
-        firstName,
-        lastName,
+        firstName: defangLinks(firstName),
+        lastName: defangLinks(lastName),
         email,
-        subject,
-        message,
+        subject: defangLinks(subject),
+        message: defangLinks(message),
+        hasLink,
       }) as ReactElement,
     })
 
@@ -40,7 +54,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       const resendError = error as ResendError
       const statusCode: number = resendError.statusCode || httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR
 
-      return NextResponse.json(error, { status: statusCode })
+      return NextResponse.json({ error: "Email could not be sent" }, { status: statusCode })
     }
 
     return NextResponse.json({ message: "Email send successfully" }, { status: httpConstants.HTTP_STATUS_OK })
@@ -49,6 +63,6 @@ export async function POST(request: NextRequest): Promise<Response> {
       return NextResponse.json({ error: error.errors }, { status: httpConstants.HTTP_STATUS_BAD_REQUEST })
     }
 
-    return NextResponse.json({ error }, { status: httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR })
+    return NextResponse.json({ error: "Internal error" }, { status: httpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR })
   }
 }

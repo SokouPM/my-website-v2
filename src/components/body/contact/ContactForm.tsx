@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { clsx } from "clsx"
 import { useTranslations } from "next-intl"
-import { ReactElement } from "react"
+import { ReactElement, useEffect, useRef } from "react"
 import { useForm } from "react-hook-form"
 import { IoAlertCircleOutline, IoCheckmarkCircleOutline } from "react-icons/io5"
 import { CirclesWithBar } from "react-loader-spinner"
@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { HONEYPOT_FIELD } from "@/lib/antiSpam"
 import { ContactFormSchema } from "@/schemas/ContactFormSchema"
 
 const EmailFormDialog = ({
@@ -68,6 +69,12 @@ export default function ContactForm(): ReactElement {
   const t = useTranslations("pages.contact.form")
 
   const contactFormSchema = ContactFormSchema(t)
+  const honeypotRef = useRef<HTMLInputElement>(null)
+  const startedAtRef = useRef<number>(0)
+
+  useEffect((): void => {
+    startedAtRef.current = Date.now()
+  }, [])
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -85,7 +92,11 @@ export default function ContactForm(): ReactElement {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        [HONEYPOT_FIELD]: honeypotRef.current?.value ?? "",
+        startedAt: startedAtRef.current,
+      }),
     })
 
     if (!response.ok) {
@@ -97,6 +108,7 @@ export default function ContactForm(): ReactElement {
   const { mutate, isLoading, isError, isSuccess, reset } = useMutation(sendData, {
     onSuccess: (): void => {
       form.reset()
+      startedAtRef.current = Date.now()
     },
   })
   const onSubmit = (values: z.infer<typeof contactFormSchema>): void => {
@@ -114,6 +126,19 @@ export default function ContactForm(): ReactElement {
             </div>
           )}
           <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto md:w-10/12">
+            {/* Pot de miel : invisible pour les humains et les lecteurs d'écran, rempli par les robots */}
+            <div aria-hidden="true" className="-left-[9999px] absolute size-px overflow-hidden">
+              <label htmlFor={HONEYPOT_FIELD}>Ne pas remplir ce champ</label>
+              <input
+                ref={honeypotRef}
+                id={HONEYPOT_FIELD}
+                name={HONEYPOT_FIELD}
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                defaultValue=""
+              />
+            </div>
             <div className="flex flex-col md:flex-row md:gap-4">
               <FormField
                 control={form.control}
